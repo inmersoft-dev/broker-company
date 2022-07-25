@@ -39,10 +39,7 @@ const Hero = () => {
       <div className="uk-container uk-padding-large">
         <h1>{languageState.texts.Hero.Title}</h1>
 
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor.
-        </p>
+        <p>{languageState.texts.Hero.Description}</p>
       </div>
       <form
         className={`uk-grid-small ${formCSS} uk-padding-large`}

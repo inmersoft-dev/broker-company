@@ -38,6 +38,7 @@ const Projects = () => {
     >
       <div className="uk-container">
         <h2>{languageState.texts.Projects.Title}</h2>
+        <p>{languageState.texts.Hero.Description}</p>
         <div
           class={`uk-child-width-1-3@m uk-grid-small uk-grid-match ${css({
             justifyContent: "center",

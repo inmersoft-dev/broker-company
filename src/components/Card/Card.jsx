@@ -23,7 +23,7 @@ const Card = (props) => {
 
   return (
     <div
-      className={`uk-card uk-card-default uk-card-body uk-card-hover uk-width-1-4@m ${margin}`}
+      className={`uk-card uk-card-default uk-card-body uk-card-hover uk-width-large uk-padding ${margin}`}
     >
       <h3 className="uk-card-title">{title}</h3>
       <p>{description}</p>
