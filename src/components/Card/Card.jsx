@@ -19,11 +19,14 @@ const Card = (props) => {
 
   const margin = css({
     margin: "20px",
+    "@media (min-width: 960px)": {
+      flex: 1,
+    },
   });
 
   return (
     <div
-      className={`uk-card uk-card-default uk-card-body uk-card-hover uk-width-large uk-padding ${margin}`}
+      className={`uk-card uk-card-default uk-card-body uk-card-hover uk-padding ${margin}`}
     >
       <h3 className="uk-card-title">{title}</h3>
       <p>{description}</p>

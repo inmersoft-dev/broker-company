@@ -32,6 +32,7 @@ const Navbar = () => {
     position: "fixed",
     display: "flex",
     width: "-webkit-fill-available",
+    zIndex: 99,
   });
 
   const logoCSS = css({

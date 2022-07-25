@@ -5,7 +5,7 @@ const About = () => {
   return (
     <div
       id="section-about"
-      className="uk-section uk-section-primary uk-light uk-section-large"
+      className="uk-section uk-section-primary uk-light uk-section-large uk-padding-large"
     >
       <div className="uk-container">
         <h2>{languageState.texts.About.Title}</h2>

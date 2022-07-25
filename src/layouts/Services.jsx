@@ -34,15 +34,17 @@ const Projects = () => {
   return (
     <div
       id="section-services"
-      className="uk-section uk-section-muted uk-section-large"
+      className="uk-section uk-section-muted uk-section-large uk-padding-large"
     >
       <div className="uk-container">
         <h2>{languageState.texts.Projects.Title}</h2>
         <p>{languageState.texts.Hero.Description}</p>
         <div
-          class={`uk-child-width-1-3@m uk-grid-small uk-grid-match ${css({
-            justifyContent: "center",
-          })}`}
+          class={`uk-child-width-1-1@s uk-child-width-1-2@m uk-child-width-expands@l uk-grid-match ${css(
+            {
+              justifyContent: "center",
+            }
+          )}`}
           data-uk-grid
         >
           {cards.map((item) => (
