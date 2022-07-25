@@ -19,7 +19,7 @@ const OffCanvas = () => {
           data-uk-close
         ></button>
 
-        <h3>Sito</h3>
+        <h3>{languageState.texts.CompanyName}</h3>
         <ul className={`uk-nav uk-nav-primary uk-nav-left`}>
           {languageState.texts.Navbar.Links.map((item) => (
             <li

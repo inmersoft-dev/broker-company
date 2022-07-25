@@ -4,7 +4,7 @@ import SitoContainer from "sito-container";
 // own components
 import Navbar from "../components/Navbar/Navbar";
 import Hero from "../layouts/Hero";
-import Projects from "../layouts/Projects";
+import Services from "../layouts/Services";
 import About from "../layouts/About";
 import Contact from "../layouts/Contact";
 
@@ -13,7 +13,7 @@ const Home = () => {
     <SitoContainer flexDirection="column" sx={{ width: "100vw" }}>
       <Navbar />
       <Hero />
-      <Projects />
+      <Services />
       <About />
       <Contact />
     </SitoContainer>

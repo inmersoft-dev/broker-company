@@ -82,7 +82,7 @@ const Navbar = () => {
           data-uk-toggle="target: #offcanvas-push"
         />
         <a href="#" className={`uk-navbar-item uk-logo ${logoCSS}`}>
-          Sito
+          {languageState.texts.CompanyName}
         </a>
 
         <SitoContainer ignoreDefault className="uk-navbar-right uk-visible@s">
