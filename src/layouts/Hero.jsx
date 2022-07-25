@@ -3,8 +3,14 @@ import { useForm } from "react-hook-form";
 // @emotion/css
 import { css } from "@emotion/css";
 
+// sito components
+import SitoImage from "sito-image";
+
 // contexts
 import { useLanguage } from "../contexts/LanguageProvider";
+
+// image
+import background from "../assets/images/background.jpg";
 
 const Hero = () => {
   const { languageState } = useLanguage();
@@ -28,67 +34,104 @@ const Hero = () => {
   };
 
   const formCSS = css({
-    justifyContent: "center",
+    // justifyContent: "center",
   });
 
   return (
     <div
       id="section-home"
-      className="uk-section uk-section-secondary uk-light uk-section-large"
+      className={`uk-section uk-section-secondary uk-light ${css({
+        padding: 0,
+      })}`}
     >
-      <div className="uk-container uk-padding-large">
-        <h1>{languageState.texts.Hero.Title}</h1>
-
-        <p>{languageState.texts.Hero.Description}</p>
-      </div>
-      <form
-        className={`uk-grid-small ${formCSS} uk-padding-large`}
-        data-uk-grid
-        onSubmit={handleSubmit(onSubmit)}
+      <div
+        className="uk-position-relative uk-visible-toggle uk-light"
+        tabindex="-1"
+        data-uk-slideshow
       >
-        <div className="uk-width-1-4@s">
-          <label className="uk-form-label" htmlFor="date">
-            {languageState.texts.Form.Inputs.Date.label}
-          </label>
-          <input
-            id="date"
-            name="date"
-            className="uk-input"
-            type="date"
-            {...register("date")}
-          />
-        </div>
-        <div className="uk-width-1-4@s">
-          <label className="uk-form-label" htmlFor="origin">
-            {languageState.texts.Form.Inputs.Origin.label}
-          </label>
-          <input
-            id="origin"
-            className="uk-input"
-            type="text"
-            placeholder={languageState.texts.Form.Inputs.Origin.placeholder}
-            {...register("origin")}
-          />
-        </div>
-        <div className="uk-width-1-4@s">
-          <label className="uk-form-label" htmlFor="destiny">
-            {languageState.texts.Form.Inputs.Destiny.label}
-          </label>
-          <input
-            id="destiny"
-            className="uk-input"
-            type="text"
-            placeholder={languageState.texts.Form.Inputs.Destiny.placeholder}
-            {...register("destiny")}
-          />
-        </div>
-        <div>
-          <div className={css({ height: "23px" })} />
-          <button className="uk-button uk-button-primary">
-            {languageState.texts.Form.Buttons.Submit}
-          </button>
-        </div>
-      </form>
+        <ul className="uk-slideshow-items">
+          <li>
+            <SitoImage
+              sx={{ objectFit: "cover", filter: "brightness(0.5)" }}
+              src={background}
+              alt="slider-1"
+            />
+            <div className="uk-position-center uk-position-small">
+              <div className="uk-container uk-padding-large">
+                <h1>{languageState.texts.Hero.Title}</h1>
+
+                <p>{languageState.texts.Hero.Description}</p>
+              </div>
+              <form
+                className={`uk-grid-small ${formCSS} uk-padding-large`}
+                data-uk-grid
+                onSubmit={handleSubmit(onSubmit)}
+              >
+                <div className="uk-width-1-4@s">
+                  <label className="uk-form-label" htmlFor="date">
+                    {languageState.texts.Form.Inputs.Date.label}
+                  </label>
+                  <input
+                    id="date"
+                    name="date"
+                    className="uk-input"
+                    type="date"
+                    {...register("date")}
+                  />
+                </div>
+                <div className="uk-width-1-4@s">
+                  <label className="uk-form-label" htmlFor="origin">
+                    {languageState.texts.Form.Inputs.Origin.label}
+                  </label>
+                  <input
+                    id="origin"
+                    className="uk-input"
+                    type="text"
+                    placeholder={
+                      languageState.texts.Form.Inputs.Origin.placeholder
+                    }
+                    {...register("origin")}
+                  />
+                </div>
+                <div className="uk-width-1-4@s">
+                  <label className="uk-form-label" htmlFor="destiny">
+                    {languageState.texts.Form.Inputs.Destiny.label}
+                  </label>
+                  <input
+                    id="destiny"
+                    className="uk-input"
+                    type="text"
+                    placeholder={
+                      languageState.texts.Form.Inputs.Destiny.placeholder
+                    }
+                    {...register("destiny")}
+                  />
+                </div>
+                <div>
+                  <div className={css({ height: "23px" })} />
+                  <button className="uk-button uk-button-primary">
+                    {languageState.texts.Form.Buttons.Submit}
+                  </button>
+                </div>
+              </form>
+            </div>
+          </li>
+          <li>
+            <SitoImage
+              sx={{ objectFit: "cover", width: "100vw", height: "100vh" }}
+              src={background}
+              alt="slider-2"
+            />
+          </li>
+          <li>
+            <SitoImage
+              sx={{ objectFit: "cover", width: "100vw", height: "100vh" }}
+              src={background}
+              alt="slider-3"
+            />
+          </li>
+        </ul>
+      </div>
     </div>
   );
 };
