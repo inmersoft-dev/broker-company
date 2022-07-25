@@ -24,19 +24,33 @@ const Contact = () => {
   };
 
   return (
-    <div id="section-contact" className="uk-section uk-section-large uk-padding-large">
+    <div
+      id="section-contact"
+      className="uk-section uk-section-large uk-padding-large"
+    >
       <div className="uk-container">
-        <h2>{languageState.texts.Contact.Title}</h2>
-        <p>{languageState.texts.Hero.Description}</p>
+        <h2 data-uk-scrollspy="cls: uk-animation-fade;">
+          {languageState.texts.Contact.Title}
+        </h2>
+        <p data-uk-scrollspy="cls: uk-animation-fade;">
+          {languageState.texts.Hero.Description}
+        </p>
         <div class="uk-child-width-expand@s" data-uk-grid>
-          <div className="uk-margin uk-visible@s">
+          <div
+            className="uk-margin uk-visible@s"
+            data-uk-scrollspy="cls: uk-animation-slide-left;"
+          >
             <SitoImage
               sx={{ objectFit: "cover", height: "100%", marginTop: "10px" }}
               src={background}
               alt="contact"
             />
           </div>
-          <form onSubmit={handleSubmit(onSubmit)} className="uk-form-stacked">
+          <form
+            onSubmit={handleSubmit(onSubmit)}
+            className="uk-form-stacked"
+            data-uk-scrollspy="cls: uk-animation-slide-right;"
+          >
             <div className="uk-margin">
               <label className="uk-form-label" htmlFor="name">
                 {languageState.texts.Form.Inputs.Name.label}

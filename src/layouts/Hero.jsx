@@ -58,14 +58,19 @@ const Hero = () => {
             />
             <div className="uk-position-center uk-position-small">
               <div className="uk-container uk-padding-large">
-                <h1>{languageState.texts.Hero.Title}</h1>
+                <h1 data-uk-scrollspy="cls: uk-animation-fade;">
+                  {languageState.texts.Hero.Title}
+                </h1>
 
-                <p>{languageState.texts.Hero.Description}</p>
+                <p data-uk-scrollspy="cls: uk-animation-fade;">
+                  {languageState.texts.Hero.Description}
+                </p>
               </div>
               <form
                 className={`uk-grid-small ${formCSS} uk-padding-large`}
                 data-uk-grid
                 onSubmit={handleSubmit(onSubmit)}
+                data-uk-scrollspy="cls: uk-animation-fade; target: div; delay: 500;"
               >
                 <div className="uk-width-1-4@s">
                   <label className="uk-form-label" htmlFor="date">
