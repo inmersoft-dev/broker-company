@@ -22,6 +22,11 @@
           "id": "contact",
           "label": "Contacto",
           "to": "#contact"
+        },
+        {
+          "id": "login",
+          "label": "Iniciar sesión",
+          "to": "/auth"
         }
       ]
     },

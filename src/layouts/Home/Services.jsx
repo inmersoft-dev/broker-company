@@ -2,10 +2,10 @@
 import { css } from "@emotion/css";
 
 // own components
-import Card from "../components/Card/Card";
+import Card from "../../components/Card/Card";
 
 // contexts
-import { useLanguage } from "../contexts/LanguageProvider";
+import { useLanguage } from "../../contexts/LanguageProvider";
 
 const Projects = () => {
   const { languageState } = useLanguage();
@@ -45,7 +45,7 @@ const Projects = () => {
           {languageState.texts.Hero.Description}
         </p>
         <div
-          class={`uk-child-width-1-1@s uk-child-width-1-2@m uk-child-width-expands@l uk-grid-match ${css(
+          className={`uk-child-width-1-1@s uk-child-width-1-2@m uk-child-width-expands@l uk-grid-match ${css(
             {
               justifyContent: "center",
             }

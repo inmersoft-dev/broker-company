@@ -31,7 +31,7 @@ const Card = (props) => {
       <h3 className="uk-card-title">{title}</h3>
       <p>{description}</p>
       {link && (
-        <Link to={link} class={`uk-button uk-button-text ${textLeft}`}>
+        <Link to={link} className={`uk-button uk-button-text ${textLeft}`}>
           {languageState.texts.Form.Buttons.ReadMore}
         </Link>
       )}

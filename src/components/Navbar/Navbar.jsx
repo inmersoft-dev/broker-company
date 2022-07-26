@@ -41,14 +41,14 @@ const Navbar = () => {
   });
 
   const linksCSS = css({
-    textTransform: "none",
+    textTransform: "none !important",
   });
 
   const linkTo = (e) => {
     const { id } = e.target;
     setRouteState(id);
-    console.log(id);
     scrollTo(`section-${id}`);
+    if (id !== "login") e.preventDefault();
   };
 
   const onScroll = useCallback(
@@ -93,14 +93,14 @@ const Navbar = () => {
                 key={item.label}
                 className={item.id === active ? "uk-active" : ""}
               >
-                <button
+                <a
                   className={`uk-button uk-button-link ${linksCSS}`}
                   id={item.id}
                   onClick={linkTo}
-                  href={item.to}
+                  href={item.to === "#" ? "#" : item.to}
                 >
                   {item.label}
-                </button>
+                </a>
               </li>
             ))}
           </ul>

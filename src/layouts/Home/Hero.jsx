@@ -7,10 +7,10 @@ import { css } from "@emotion/css";
 import SitoImage from "sito-image";
 
 // contexts
-import { useLanguage } from "../contexts/LanguageProvider";
+import { useLanguage } from "../../contexts/LanguageProvider";
 
 // image
-import background from "../assets/images/background.jpg";
+import background from "../../assets/images/background.jpg";
 
 const Hero = () => {
   const { languageState } = useLanguage();
@@ -46,7 +46,7 @@ const Hero = () => {
     >
       <div
         className="uk-position-relative uk-visible-toggle uk-light"
-        tabindex="-1"
+        tabIndex="-1"
         data-uk-slideshow
       >
         <ul className="uk-slideshow-items">
@@ -85,6 +85,7 @@ const Hero = () => {
                     name="date"
                     className="uk-input"
                     type="date"
+                    required
                     {...register("date")}
                   />
                 </div>
@@ -96,6 +97,7 @@ const Hero = () => {
                     id="origin"
                     className="uk-input"
                     type="text"
+                    required
                     placeholder={
                       languageState.texts.Form.Inputs.Origin.placeholder
                     }
@@ -110,6 +112,7 @@ const Hero = () => {
                     id="destiny"
                     className="uk-input"
                     type="text"
+                    required
                     placeholder={
                       languageState.texts.Form.Inputs.Destiny.placeholder
                     }

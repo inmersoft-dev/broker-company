@@ -2,7 +2,7 @@
 import { css } from "@emotion/css";
 
 // contexts
-import { useLanguage } from "../contexts/LanguageProvider";
+import { useLanguage } from "../../contexts/LanguageProvider";
 
 const About = () => {
   const { languageState } = useLanguage();

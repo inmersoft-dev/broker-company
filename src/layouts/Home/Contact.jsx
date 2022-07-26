@@ -1,13 +1,15 @@
 import { useForm } from "react-hook-form";
 
+
+
 // sito-image
 import SitoImage from "sito-image";
 
 // contexts
-import { useLanguage } from "../contexts/LanguageProvider";
+import { useLanguage } from "../../contexts/LanguageProvider";
 
 // image
-import background from "../assets/images/background.jpg";
+import background from "../../assets/images/background.jpg";
 
 const Contact = () => {
   const { languageState } = useLanguage();
@@ -35,7 +37,7 @@ const Contact = () => {
         <p data-uk-scrollspy="cls: uk-animation-fade;">
           {languageState.texts.Hero.Description}
         </p>
-        <div class="uk-child-width-expand@s" data-uk-grid>
+        <div className="uk-child-width-expand@s" data-uk-grid>
           <div
             className="uk-margin uk-visible@s"
             data-uk-scrollspy="cls: uk-animation-slide-left;"
