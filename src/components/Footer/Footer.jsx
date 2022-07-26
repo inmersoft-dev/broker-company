@@ -28,7 +28,10 @@ const Footer = () => {
   });
 
   return (
-    <div id="footer" className="uk-section uk-section-secondary uk-light">
+    <div
+      id="footer"
+      className="uk-section uk-section-secondary uk-section-large uk-light uk-padding-large"
+    >
       <div
         className={`uk-child-width-1-2 uk-padding ${css({
           width: "-webkit-fill-available",

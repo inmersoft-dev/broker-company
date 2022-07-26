@@ -9,7 +9,7 @@ import SitoImage from "sito-image";
 import { useLanguage } from "../../contexts/LanguageProvider";
 
 // image
-import background from "../../assets/images/background.jpg";
+import background from "../../assets/images/bg1.jpg";
 
 const Contact = () => {
   const { languageState } = useLanguage();
