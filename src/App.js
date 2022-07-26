@@ -4,8 +4,6 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import SitoContainer from "sito-container";
 
 // own components
-import Navbar from "./components/Navbar/Navbar";
-import Footer from "./components/Footer/Footer";
 import ToTop from "./components/ToTop/ToTop";
 
 // views
@@ -18,7 +16,6 @@ import NotFound from "./views/NotFound/NotFound";
 const App = () => {
   return (
     <SitoContainer ignoreDefault sx={{ width: "100vw" }}>
-      <Navbar />
       <ToTop />
       <BrowserRouter basename={process.env.PUBLIC_URL}>
         <Routes>
@@ -30,7 +27,6 @@ const App = () => {
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
-      <Footer />
     </SitoContainer>
   );
 };

@@ -1,6 +1,11 @@
 {
   "es": {
     "CompanyName": "CompanyName",
+    "NotFound": {
+      "Title": "Ups! 404",
+      "Description": "No se encontró la página",
+      "Link": "Volver"
+    },
     "Navbar": {
       "Links": [
         {
