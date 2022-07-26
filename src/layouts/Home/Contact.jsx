@@ -32,9 +32,6 @@ const Contact = () => {
         <h2 data-uk-scrollspy="cls: uk-animation-fade;">
           {languageState.texts.Contact.Title}
         </h2>
-        <p data-uk-scrollspy="cls: uk-animation-fade;">
-          {languageState.texts.Contact.Description}
-        </p>
         <div className="uk-child-width-expand@s" data-uk-grid>
           <div
             className="uk-margin uk-visible@s"

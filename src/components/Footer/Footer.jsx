@@ -49,9 +49,6 @@ const Footer = () => {
           <h3 data-uk-scrollspy="cls: uk-animation-fade;">
             {languageState.texts.CompanyName}
           </h3>
-          <p data-uk-scrollspy="cls: uk-animation-fade;">
-            {languageState.texts.Footer.Section1.Description}
-          </p>
           <div
             className={css({
               display: "flex",
@@ -137,7 +134,6 @@ const Footer = () => {
                     <a
                       className={`uk-button uk-button-link ${linksCSS}`}
                       id={item.id}
-                      onClick={linkTo}
                       href={item.Link}
                     >
                       {item.Label}

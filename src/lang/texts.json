@@ -87,7 +87,7 @@
     },
     "Hero": {
       "Slide1": {
-        "Title": "Title",
+        "Title": "Superamos obstáculos, encontramos soluciones",
         "Description": "Simplificamos el proceso de envío desde el principio hasta el final",
         "Button": "Contactar ahora"
       },
@@ -141,8 +141,7 @@
       "Button": "Contactar ahora"
     },
     "Contact": {
-      "Title": "Título del contato",
-      "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor. ",
+      "Title": "Contactar ahora",
       "Button": "Contactar ahora"
     }
   }
