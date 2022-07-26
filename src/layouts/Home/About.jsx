@@ -28,7 +28,18 @@ const About = () => {
         >
           {languageState.texts.About.Description}
         </p>
-        <div
+        <h3 data-uk-scrollspy="cls: uk-animation-fade;">
+          {languageState.texts.About.Title1}
+        </h3>
+        <p
+          data-uk-scrollspy="cls: uk-animation-fade;"
+          className={css({
+            marginBottom: "50px",
+          })}
+        >
+          {languageState.texts.About.Description1}
+        </p>
+        {/*<div
           className={`uk-grid-match uk-child-width-1-3@m`}
           data-uk-grid
           data-uk-scrollspy="cls: uk-animation-fade; target: div; delay: 500;"
@@ -57,7 +68,7 @@ const About = () => {
 
             <p>{languageState.texts.About.Section3.Description}</p>
           </div>
-        </div>
+        </div>*/}
       </div>
     </div>
   );

@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable jsx-a11y/anchor-has-content */
-import { useForm } from "react-hook-form";
+// import { useForm } from "react-hook-form";
 
 // @emotion/css
 import { css } from "@emotion/css";
@@ -10,25 +10,25 @@ import { useLanguage } from "../../contexts/LanguageProvider";
 
 const Hero = () => {
   const { languageState } = useLanguage();
-  const now = new Date();
-  const nowYear = now.getFullYear();
-  const nowMonth =
+  // const now = new Date();
+  // const nowYear = now.getFullYear();
+  /* const nowMonth =
     String(now.getMonth() + 1).length === 1
       ? `0${now.getMonth() + 1}`
       : now.getMonth() + 1;
-
-  const nowDay = now.getDate();
-  const { handleSubmit, register } = useForm({
+  */
+  // const nowDay = now.getDate();
+  /* const { handleSubmit, register } = useForm({
     defaultValues: {
       date: `${nowYear}-${nowMonth}-${nowDay}`,
       origin: "",
       destiny: "",
     },
-  });
+  }); */
 
-  const onSubmit = (data) => {
+  /* const onSubmit = (data) => {
     console.log(data);
-  };
+  }; */
 
   return (
     <div
@@ -52,7 +52,7 @@ const Hero = () => {
             {languageState.texts.Hero.Slide1.Description}
           </p>
         </div>
-        <form
+        {/* <form
           className={`uk-grid-small uk-padding-large`}
           data-uk-grid
           onSubmit={handleSubmit(onSubmit)}
@@ -103,7 +103,7 @@ const Hero = () => {
               {languageState.texts.Form.Buttons.Submit}
             </button>
           </div>
-        </form>
+        </form> */}
       </div>
     </div>
   );

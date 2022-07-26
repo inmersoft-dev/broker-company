@@ -1,6 +1,6 @@
 {
   "es": {
-    "CompanyName": "CompanyName",
+    "CompanyName": "Dogma Transportation",
     "NotFound": {
       "Title": "Ups! 404",
       "Description": "No se encontró la página",
@@ -71,8 +71,8 @@
     },
     "Hero": {
       "Slide1": {
-        "Title": "Título del hero 1",
-        "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.",
+        "Title": "Title",
+        "Description": "Simplificamos el proceso de envío desde el principio hasta el final",
         "Button": "Contactar ahora"
       },
       "Slide2": {
@@ -87,20 +87,36 @@
       }
     },
     "Projects": {
-      "Title": "Título de servicios",
+      "Title": "Servicios de envío",
       "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.",
+      "Services": [
+        {
+          "title": "Carga LTL",
+          "description": "Vea cotizaciones gratuitas de los principales transportistas de LTL para carga que no requiere un camión completo. Ahorre en combustible y costos generales de envío al obtener la oferta adecuada para mover su carga."
+        },
+        {
+          "title": "Carga de camiones",
+          "description": "Ya sea que necesite un camión completo o varios, tenemos la capacidad que necesita para mover la carga a su manera. Aproveche nuestra amplia selección de relaciones de transportistas para obtener una gran oferta rápidamente."
+        },
+        {
+          "title": "Cargas parciales",
+          "description": "Divida el costo de un camión con envíos similares y ahorre dinero. Permítanos manejar los detalles para que no tenga que sacrificar la entrega oportuna para recibir un excelente precio."
+        }
+      ],
       "Button": "Contactar ahora"
     },
     "About": {
-      "Title": "Título del acerca de ",
-      "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.",
+      "Title": "Dogma Transportation",
+      "Description": "Tenemos todos los recursos y tecnologías para facilitarle el envío de paquetes, carga de camión y LTL. Le ayudamos a encontrar la mejor cotización, rastrear rápidamente su producto o contactar con los transportistas en el menor tiempo posible. Nuestras herramientas facilitan todo el proceso de envío, desde el inicio hasta el final.",
+      "Title1": "Superamos obstáculos, encontramos soluciones",
+      "Description1": "Explore nuestros servicios de carga, soluciones personalizadas u obtenga un presupuesto gratuito.",
       "Section1": {
         "Title": "Sección 1",
-        "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor. "
+        "Description": "Superamos obstáculos, encontramos soluciones. "
       },
       "Section2": {
         "Title": "Sección 2",
-        "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor. "
+        "Description": "Explore nuestros servicios de carga, soluciones personalizadas u obtenga un presupuesto gratuito. "
       },
       "Section3": {
         "Title": "Sección 3",

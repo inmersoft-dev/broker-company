@@ -10,24 +10,6 @@ import { useLanguage } from "../../contexts/LanguageProvider";
 const Projects = () => {
   const { languageState } = useLanguage();
 
-  const cards = [
-    {
-      title: "Card 1",
-      description:
-        "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur",
-    },
-    {
-      title: "Card 2",
-      description:
-        "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur",
-    },
-    {
-      title: "Card 3",
-      description:
-        "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur",
-    },
-  ];
-
   return (
     <div
       id="section-services"
@@ -49,12 +31,13 @@ const Projects = () => {
           )}`}
           data-uk-grid
         >
-          {cards.map((item) => (
+          {languageState.texts.Projects.Services.map((item, i) => (
             <Card
               key={item.title}
               title={item.title}
               description={item.description}
               link={item.link}
+              index={i}
             />
           ))}
         </div>
