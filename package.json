@@ -1,6 +1,6 @@
 {
   "name": "broker-company",
-  "version": "0.1.0",
+  "version": "0.2.24",
   "private": false,
   "dependencies": {
     "@emotion/css": "^11.9.0",
