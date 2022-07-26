@@ -1,4 +1,4 @@
-import { useForm } from "react-hook-form";
+// import { useForm } from "react-hook-form";
 
 // @emotion/css
 import { css } from "@emotion/css";
@@ -14,28 +14,25 @@ import background from "../../assets/images/background.jpg";
 
 const Hero = () => {
   const { languageState } = useLanguage();
-  const now = new Date();
-  const nowYear = now.getFullYear();
-  const nowMonth =
+  // const now = new Date();
+  // const nowYear = now.getFullYear();
+  /* const nowMonth =
     String(now.getMonth() + 1).length === 1
       ? `0${now.getMonth() + 1}`
       : now.getMonth() + 1;
-  const nowDay = now.getDate();
-  const { handleSubmit, register } = useForm({
+  */
+  // const nowDay = now.getDate();
+  /* const { handleSubmit, register } = useForm({
     defaultValues: {
       date: `${nowYear}-${nowMonth}-${nowDay}`,
       origin: "",
       destiny: "",
     },
-  });
+  }); */
 
-  const onSubmit = (data) => {
+  /* const onSubmit = (data) => {
     console.log(data);
-  };
-
-  const formCSS = css({
-    // justifyContent: "center",
-  });
+  }; */
 
   return (
     <div
@@ -63,15 +60,15 @@ const Hero = () => {
                 })}`}
               >
                 <h1 data-uk-scrollspy="cls: uk-animation-fade;">
-                  {languageState.texts.Hero.Title}
+                  {languageState.texts.Hero.Slide1.Title}
                 </h1>
 
                 <p data-uk-scrollspy="cls: uk-animation-fade;">
-                  {languageState.texts.Hero.Description}
+                  {languageState.texts.Hero.Slide1.Description}
                 </p>
               </div>
-              <form
-                className={`uk-grid-small ${formCSS} uk-padding-large`}
+              {/* <form
+                className={`uk-grid-small uk-padding-large`}
                 data-uk-grid
                 onSubmit={handleSubmit(onSubmit)}
                 data-uk-scrollspy="cls: uk-animation-fade; target: div; delay: 500;"
@@ -125,7 +122,7 @@ const Hero = () => {
                     {languageState.texts.Form.Buttons.Submit}
                   </button>
                 </div>
-              </form>
+              </form> */}
             </div>
           </li>
           <li>
@@ -134,6 +131,21 @@ const Hero = () => {
               src={background}
               alt="slider-2"
             />
+            <div className="uk-position-center uk-position-small">
+              <div
+                className={`uk-container uk-padding-large ${css({
+                  paddingBottom: 0,
+                })}`}
+              >
+                <h1 data-uk-scrollspy="cls: uk-animation-fade;">
+                  {languageState.texts.Hero.Slide2.Title}
+                </h1>
+
+                <p data-uk-scrollspy="cls: uk-animation-fade;">
+                  {languageState.texts.Hero.Slide2.Description}
+                </p>
+              </div>
+            </div>
           </li>
           <li>
             <SitoImage
@@ -141,6 +153,21 @@ const Hero = () => {
               src={background}
               alt="slider-3"
             />
+            <div className="uk-position-center uk-position-small">
+              <div
+                className={`uk-container uk-padding-large ${css({
+                  paddingBottom: 0,
+                })}`}
+              >
+                <h1 data-uk-scrollspy="cls: uk-animation-fade;">
+                  {languageState.texts.Hero.Slide2.Title}
+                </h1>
+
+                <p data-uk-scrollspy="cls: uk-animation-fade;">
+                  {languageState.texts.Hero.Slide2.Description}
+                </p>
+              </div>
+            </div>
           </li>
         </ul>
       </div>

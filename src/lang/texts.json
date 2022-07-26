@@ -22,11 +22,6 @@
           "id": "contact",
           "label": "Contacto",
           "to": "#contact"
-        },
-        {
-          "id": "login",
-          "label": "Iniciar sesión",
-          "to": "/auth"
         }
       ]
     },
@@ -59,9 +54,21 @@
       "Buttons": { "Submit": "Enviar", "ReadMore": "Leer más" }
     },
     "Hero": {
-      "Title": "Título del hero",
-      "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.",
-      "Button": "Contactar ahora"
+      "Slide1": {
+        "Title": "Título del hero 1",
+        "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.",
+        "Button": "Contactar ahora"
+      },
+      "Slide2": {
+        "Title": "Título del hero 2",
+        "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.",
+        "Button": "Contactar ahora"
+      },
+      "Slide3": {
+        "Title": "Título del hero 3",
+        "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.",
+        "Button": "Contactar ahora"
+      }
     },
     "Projects": {
       "Title": "Título de servicios",
