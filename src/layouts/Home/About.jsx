@@ -7,10 +7,6 @@ import { useLanguage } from "../../contexts/LanguageProvider";
 const About = () => {
   const { languageState } = useLanguage();
 
-  const marginRight = css({
-    marginRight: "10px",
-  });
-
   return (
     <div
       id="section-about"
