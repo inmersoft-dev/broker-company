@@ -33,26 +33,24 @@ const Hero = () => {
   return (
     <div
       id="section-home"
-      className={`uk-section uk-section-secondary uk-light ${css({
-        padding: 0,
-        height: "100vh",
-      })}`}
+      className={`uk-section uk-section-secondary uk-light uk-section-large uk-padding-large ${css(
+        { height: "400px" }
+      )}`}
     >
-      <div className="uk-position-center uk-position-small">
-        <div
-          className={`uk-container uk-padding-large ${css({
-            paddingBottom: 0,
-          })}`}
-        >
-          <h1 data-uk-scrollspy="cls: uk-animation-fade;">
-            {languageState.texts.Hero.Slide1.Title}
-          </h1>
+      <div
+        className={`uk-container uk-padding-large ${css({
+          paddingBottom: 0,
+        })}`}
+      >
+        <h1 data-uk-scrollspy="cls: uk-animation-fade;">
+          {languageState.texts.Hero.Slide1.Title}
+        </h1>
 
-          <p data-uk-scrollspy="cls: uk-animation-fade;">
-            {languageState.texts.Hero.Slide1.Description}
-          </p>
-        </div>
-        {/* <form
+        <p data-uk-scrollspy="cls: uk-animation-fade;">
+          {languageState.texts.Hero.Slide1.Description}
+        </p>
+      </div>
+      {/* <form
           className={`uk-grid-small uk-padding-large`}
           data-uk-grid
           onSubmit={handleSubmit(onSubmit)}
@@ -104,7 +102,6 @@ const Hero = () => {
             </button>
           </div>
         </form> */}
-      </div>
     </div>
   );
 };

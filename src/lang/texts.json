@@ -38,7 +38,23 @@
         "Title": "Enlaces útiles"
       },
       "Section3": {
-        "Title": "Contacto"
+        "Title": "Contacto",
+        "Links": [
+          {
+            "id": "1",
+            "Link": "mailto:email@email.com",
+            "Label": "Email: email@email.com"
+          },
+          {
+            "id": "2",
+            "Link": "tel:123-456-789",
+            "Label": "Teléfono: +123 456 789"
+          },
+          {
+            "id": "3",
+            "Description": "Dirección: Sidney Street, New York, USA"
+          }
+        ]
       }
     },
     "Form": {
