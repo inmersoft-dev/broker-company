@@ -34,21 +34,32 @@ const Hero = () => {
     <div
       id="section-home"
       className={`uk-section uk-section-secondary uk-light ${css({
-        height: "400px",
+        height: "100vh",
+        display: "flex",
+        alignItems: "center",
       })}`}
     >
       <div
         className={`uk-container uk-padding-large ${css({
           paddingBottom: 0,
+          justifyContent: "flex-start",
+          alignItems: "flex-start",
+          display: "flex",
+          flexDirection: "column",
+          width: "100%",
         })}`}
+        data-uk-scrollspy="cls: uk-animation-fade; target: div; delay: 500;"
       >
-        <h1 data-uk-scrollspy="cls: uk-animation-fade;">
-          {languageState.texts.Hero.Slide1.Title}
-        </h1>
-
-        <p data-uk-scrollspy="cls: uk-animation-fade;">
-          {languageState.texts.Hero.Slide1.Description}
-        </p>
+        <div>
+          <h1 data-uk-scrollspy="cls: uk-animation-fade;">
+            {languageState.texts.Hero.Slide1.Title}
+          </h1>
+        </div>
+        <div>
+          <p data-uk-scrollspy="cls: uk-animation-fade;">
+            {languageState.texts.Hero.Slide1.Description}
+          </p>
+        </div>
       </div>
       {/* <form
           className={`uk-grid-small uk-padding-large`}
