@@ -66,6 +66,18 @@
     "About": {
       "Title": "Título del acerca de ",
       "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.",
+      "Section1": {
+        "Title": "Sección 1",
+        "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor. "
+      },
+      "Section2": {
+        "Title": "Sección 2",
+        "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor. "
+      },
+      "Section3": {
+        "Title": "Sección 3",
+        "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor. "
+      },
       "Button": "Contactar ahora"
     },
     "Contact": {

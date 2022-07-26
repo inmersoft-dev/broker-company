@@ -57,7 +57,11 @@ const Hero = () => {
               alt="slider-1"
             />
             <div className="uk-position-center uk-position-small">
-              <div className="uk-container uk-padding-large">
+              <div
+                className={`uk-container uk-padding-large ${css({
+                  paddingBottom: 0,
+                })}`}
+              >
                 <h1 data-uk-scrollspy="cls: uk-animation-fade;">
                   {languageState.texts.Hero.Title}
                 </h1>
@@ -123,14 +127,14 @@ const Hero = () => {
           </li>
           <li>
             <SitoImage
-              sx={{ objectFit: "cover", width: "100vw", height: "100vh" }}
+              sx={{ objectFit: "cover", filter: "brightness(0.5)" }}
               src={background}
               alt="slider-2"
             />
           </li>
           <li>
             <SitoImage
-              sx={{ objectFit: "cover", width: "100vw", height: "100vh" }}
+              sx={{ objectFit: "cover", filter: "brightness(0.5)" }}
               src={background}
               alt="slider-3"
             />
