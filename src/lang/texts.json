@@ -25,6 +25,17 @@
         }
       ]
     },
+    "Footer": {
+      "Section1": {
+        "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor. "
+      },
+      "Section2": {
+        "Title": "Enlaces útiles"
+      },
+      "Section3": {
+        "Title": "Contacto"
+      }
+    },
     "Form": {
       "Inputs": {
         "Date": {

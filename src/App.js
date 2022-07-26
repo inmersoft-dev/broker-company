@@ -17,7 +17,7 @@ import NotFound from "./views/NotFound/NotFound";
 
 const App = () => {
   return (
-    <SitoContainer sx={{ width: "100vw" }}>
+    <SitoContainer ignoreDefault sx={{ width: "100vw" }}>
       <Navbar />
       <ToTop />
       <BrowserRouter basename={process.env.PUBLIC_URL}>
