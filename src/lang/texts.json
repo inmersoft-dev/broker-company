@@ -1,0 +1,117 @@
+{
+  "es": {
+    "CompanyName": "CompanyName",
+    "NotFound": {
+      "Title": "Ups! 404",
+      "Description": "No se encontró la página",
+      "Link": "Volver"
+    },
+    "Navbar": {
+      "Links": [
+        {
+          "id": "home",
+          "label": "Inico",
+          "to": "#"
+        },
+        {
+          "id": "services",
+          "label": "Services",
+          "to": "#services"
+        },
+        {
+          "id": "about",
+          "label": "Acerca de",
+          "to": "#about"
+        },
+        {
+          "id": "contact",
+          "label": "Contacto",
+          "to": "#contact"
+        }
+      ]
+    },
+    "Footer": {
+      "Section1": {
+        "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor. "
+      },
+      "Section2": {
+        "Title": "Enlaces útiles"
+      },
+      "Section3": {
+        "Title": "Contacto"
+      }
+    },
+    "Form": {
+      "Inputs": {
+        "Date": {
+          "label": "Fecha"
+        },
+        "Origin": {
+          "label": "Origen",
+          "placeholder": "Ciudad o código postal"
+        },
+        "Destiny": {
+          "label": "Destino",
+          "placeholder": "Ciudad o código postal"
+        },
+        "Name": {
+          "label": "Nombre",
+          "placeholder": "ej: Jose"
+        },
+        "Email": {
+          "label": "Email",
+          "placeholder": "ej: jose@email.com"
+        },
+        "Message": {
+          "label": "Mensage",
+          "placeholder": "Algún mensaje..."
+        }
+      },
+      "Buttons": { "Submit": "Enviar", "ReadMore": "Leer más" }
+    },
+    "Hero": {
+      "Slide1": {
+        "Title": "Título del hero 1",
+        "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.",
+        "Button": "Contactar ahora"
+      },
+      "Slide2": {
+        "Title": "Título del hero 2",
+        "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.",
+        "Button": "Contactar ahora"
+      },
+      "Slide3": {
+        "Title": "Título del hero 3",
+        "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.",
+        "Button": "Contactar ahora"
+      }
+    },
+    "Projects": {
+      "Title": "Título de servicios",
+      "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.",
+      "Button": "Contactar ahora"
+    },
+    "About": {
+      "Title": "Título del acerca de ",
+      "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.",
+      "Section1": {
+        "Title": "Sección 1",
+        "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor. "
+      },
+      "Section2": {
+        "Title": "Sección 2",
+        "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor. "
+      },
+      "Section3": {
+        "Title": "Sección 3",
+        "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor. "
+      },
+      "Button": "Contactar ahora"
+    },
+    "Contact": {
+      "Title": "Título del contato",
+      "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor. ",
+      "Button": "Contactar ahora"
+    }
+  }
+}
