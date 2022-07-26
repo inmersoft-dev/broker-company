@@ -5,6 +5,7 @@ import SitoContainer from "sito-container";
 
 // own components
 import Navbar from "./components/Navbar/Navbar";
+import Footer from "./components/Footer/Footer";
 import ToTop from "./components/ToTop/ToTop";
 
 // views
@@ -29,6 +30,7 @@ const App = () => {
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
+      <Footer />
     </SitoContainer>
   );
 };
