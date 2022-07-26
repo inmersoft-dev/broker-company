@@ -1,6 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-has-content */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import { useState, useEffect, useCallback } from "react";
+import { Link } from "react-router-dom";
 
 // sito components
 import SitoContainer from "sito-container";
@@ -82,9 +83,9 @@ const Navbar = () => {
           href="#"
           data-uk-toggle="target: #offcanvas-push"
         />
-        <a href="#" className={`uk-navbar-item uk-logo ${logoCSS}`}>
+        <Link to="/" className={`uk-navbar-item uk-logo ${logoCSS}`}>
           {languageState.texts.CompanyName}
-        </a>
+        </Link>
 
         <SitoContainer ignoreDefault className="uk-navbar-right uk-visible@s">
           <ul className="uk-navbar-nav">

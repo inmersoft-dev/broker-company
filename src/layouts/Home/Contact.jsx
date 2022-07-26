@@ -1,7 +1,5 @@
 import { useForm } from "react-hook-form";
 
-
-
 // sito-image
 import SitoImage from "sito-image";
 
@@ -35,7 +33,7 @@ const Contact = () => {
           {languageState.texts.Contact.Title}
         </h2>
         <p data-uk-scrollspy="cls: uk-animation-fade;">
-          {languageState.texts.Hero.Description}
+          {languageState.texts.Contact.Description}
         </p>
         <div className="uk-child-width-expand@s" data-uk-grid>
           <div
