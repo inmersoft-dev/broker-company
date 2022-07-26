@@ -16,7 +16,7 @@ const Projects = () => {
       className="uk-section uk-section-muted uk-section-large uk-padding-large"
       data-uk-scrollspy="cls: uk-animation-fade; target: .uk-card; delay: 500;"
     >
-      <div className="uk-container">
+      <div className={`uk-container ${css({ padding: 0 })}`}>
         <h2 className="uk-h2" data-uk-scrollspy="cls: uk-animation-fade;">
           {languageState.texts.Projects.Title}
         </h2>

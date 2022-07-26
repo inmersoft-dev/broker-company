@@ -33,9 +33,9 @@ const Hero = () => {
   return (
     <div
       id="section-home"
-      className={`uk-section uk-section-secondary uk-light uk-section-large uk-padding-large ${css(
-        { height: "400px" }
-      )}`}
+      className={`uk-section uk-section-secondary uk-light ${css({
+        height: "400px",
+      })}`}
     >
       <div
         className={`uk-container uk-padding-large ${css({
