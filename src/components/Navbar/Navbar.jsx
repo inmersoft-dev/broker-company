@@ -38,7 +38,7 @@ const Navbar = () => {
 
   const logoCSS = css({
     marginLeft: "10px",
-    marginBottom: "4px",
+    marginBottom: "2px",
   });
 
   const linksCSS = css({

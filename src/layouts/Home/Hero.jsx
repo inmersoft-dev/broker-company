@@ -1,15 +1,21 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable jsx-a11y/anchor-has-content */
 // import { useForm } from "react-hook-form";
 
 // @emotion/css
 import { css } from "@emotion/css";
+import { useEffect, useState } from "react";
 
 // contexts
 import { useLanguage } from "../../contexts/LanguageProvider";
 
+// utils
+import { scrollTo } from "../../utils/functions";
+
 const Hero = () => {
   const { languageState } = useLanguage();
+  const [slider, setSlider] = useState(0);
   // const now = new Date();
   // const nowYear = now.getFullYear();
   /* const nowMonth =
@@ -30,6 +36,14 @@ const Hero = () => {
     console.log(data);
   }; */
 
+  useEffect(() => {
+    setTimeout(() => {
+      if (slider < languageState.texts.Hero.Sliders.length - 1)
+        setSlider(slider + 1);
+      else setSlider(0);
+    }, 10000);
+  }, [slider]);
+
   return (
     <div
       id="section-home"
@@ -48,18 +62,73 @@ const Hero = () => {
           flexDirection: "column",
           width: "100%",
         })}`}
-        data-uk-scrollspy="cls: uk-animation-fade; target: div; delay: 500;"
       >
-        <div>
-          <h1 data-uk-scrollspy="cls: uk-animation-fade;">
-            {languageState.texts.Hero.Slide1.Title}
-          </h1>
-        </div>
-        <div>
-          <p data-uk-scrollspy="cls: uk-animation-fade;">
-            {languageState.texts.Hero.Slide1.Description}
-          </p>
-        </div>
+        {slider === 0 && (
+          <div data-uk-scrollspy="cls: uk-animation-fade; target: div; delay: 500;">
+            <div>
+              <h1 data-uk-scrollspy="cls: uk-animation-fade;">
+                {languageState.texts.Hero.Sliders[0].Title}
+              </h1>
+            </div>
+            <div>
+              <p data-uk-scrollspy="cls: uk-animation-fade;">
+                {languageState.texts.Hero.Sliders[0].Description}
+              </p>
+            </div>
+            <div>
+              <button
+                onClick={() => scrollTo("section-about")}
+                className="uk-button uk-button-primary"
+              >
+                {languageState.texts.Hero.Sliders[0].Button}
+              </button>
+            </div>
+          </div>
+        )}
+        {slider === 1 && (
+          <div data-uk-scrollspy="cls: uk-animation-fade; target: div; delay: 500;">
+            <div>
+              <h1 data-uk-scrollspy="cls: uk-animation-fade;">
+                {languageState.texts.Hero.Sliders[1].Title}
+              </h1>
+            </div>
+            <div>
+              <p data-uk-scrollspy="cls: uk-animation-fade;">
+                {languageState.texts.Hero.Sliders[1].Description}
+              </p>
+            </div>
+            <div>
+              <button
+                onClick={() => scrollTo("section-services")}
+                className="uk-button uk-button-primary"
+              >
+                {languageState.texts.Hero.Sliders[1].Button}
+              </button>
+            </div>
+          </div>
+        )}
+        {slider === 2 && (
+          <div data-uk-scrollspy="cls: uk-animation-fade; target: div; delay: 500;">
+            <div>
+              <h1 data-uk-scrollspy="cls: uk-animation-fade;">
+                {languageState.texts.Hero.Sliders[2].Title}
+              </h1>
+            </div>
+            <div>
+              <p data-uk-scrollspy="cls: uk-animation-fade;">
+                {languageState.texts.Hero.Sliders[2].Description}
+              </p>
+            </div>
+            <div>
+              <button
+                onClick={() => scrollTo("section-contact")}
+                className="uk-button uk-button-primary"
+              >
+                {languageState.texts.Hero.Sliders[2].Button}
+              </button>
+            </div>
+          </div>
+        )}
       </div>
       {/* <form
           className={`uk-grid-small uk-padding-large`}

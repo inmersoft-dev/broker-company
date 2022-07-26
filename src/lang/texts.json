@@ -86,21 +86,23 @@
       "Buttons": { "Submit": "Enviar", "ReadMore": "Leer más" }
     },
     "Hero": {
-      "Slide1": {
-        "Title": "Superamos obstáculos, encontramos soluciones",
-        "Description": "Simplificamos el proceso de envío desde el principio hasta el final",
-        "Button": "Contactar ahora"
-      },
-      "Slide2": {
-        "Title": "Título del hero 2",
-        "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.",
-        "Button": "Contactar ahora"
-      },
-      "Slide3": {
-        "Title": "Título del hero 3",
-        "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.",
-        "Button": "Contactar ahora"
-      }
+      "Sliders": [
+        {
+          "Title": "Superamos obstáculos",
+          "Description": "Simplificamos el proceso de envío desde el principio hasta el final",
+          "Button": "Leer más"
+        },
+        {
+          "Title": "Servicios de envío",
+          "Description": "Vea cotizaciones gratuitas de los principales transportistas",
+          "Button": "Ver servicios"
+        },
+        {
+          "Title": "Encontramos soluciones",
+          "Description": "Tenemos todos los recursos y tecnologías para facilitarle el envío de paquetes",
+          "Button": "Contactar ahora"
+        }
+      ]
     },
     "Projects": {
       "Title": "Servicios de envío",
