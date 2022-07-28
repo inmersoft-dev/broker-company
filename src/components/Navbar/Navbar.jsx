@@ -18,6 +18,7 @@ import { useRoute } from "../../contexts/RouteProvider";
 
 // utils
 import { scrollTo } from "../../utils/functions";
+import { userLogged } from "../../utils/auth";
 
 const Navbar = () => {
   const { languageState } = useLanguage();
@@ -49,7 +50,13 @@ const Navbar = () => {
     const { id } = e.target;
     setRouteState(id);
     scrollTo(`section-${id}`);
-    if (active !== "login") if (id !== "login") e.preventDefault();
+    if (
+      active !== "login" &&
+      active !== "dashboard" &&
+      id !== "login" &&
+      id !== "dashboard"
+    )
+      e.preventDefault();
   };
 
   const onScroll = useCallback(
@@ -89,21 +96,25 @@ const Navbar = () => {
 
         <SitoContainer ignoreDefault className="uk-navbar-right uk-visible@s">
           <ul className="uk-navbar-nav">
-            {languageState.texts.Navbar.Links.map((item) => (
-              <li
-                key={item.label}
-                className={item.id === active ? "uk-active" : ""}
-              >
-                <Link
-                  className={`uk-button uk-button-link ${linksCSS}`}
-                  id={item.id}
-                  onClick={linkTo}
-                  to={item.to}
+            {languageState.texts.Navbar.Links.map((item) =>
+              item.logged && userLogged() ? (
+                <li
+                  key={item.label}
+                  className={item.id === active ? "uk-active" : ""}
                 >
-                  {item.label}
-                </Link>
-              </li>
-            ))}
+                  <Link
+                    className={`uk-button uk-button-link ${linksCSS}`}
+                    id={item.id}
+                    onClick={linkTo}
+                    to={item.to}
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+              ) : (
+                <span key={item.label} />
+              )
+            )}
           </ul>
         </SitoContainer>
       </nav>

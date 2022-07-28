@@ -29,11 +29,10 @@ const Login = () => {
   const navigate = useNavigate();
 
   const { languageState } = useLanguage();
-
   const { setRouteState } = useRoute();
 
   const [loading, setLoading] = useState(false);
-  const [ok, setOk] = useState(1);
+  const [ok, setOk] = useState(true);
 
   const [user, setUser] = useState("");
   const [password, setPassword] = useState("");
@@ -139,9 +138,9 @@ const Login = () => {
             width: "100%",
           })}`}
         >
-          <h1 data-uk-scrollspy="cls: uk-animation-slide-left;">
+          <h2 data-uk-scrollspy="cls: uk-animation-slide-left;">
             {languageState.texts.Login.Title}
-          </h1>
+          </h2>
           <form
             onSubmit={onSubmit}
             className="uk-form-stacked uk-width-1-1@xs uk-width-1-3@m"

@@ -6,6 +6,9 @@
       "SomeWrong": "Ha ocurrido un error",
       "Wrong": "Usuario o contraseña incorrecta",
       "NameRequired": "Debes introducir un nombre",
+      "TitleRequired": "Debes introducir un título",
+      "UrlRequired": "Debes introducir la url",
+      "PriceRequired": "Debes introducir un precio",
       "DescriptionRequired": "Debes introducir una descripción",
       "NoEmptyPassword": "La contraseña no puede estar vacía"
     },
@@ -20,6 +23,12 @@
       "Title": "Ups! 404",
       "Description": "No se encontró la página",
       "Link": "Volver"
+    },
+    "Dashboard": {
+      "Tabs": ["Listar", "Insertar", "Modificar", "Eliminar"],
+      "Insert": {
+        "Title": "Insertar curso"
+      }
     },
     "Navbar": {
       "Links": [
@@ -46,7 +55,14 @@
         {
           "id": "login",
           "label": "Iniciar sesión",
-          "to": "/login"
+          "to": "/login",
+          "logged": false
+        },
+        {
+          "id": "dashboard",
+          "label": "Panel de administración",
+          "to": "/dashboard",
+          "logged": true
         }
       ]
     },
@@ -106,6 +122,22 @@
           "label": "Contraseña",
           "placeholder": "ej: ********"
         },
+        "Title": {
+          "label": "Título",
+          "placeholder": "ej: Transporte de carga"
+        },
+        "Price": {
+          "label": "Precio",
+          "placeholder": "ej: 100"
+        },
+        "Url": {
+          "label": "Dirección url",
+          "placeholder": "ej: https://fdrive-curso1233/?file=1as23@@13Dc"
+        },
+        "Description": {
+          "label": "Descripción",
+          "placeholder": "Alguna descripción"
+        },
         "Message": {
           "label": "Mensage",
           "placeholder": "Algún mensaje..."
@@ -113,8 +145,10 @@
       },
       "Buttons": {
         "Submit": "Enviar",
+        "Save": "Guardar",
         "ReadMore": "Leer más",
-        "Login": "Iniciar sesión"
+        "Login": "Iniciar sesión",
+        "Retry": "Reintentar"
       }
     },
     "Hero": {
