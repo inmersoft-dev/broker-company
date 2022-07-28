@@ -47,25 +47,35 @@ const List = () => {
       const response = await fetchAll();
       const newCourses = [];
       if (response.status === 200) {
-        const { data } = response;
+        const { courses } = response.data;
+        const data = Object.values(courses);
         if (data.length) {
           data.forEach((item) => {
             newCourses.push(
-              <SitoContainer alignItems="center">
-                <SitoImage
-                  src={item.image || noProduct}
-                  alt={item.title}
-                  sx={{ width: "100%", height: "100%", objectFit: "cover" }}
-                />
-                <div classClassName="uk-width-expand" data-uk-leader="fill: -">
-                  {item.title}
-                </div>
-                <div>{item.price}</div>
+              <SitoContainer
+                alignItems="center"
+                sx={{ margin: "10px 0", width: "100%" }}
+              >
+                <SitoContainer
+                  sx={{ width: "120px", height: "100px", marginRight: "10px" }}
+                >
+                  <SitoImage
+                    src={item.image || noProduct}
+                    alt={item.title}
+                    sx={{ width: "100%", height: "100%", objectFit: "cover" }}
+                  />
+                </SitoContainer>
+                <SitoContainer sx={{ width: "100%" }} flexDirection="column">
+                  <h4 className={margin0}>{item.title}</h4>
+                  <p className={margin0}>{item.description}</p>
+                  <span className={margin0}>{item.price}</span>
+                </SitoContainer>
               </SitoContainer>
             );
           });
           setCoursesList(newCourses);
           setCourses(data);
+          setLoading(0);
         } else setLoading(-1);
       } else {
         setLoading(-1);
@@ -97,18 +107,24 @@ const List = () => {
           zIndex: loading === 1 ? 99 : -1,
         }}
       />
-      <div className="uk-grid-small" data-uk-grid>
+      <div className={`uk-grid-small ${css({ width: "100%" })}`} data-uk-grid>
         {error && loading === -1 && <Error onRetry={retry} />}
         {loading === -1 && !error && <Empty />}
         {!error && !loading && (
-          <>
+          <SitoContainer
+            flexDirection="column"
+            alignItems="flex-start"
+            className={css({ width: "100%" })}
+          >
             <h3 className={margin0} data-uk-scrollspy="cls: uk-animation-fade;">
               {languageState.texts.Dashboard.List.Title}
             </h3>
             {coursesList.map((item, i) => (
-              <div key={courses[i].id}>{item}</div>
+              <div key={courses[i].id} className={css({ width: "100%" })}>
+                {item}
+              </div>
             ))}
-          </>
+          </SitoContainer>
         )}
       </div>
     </>
