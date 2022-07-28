@@ -5,7 +5,10 @@
   "homepage": "https://inmersoft-dev.github.io/broker-company/",
   "dependencies": {
     "@emotion/css": "^11.9.0",
+    "axios": "^0.27.2",
+    "firebase": "^9.9.1",
     "gh-pages": "^4.0.0",
+    "md5": "^2.3.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.33.1",

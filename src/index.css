@@ -37,3 +37,32 @@ textarea {
   background-color: #0e6dcd !important;
   color: #fff !important;
 }
+
+/* Style modifiers
+ ========================================================================== */
+/*
+ * Primary
+ */
+.uk-notification-message-primary {
+  background: #1e87f0 !important;
+}
+/*
+ * Success
+ */
+.uk-notification-message-success {
+  background: #32d296 !important;
+}
+/*
+ * Warning
+ */
+.uk-notification-message-warning {
+  background: #faa05a !important;
+  color: aliceblue;
+}
+/*
+ * Danger
+ */
+.uk-notification-message-danger {
+  background: #f0506e !important;
+  color: aliceblue;
+}

@@ -1,7 +1,21 @@
 {
   "es": {
+    "Errors": {
+      "NotConnected": "No tienes conexión con el servidor",
+      "Empty": "No hay cursos",
+      "SomeWrong": "Ha ocurrido un error",
+      "Wrong": "Usuario o contraseña incorrecta",
+      "NameRequired": "Debes introducir un nombre",
+      "DescriptionRequired": "Debes introducir una descripción",
+      "NoEmptyPassword": "La contraseña no puede estar vacía"
+    },
+    "Messages": {
+      "LoginSuccessful": "Inicio de sesión correctamente",
+      "RegisterSuccessful": "Usuario creado correctamente",
+      "SaveSuccessful": "Guardado correctamente"
+    },
     "CompanyName": "Dogma Transportation",
-    "Login": { "Title": "Inicia sesión" },
+    "Login": { "Title": "Acceder al panel administrativo" },
     "NotFound": {
       "Title": "Ups! 404",
       "Description": "No se encontró la página",
@@ -12,22 +26,22 @@
         {
           "id": "home",
           "label": "Inico",
-          "to": "#"
+          "to": "/"
         },
         {
           "id": "services",
           "label": "Services",
-          "to": "#services"
+          "to": "/#services"
         },
         {
           "id": "about",
           "label": "Acerca de",
-          "to": "#about"
+          "to": "/#about"
         },
         {
           "id": "contact",
           "label": "Contacto",
-          "to": "#contact"
+          "to": "/#contact"
         },
         {
           "id": "login",
@@ -97,7 +111,11 @@
           "placeholder": "Algún mensaje..."
         }
       },
-      "Buttons": { "Submit": "Enviar", "ReadMore": "Leer más" }
+      "Buttons": {
+        "Submit": "Enviar",
+        "ReadMore": "Leer más",
+        "Login": "Iniciar sesión"
+      }
     },
     "Hero": {
       "Sliders": [
