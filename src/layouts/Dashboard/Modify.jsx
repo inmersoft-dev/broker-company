@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useState, useEffect, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -88,7 +89,7 @@ const Modify = () => {
 
   useEffect(() => {
     setRouteState("dashboard");
-    if (!userLogged()) navigate("/auth/");
+    if (!userLogged()) navigate("/login/");
     retry();
   }, []);
 
@@ -116,11 +117,6 @@ const Modify = () => {
     }
     setLoading(false);
   };
-
-  useEffect(() => {
-    setRouteState("dashboard");
-    if (!userLogged()) navigate("/auth/");
-  }, []);
 
   useEffect(() => {
     setOk(true);
@@ -285,7 +281,7 @@ const Modify = () => {
                       required
                       className="uk-input"
                       type="number"
-                      value={title}
+                      value={price}
                       onChange={(e) => setPrice(e.target.value)}
                       onInput={validate}
                       onInvalid={invalidate}
@@ -310,7 +306,7 @@ const Modify = () => {
                     required
                     className="uk-input"
                     type="text"
-                    value={title}
+                    value={url}
                     onChange={(e) => setUrl(e.target.value)}
                     onInput={validate}
                     onInvalid={invalidate}
@@ -330,7 +326,7 @@ const Modify = () => {
                   required
                   className="uk-input"
                   type="text"
-                  value={title}
+                  value={description}
                   onChange={(e) => setDescription(e.target.value)}
                   onInput={validate}
                   onInvalid={invalidate}

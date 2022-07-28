@@ -1,15 +1,12 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
+// @emotion/css
+import { css } from "@emotion/css";
+
 // services
 import { fetchAll } from "../../services/courses.js";
-
-// sito components
-import SitoImage from "sito-image";
-import SitoContainer from "sito-container";
-
-// images
-import noProduct from "../../assets/images/no-product.webp";
 
 // own components
 import Loading from "../../components/Loading/Loading";
@@ -34,33 +31,17 @@ const Delete = () => {
   const [error, setError] = useState(false);
 
   const [courses, setCourses] = useState([]);
-  const [coursesDelete, setCoursesDelete] = useState([]);
+
+  const [selectedCourse, setSelectedCourse] = useState(0);
 
   const fetch = async () => {
     setLoading(1);
     setError(false);
     try {
       const response = await fetchAll();
-      const newCourses = [];
       if (response.status === 200) {
         const { data } = response;
         if (data.length) {
-          data.forEach((item) => {
-            newCourses.push(
-              <SitoContainer alignItems="center">
-                <SitoImage
-                  src={item.image || noProduct}
-                  alt={item.title}
-                  sx={{ width: "100%", height: "100%", objectFit: "cover" }}
-                />
-                <div classClassName="uk-width-expand" data-uk-leader="fill: -">
-                  {item.title}
-                </div>
-                <div>{item.price}</div>
-              </SitoContainer>
-            );
-          });
-          setCoursesDelete(newCourses);
           setCourses(data);
         } else setLoading(-1);
       } else {
@@ -79,9 +60,11 @@ const Delete = () => {
 
   useEffect(() => {
     setRouteState("dashboard");
-    if (!userLogged()) navigate("/auth/");
+    if (!userLogged()) navigate("/login/");
     retry();
   }, []);
+
+  const margin0 = css({ margin: "0 !important" });
 
   return (
     <>
@@ -96,9 +79,22 @@ const Delete = () => {
         {loading === -1 && !error && <Empty />}
         {!error && !loading && (
           <>
-            {coursesDelete.map((item, i) => (
-              <div key={courses[i].id}>{item}</div>
-            ))}
+            <h4 className={margin0} data-uk-scrollspy="cls: uk-animation-fade;">
+              {languageState.texts.Dashboard.Modify.Select}
+            </h4>
+            <div class="uk-margin">
+              <select
+                class="uk-select"
+                value={selectedCourse}
+                onChange={(e) => setSelectedCourse(e.target.value)}
+              >
+                {courses.map((item, i) => (
+                  <option key={courses[i].id} value={i}>
+                    {item.title}
+                  </option>
+                ))}
+              </select>
+            </div>
           </>
         )}
       </div>

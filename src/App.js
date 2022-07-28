@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { useEffect } from "react";
 
 // sito components
 import SitoContainer from "sito-container";
@@ -8,12 +9,32 @@ import ToTop from "./components/ToTop/ToTop";
 
 // views
 import Home from "./views/Home/Home";
-import Login from "./views/Auth/Login";
-import Logout from "./views/Auth/Logout";
+import Login from "./views/login/Login";
+import Logout from "./views/login/Logout";
 import Dashboard from "./views/Dashboard/Dashboard";
 import NotFound from "./views/NotFound/NotFound";
 
+// functions
+import { userLogged, logoutUser } from "./utils/auth";
+
+// services
+import { validateBasicKey } from "./services/auth";
+
 const App = () => {
+  const fetch = async () => {
+    const value = await validateBasicKey();
+    if (!value) {
+      logoutUser();
+      setTimeout(() => {
+        window.location.reload();
+      }, 1000);
+    }
+  };
+
+  useEffect(() => {
+    if (userLogged()) fetch();
+  }, []);
+
   return (
     <SitoContainer ignoreDefault sx={{ width: "100vw" }}>
       <ToTop />

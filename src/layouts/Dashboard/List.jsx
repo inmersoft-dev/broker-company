@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -82,7 +83,7 @@ const List = () => {
 
   useEffect(() => {
     setRouteState("dashboard");
-    if (!userLogged()) navigate("/auth/");
+    if (!userLogged()) navigate("/login/");
     retry();
   }, []);
 
