@@ -6,7 +6,8 @@ import config from "../config";
 import { getCookie } from "../utils/auth";
 
 /**
- * @returns The response from the server.
+ * It fetches all courses from the database and returns the data.
+ * @returns An array of objects.
  */
 export const fetchAll = async () => {
   const response = await axios.get(
@@ -21,10 +22,9 @@ export const fetchAll = async () => {
 };
 
 /**
- * Takes a user object and sends it to the backend to be authenticated
- * @param {string} user - the user name
- * @param {string} courseName - the course name
- * @returns The response from the server.
+ * It fetches a course from the database and returns the data.
+ * @param {string} user - string
+ * @param {string} courseName - "test"
  */
 export const fetchCourse = async (user, courseName) => {
   const response = await axios.get(
@@ -39,18 +39,18 @@ export const fetchCourse = async (user, courseName) => {
 };
 
 /**
- * Takes a user object and sends it to the backend to be authenticated
- * @param {string} user - the user name
- * @param {string} courseName - the course name
- * @param {object[]} course - the course list
- * @param {string[]} types - the type list
- * @returns The response from the server.
+ * It saves a course to the database.
+ * @param {string} title - string
+ * @param {string} url - https://www.udemy.com/course/the-complete-javascript-course/
+ * @param {string} price - number
+ * @param {string} description - "This is a test course"
+ * @param {string} photo - photo url
  */
-export const saveCourse = async (user, courseName, course, types) => {
+export const saveCourse = async (title, url, price, description, photo) => {
   const response = await axios.post(
     // @ts-ignore
     `${config.apiUrl}course/save`,
-    { user, courseName, course, types },
+    { title, url, price, description, photo },
     {
       headers: {
         ...getAuth,

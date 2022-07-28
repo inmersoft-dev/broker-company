@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 
 // @emotion/css
@@ -16,6 +16,10 @@ import noProduct from "../../assets/images/no-product.webp";
 
 // own components
 import Loading from "../../components/Loading/Loading";
+
+// firebase
+import { storage } from "../../utils/firebase";
+import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
 
 // contexts
 import { useLanguage } from "../../contexts/LanguageProvider.jsx";
@@ -43,6 +47,25 @@ const Insert = () => {
   const onSubmit = async (e) => {
     setLoading(true);
     e.preventDefault();
+    try {
+      const response = await saveCourse(title, url, price, description, photo);
+      if (response.status === 200) {
+      } else {
+        const { error } = response.data;
+        let message;
+        if (error.indexOf("not found") > -1)
+          message = languageState.texts.Errors.Wrong;
+        else if (error.indexOf("Error: Network Error") > -1)
+          message = languageState.texts.Errors.NotConnected;
+        else message = languageState.texts.Errors.SomeWrong;
+        showNotification("danger", message);
+        setLoading(false);
+      }
+    } catch (err) {
+      console.log(err);
+      showNotification("danger", languageState.texts.Errors.SomeWrong);
+      setLoading(false);
+    }
     setLoading(false);
   };
 
@@ -89,6 +112,42 @@ const Insert = () => {
 
   const marginTop20 = css({ marginTop: "20px" });
 
+  const onUploadPhoto = (e) => {
+    const file = e.target.files[0];
+    if (!file) return;
+    const storageRef = ref(storage, `/files/${file.name}`);
+    const uploadTask = uploadBytesResumable(storageRef, file);
+    uploadTask.on(
+      "state_changed",
+      (snapshot) => {},
+      (error) => {
+        console.log(error);
+      },
+      () => {
+        getDownloadURL(uploadTask.snapshot.ref).then((url) => {
+          setPhoto(url);
+        });
+      }
+    );
+  };
+
+  const uploadPhoto = useCallback((e) => {
+    const file = document.getElementById("menu-photo");
+    if (file !== null) file.click();
+  }, []);
+
+  useEffect(() => {
+    const image = document.getElementById("no-image");
+    if (image !== null) {
+      image.onclick = uploadPhoto;
+    }
+    return () => {
+      if (image !== null) {
+        image.onclick = undefined;
+      }
+    };
+  }, [uploadPhoto]);
+
   return (
     <div
       className={`uk-container uk-padding-large ${css({
@@ -117,11 +176,7 @@ const Insert = () => {
       >
         <div className="uk-margin">
           <SitoContainer sx={{ flexWrap: "wrap" }}>
-            <div
-              className={`uk-width-1-1@xs uk-width-expand@m ${css({
-                marginRight: "20px",
-              })}`}
-            >
+            <div className={`uk-width-1-1@xs uk-width-1-9@m`}>
               <label className={`uk-form-label ${marginTop20}`} htmlFor="name">
                 {languageState.texts.Form.Inputs.Title.label}
               </label>
@@ -194,7 +249,7 @@ const Insert = () => {
               className="uk-input"
               type="text"
               value={title}
-              onChange={(e) => setTitle(e.target.value)}
+              onChange={(e) => setDescription(e.target.value)}
               onInput={validate}
               onInvalid={invalidate}
               placeholder={
@@ -202,6 +257,18 @@ const Insert = () => {
               }
             />
           </div>
+          <input
+            id="menu-photo"
+            type="file"
+            accept=".jpg, .png, .webp, .gif"
+            value={photo}
+            onChange={onUploadPhoto}
+          />
+          <SitoImage
+            src={photo ? photo : noProduct}
+            id="no-image"
+            sx={{ width: "200px", height: "200px", marginTop: "20px" }}
+          />
         </div>
         <button className="uk-button uk-button-primary">
           {languageState.texts.Form.Buttons.Save}

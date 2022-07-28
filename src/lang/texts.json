@@ -53,16 +53,22 @@
           "to": "/#contact"
         },
         {
-          "id": "login",
-          "label": "Iniciar sesión",
-          "to": "/login",
-          "logged": false
-        },
-        {
           "id": "dashboard",
           "label": "Panel de administración",
           "to": "/dashboard",
-          "logged": true
+          "logged": 2
+        },
+        {
+          "id": "logout",
+          "label": "Cerrar sesión",
+          "to": "/logout",
+          "logged": 2
+        },
+        {
+          "id": "login",
+          "label": "Iniciar sesión",
+          "to": "/login",
+          "logged": 1
         }
       ]
     },

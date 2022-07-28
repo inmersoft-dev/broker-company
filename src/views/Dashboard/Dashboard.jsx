@@ -26,7 +26,7 @@ const Dashboard = () => {
       <div
         id="section-home"
         className={`uk-section uk-section-secondary uk-light ${css({
-          height: "100vh",
+          minHeight: "100vh !important",
           display: "flex",
         })}`}
       >
@@ -45,7 +45,7 @@ const Dashboard = () => {
             data-uk-switcher="animation: uk-animation-fade"
           >
             {languageState.texts.Dashboard.Tabs.map((item, i) => (
-              <li className={i === 0 ? "uk-active" : ""}>
+              <li key={item} className={i === 0 ? "uk-active" : ""}>
                 <a href="#">{item}</a>
               </li>
             ))}

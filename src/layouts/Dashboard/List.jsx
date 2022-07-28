@@ -81,7 +81,7 @@ const List = () => {
   }, []);
 
   return (
-    <div class="uk-grid-small" uk-grid>
+    <div className="uk-grid-small" data-uk-grid>
       <Loading
         visible={loading === 1}
         sx={{

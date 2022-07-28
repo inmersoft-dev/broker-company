@@ -50,7 +50,7 @@ const Login = () => {
           response.data.token
         );
         showNotification(
-          "primary",
+          "success",
           languageState.texts.Messages.LoginSuccessful
         );
         setTimeout(() => {

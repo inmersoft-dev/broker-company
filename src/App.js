@@ -9,6 +9,7 @@ import ToTop from "./components/ToTop/ToTop";
 // views
 import Home from "./views/Home/Home";
 import Login from "./views/Auth/Login";
+import Logout from "./views/Auth/Logout";
 import Dashboard from "./views/Dashboard/Dashboard";
 import NotFound from "./views/NotFound/NotFound";
 
@@ -20,6 +21,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route exact path="/login" element={<Login />} />
+          <Route exact path="/logout" element={<Logout />} />
           <Route exact path="/dashboard" element={<Dashboard />} />
           <Route path="*" element={<NotFound />} />
         </Routes>

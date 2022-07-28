@@ -9,6 +9,10 @@ body {
   scroll-behavior: smooth;
 }
 
+input[type="file"] {
+  display: hidden;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
@@ -18,6 +22,40 @@ textarea {
   resize: none;
 }
 
+.uk-width-1-9 {
+  flex: 1;
+  min-width: 1px;
+}
+/* Phone landscape and bigger */
+@media (min-width: 640px) {
+  .uk-width-1-9\@s {
+    flex: 1;
+    min-width: 1px;
+  }
+}
+@media (min-width: 960px) {
+  .uk-width-1-9\@m {
+    flex: 1;
+    min-width: 1px;
+    margin-right: 20px;
+  }
+}
+/* Desktop and bigger */
+@media (min-width: 1200px) {
+  .uk-width-1-9\@l {
+    flex: 1;
+    min-width: 1px;
+    margin-right: 20px;
+  }
+}
+/* Large screen and bigger */
+@media (min-width: 1600px) {
+  .uk-width-1-9\@xl {
+    flex: 1;
+    min-width: 1px;
+    margin-right: 20px;
+  }
+}
 /*
  * Primary
  */
@@ -50,6 +88,7 @@ textarea {
  * Success
  */
 .uk-notification-message-success {
+  color: aliceblue !important;
   background: #32d296 !important;
 }
 /*

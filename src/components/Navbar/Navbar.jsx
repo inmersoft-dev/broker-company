@@ -42,6 +42,10 @@ const Navbar = () => {
     marginBottom: "2px",
   });
 
+  const marginRight = css({
+    marginRight: "20px !important",
+  });
+
   const linksCSS = css({
     textTransform: "none !important",
   });
@@ -62,7 +66,7 @@ const Navbar = () => {
   const onScroll = useCallback(
     (e) => {
       const top = window.pageYOffset || document.documentElement.scrollTop;
-      if (top < 100) setTransparency(true);
+      if (top < 50) setTransparency(true);
       else setTransparency(false);
     },
     [setTransparency]
@@ -95,12 +99,16 @@ const Navbar = () => {
         </Link>
 
         <SitoContainer ignoreDefault className="uk-navbar-right uk-visible@s">
-          <ul className="uk-navbar-nav">
+          <ul className={`uk-navbar-nav ${css({ gap: "0 !important" })}`}>
             {languageState.texts.Navbar.Links.map((item) =>
-              item.logged && userLogged() ? (
+              (item.logged === 2 && userLogged()) ||
+              !item.logged ||
+              (item.logged === 1 && !userLogged()) ? (
                 <li
                   key={item.label}
-                  className={item.id === active ? "uk-active" : ""}
+                  className={`${marginRight} ${
+                    item.id === active ? "uk-active" : ""
+                  }`}
                 >
                   <Link
                     className={`uk-button uk-button-link ${linksCSS}`}
