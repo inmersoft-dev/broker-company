@@ -51,6 +51,12 @@ const Insert = () => {
     try {
       const response = await saveCourse(title, url, price, description, photo);
       if (response.status === 200) {
+        setPhoto("");
+        setTitle("");
+        setUrl("");
+        setPrice("");
+        setDescription("");
+        showNotification("success", languageState.texts.Messages.SaveSuccessful);
       } else {
         const { error } = response.data;
         let message;

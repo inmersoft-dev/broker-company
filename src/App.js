@@ -9,8 +9,8 @@ import ToTop from "./components/ToTop/ToTop";
 
 // views
 import Home from "./views/Home/Home";
-import Login from "./views/login/Login";
-import Logout from "./views/login/Logout";
+import Login from "./views/Auth/Login";
+import Logout from "./views/Auth/Logout";
 import Dashboard from "./views/Dashboard/Dashboard";
 import NotFound from "./views/NotFound/NotFound";
 
