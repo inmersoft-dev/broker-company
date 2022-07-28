@@ -8,9 +8,7 @@ import ToTop from "./components/ToTop/ToTop";
 
 // views
 import Home from "./views/Home/Home";
-/* import Login from "./views/Auth/Login";
-import Register from "./views/Auth/Register";
-import Restore from "./views/Auth/Restore"; */
+import Login from "./views/Auth/Login";
 import NotFound from "./views/NotFound/NotFound";
 
 const App = () => {
@@ -20,10 +18,7 @@ const App = () => {
       <BrowserRouter basename={process.env.PUBLIC_URL}>
         <Routes>
           <Route path="/" element={<Home />} />
-          {/*<Route exact path="/auth" element={<Login />}>
-            <Route exact path="/auth/register" element={<Register />} />
-            <Route exact path="/auth/restore" element={<Restore />} />
-          </Route>*/}
+          <Route exact path="/login" element={<Login />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

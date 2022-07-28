@@ -1,6 +1,7 @@
 {
   "es": {
     "CompanyName": "Dogma Transportation",
+    "Login": { "Title": "Inicia sesión" },
     "NotFound": {
       "Title": "Ups! 404",
       "Description": "No se encontró la página",
@@ -27,6 +28,11 @@
           "id": "contact",
           "label": "Contacto",
           "to": "#contact"
+        },
+        {
+          "id": "login",
+          "label": "Iniciar sesión",
+          "to": "/login"
         }
       ]
     },
@@ -77,6 +83,14 @@
         "Email": {
           "label": "Email",
           "placeholder": "ej: jose@email.com"
+        },
+        "User": {
+          "label": "Usuario",
+          "placeholder": "ej: jose artigas"
+        },
+        "Password": {
+          "label": "Contraseña",
+          "placeholder": "ej: ********"
         },
         "Message": {
           "label": "Mensage",
