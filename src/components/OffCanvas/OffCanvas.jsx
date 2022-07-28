@@ -5,10 +5,20 @@ import SitoContainer from "sito-container";
 import { useLanguage } from "../../contexts/LanguageProvider";
 import { useRoute } from "../../contexts/RouteProvider";
 
+// utils
+import { scrollTo } from "../../utils/functions";
+
 const OffCanvas = () => {
   const { languageState } = useLanguage();
   const { routeState, setRouteState } = useRoute();
   const { active } = routeState;
+
+  const linkTo = (e) => {
+    const { id } = e.target;
+    setRouteState(id);
+    scrollTo(`section-${id}`);
+    if (id !== "login") e.preventDefault();
+  };
 
   return (
     <div id="offcanvas-push" data-uk-offcanvas="mode: push; overlay: true">
@@ -26,7 +36,7 @@ const OffCanvas = () => {
               key={item.label}
               className={item.id === active ? "uk-active" : ""}
             >
-              <a onClick={() => setRouteState(item.id)} href={item.to}>
+              <a onClick={linkTo} href={item.to} id={item.id}>
                 {item.label}
               </a>
             </li>

@@ -1,6 +1,7 @@
 {
   "es": {
-    "CompanyName": "CompanyName",
+    "CompanyName": "Dogma Transportation",
+    "Login": { "Title": "Inicia sesión" },
     "NotFound": {
       "Title": "Ups! 404",
       "Description": "No se encontró la página",
@@ -27,6 +28,11 @@
           "id": "contact",
           "label": "Contacto",
           "to": "#contact"
+        },
+        {
+          "id": "login",
+          "label": "Iniciar sesión",
+          "to": "/login"
         }
       ]
     },
@@ -38,7 +44,23 @@
         "Title": "Enlaces útiles"
       },
       "Section3": {
-        "Title": "Contacto"
+        "Title": "Contacto",
+        "Links": [
+          {
+            "id": "1",
+            "Link": "mailto:email@email.com",
+            "Label": "Email: email@email.com"
+          },
+          {
+            "id": "2",
+            "Link": "tel:123-456-789",
+            "Label": "Teléfono: +123 456 789"
+          },
+          {
+            "id": "3",
+            "Description": "Dirección: Sidney Street, New York, USA"
+          }
+        ]
       }
     },
     "Form": {
@@ -62,6 +84,14 @@
           "label": "Email",
           "placeholder": "ej: jose@email.com"
         },
+        "User": {
+          "label": "Usuario",
+          "placeholder": "ej: jose artigas"
+        },
+        "Password": {
+          "label": "Contraseña",
+          "placeholder": "ej: ********"
+        },
         "Message": {
           "label": "Mensage",
           "placeholder": "Algún mensaje..."
@@ -70,37 +100,55 @@
       "Buttons": { "Submit": "Enviar", "ReadMore": "Leer más" }
     },
     "Hero": {
-      "Slide1": {
-        "Title": "Título del hero 1",
-        "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.",
-        "Button": "Contactar ahora"
-      },
-      "Slide2": {
-        "Title": "Título del hero 2",
-        "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.",
-        "Button": "Contactar ahora"
-      },
-      "Slide3": {
-        "Title": "Título del hero 3",
-        "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.",
-        "Button": "Contactar ahora"
-      }
+      "Sliders": [
+        {
+          "Title": "Superamos obstáculos",
+          "Description": "Simplificamos el proceso de envío desde el principio hasta el final",
+          "Button": "Leer más"
+        },
+        {
+          "Title": "Servicios de envío",
+          "Description": "Vea cotizaciones gratuitas de los principales transportistas",
+          "Button": "Ver servicios"
+        },
+        {
+          "Title": "Encontramos soluciones",
+          "Description": "Tenemos todos los recursos y tecnologías para facilitarle el envío de paquetes",
+          "Button": "Contactar ahora"
+        }
+      ]
     },
     "Projects": {
-      "Title": "Título de servicios",
+      "Title": "Servicios de envío",
       "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.",
+      "Services": [
+        {
+          "title": "Carga LTL",
+          "description": "Vea cotizaciones gratuitas de los principales transportistas de LTL para carga que no requiere un camión completo. Ahorre en combustible y costos generales de envío al obtener la oferta adecuada para mover su carga."
+        },
+        {
+          "title": "Carga de camiones",
+          "description": "Ya sea que necesite un camión completo o varios, tenemos la capacidad que necesita para mover la carga a su manera. Aproveche nuestra amplia selección de relaciones de transportistas para obtener una gran oferta rápidamente."
+        },
+        {
+          "title": "Cargas parciales",
+          "description": "Divida el costo de un camión con envíos similares y ahorre dinero. Permítanos manejar los detalles para que no tenga que sacrificar la entrega oportuna para recibir un excelente precio."
+        }
+      ],
       "Button": "Contactar ahora"
     },
     "About": {
-      "Title": "Título del acerca de ",
-      "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.",
+      "Title": "Dogma Transportation",
+      "Description": "Tenemos todos los recursos y tecnologías para facilitarle el envío de paquetes, carga de camión y LTL. Le ayudamos a encontrar la mejor cotización, rastrear rápidamente su producto o contactar con los transportistas en el menor tiempo posible. Nuestras herramientas facilitan todo el proceso de envío, desde el inicio hasta el final.",
+      "Title1": "Superamos obstáculos, encontramos soluciones",
+      "Description1": "Explore nuestros servicios de carga, soluciones personalizadas u obtenga un presupuesto gratuito.",
       "Section1": {
         "Title": "Sección 1",
-        "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor. "
+        "Description": "Superamos obstáculos, encontramos soluciones. "
       },
       "Section2": {
         "Title": "Sección 2",
-        "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor. "
+        "Description": "Explore nuestros servicios de carga, soluciones personalizadas u obtenga un presupuesto gratuito. "
       },
       "Section3": {
         "Title": "Sección 3",
@@ -109,8 +157,7 @@
       "Button": "Contactar ahora"
     },
     "Contact": {
-      "Title": "Título del contato",
-      "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor. ",
+      "Title": "Contactar ahora",
       "Button": "Contactar ahora"
     }
   }

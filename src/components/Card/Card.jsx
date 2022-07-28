@@ -19,6 +19,7 @@ const Card = (props) => {
 
   const margin = css({
     margin: "20px",
+    display: "block",
     "@media (min-width: 960px)": {
       flex: 1,
     },
@@ -47,6 +48,7 @@ Card.propTypes = {
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   link: PropTypes.string,
+  index: PropTypes.number.isRequired,
 };
 
 export default Card;

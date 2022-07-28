@@ -24,6 +24,7 @@ const Footer = () => {
 
   const linksCSS = css({
     textTransform: "none !important",
+    textAlign: "left",
     minHeight: "0 !important",
   });
 
@@ -48,9 +49,6 @@ const Footer = () => {
           <h3 data-uk-scrollspy="cls: uk-animation-fade;">
             {languageState.texts.CompanyName}
           </h3>
-          <p data-uk-scrollspy="cls: uk-animation-fade;">
-            {languageState.texts.Footer.Section1.Description}
-          </p>
           <div
             className={css({
               display: "flex",
@@ -127,19 +125,22 @@ const Footer = () => {
                 alignItems: "baseline",
               })}`}
             >
-              {languageState.texts.Navbar.Links.map((item) => (
+              {languageState.texts.Footer.Section3.Links.map((item) => (
                 <li
-                  key={item.label}
+                  key={item.id}
                   className={item.id === active ? "uk-active" : ""}
                 >
-                  <a
-                    className={`uk-button uk-button-link ${linksCSS}`}
-                    id={item.id}
-                    onClick={linkTo}
-                    href={item.to === "#" ? "#" : item.to}
-                  >
-                    {item.label}
-                  </a>
+                  {item.Link ? (
+                    <a
+                      className={`uk-button uk-button-link ${linksCSS}`}
+                      id={item.id}
+                      href={item.Link}
+                    >
+                      {item.Label}
+                    </a>
+                  ) : (
+                    <p className={linksCSS}>{item.Description}</p>
+                  )}
                 </li>
               ))}
             </ul>

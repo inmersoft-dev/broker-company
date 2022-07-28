@@ -38,7 +38,7 @@ const Navbar = () => {
 
   const logoCSS = css({
     marginLeft: "10px",
-    marginBottom: "4px",
+    marginBottom: "2px",
   });
 
   const linksCSS = css({
@@ -98,7 +98,11 @@ const Navbar = () => {
                   className={`uk-button uk-button-link ${linksCSS}`}
                   id={item.id}
                   onClick={linkTo}
-                  href={item.to === "#" ? "#" : item.to}
+                  href={
+                    item.to === "/login"
+                      ? `${process.env.PUBLIC_URL}${item.to}`
+                      : item.to
+                  }
                 >
                   {item.label}
                 </a>
