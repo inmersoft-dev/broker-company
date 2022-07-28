@@ -1,6 +1,9 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
+// @emotion/css
+import { css } from "@emotion/css";
+
 // services
 import { fetchAll } from "../../services/courses.js";
 
@@ -34,6 +37,7 @@ const List = () => {
   const [error, setError] = useState(false);
 
   const [courses, setCourses] = useState([]);
+  const [coursesList, setCoursesList] = useState([]);
 
   const fetch = async () => {
     setLoading(1);
@@ -59,6 +63,8 @@ const List = () => {
               </SitoContainer>
             );
           });
+          setCoursesList(newCourses);
+          setCourses(data);
         } else setLoading(-1);
       } else {
         setLoading(-1);
@@ -80,17 +86,31 @@ const List = () => {
     retry();
   }, []);
 
+  const margin0 = css({ margin: "0 !important" });
+
   return (
-    <div className="uk-grid-small" data-uk-grid>
+    <>
       <Loading
         visible={loading === 1}
         sx={{
           zIndex: loading === 1 ? 99 : -1,
         }}
       />
-      {error && loading === -1 && <Error onRetry={retry} />}
-      {loading === -1 && !error && <Empty />}
-    </div>
+      <div className="uk-grid-small" data-uk-grid>
+        {error && loading === -1 && <Error onRetry={retry} />}
+        {loading === -1 && !error && <Empty />}
+        {!error && !loading && (
+          <>
+            <h3 className={margin0} data-uk-scrollspy="cls: uk-animation-fade;">
+              {languageState.texts.Dashboard.List.Title}
+            </h3>
+            {coursesList.map((item, i) => (
+              <div key={courses[i].id}>{item}</div>
+            ))}
+          </>
+        )}
+      </div>
+    </>
   );
 };
 

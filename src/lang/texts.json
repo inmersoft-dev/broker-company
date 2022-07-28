@@ -28,6 +28,15 @@
       "Tabs": ["Listar", "Insertar", "Modificar", "Eliminar"],
       "Insert": {
         "Title": "Insertar curso"
+      },
+      "Delete": {
+        "Title": "Eliminar curso"
+      },
+      "Modify": {
+        "Title": "Modificar curso"
+      },
+      "List": {
+        "Title": "Lista de curso"
       }
     },
     "Navbar": {

@@ -10,7 +10,7 @@ body {
 }
 
 input[type="file"] {
-  display: hidden;
+  display: none;
 }
 
 code {

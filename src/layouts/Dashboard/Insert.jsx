@@ -132,7 +132,7 @@ const Insert = () => {
   };
 
   const uploadPhoto = useCallback((e) => {
-    const file = document.getElementById("menu-photo");
+    const file = document.getElementById("course-photo");
     if (file !== null) file.click();
   }, []);
 
@@ -258,7 +258,7 @@ const Insert = () => {
             />
           </div>
           <input
-            id="menu-photo"
+            id="course-photo"
             type="file"
             accept=".jpg, .png, .webp, .gif"
             value={photo}

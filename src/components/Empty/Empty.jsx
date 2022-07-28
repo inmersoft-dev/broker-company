@@ -1,3 +1,6 @@
+// @emotion/css
+import { css } from "@emotion/css";
+
 // sito components
 import SitoContainer from "sito-container";
 
@@ -20,8 +23,15 @@ const Empty = () => {
       }}
       flexDirection="column"
     >
-      <span data-uk-icon="commenting"></span>
-      <h4>{languageState.texts.Errors.Empty}</h4>
+      <span
+        className={`${css({
+          svg: { width: "60px", height: "60px" },
+        })}`}
+        data-uk-icon="commenting"
+      ></span>
+      <h4 className={css({ marginTop: "20px" })}>
+        {languageState.texts.Errors.Empty}
+      </h4>
     </SitoContainer>
   );
 };
