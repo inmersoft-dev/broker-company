@@ -33,6 +33,7 @@
         "Title": "Eliminar curso"
       },
       "Modify": {
+        "Select": "Selecciona el curso a modificar",
         "Title": "Modificar curso"
       },
       "List": {
@@ -163,7 +164,8 @@
         "Save": "Guardar",
         "ReadMore": "Leer más",
         "Login": "Iniciar sesión",
-        "Retry": "Reintentar"
+        "Retry": "Reintentar",
+        "Delete": "Eliminar"
       }
     },
     "Hero": {

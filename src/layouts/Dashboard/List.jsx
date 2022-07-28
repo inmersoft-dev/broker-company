@@ -54,10 +54,10 @@ const List = () => {
             newCourses.push(
               <SitoContainer
                 alignItems="center"
-                sx={{ margin: "10px 0", width: "100%" }}
+                sx={{ margin: "20px 0", width: "100%" }}
               >
                 <SitoContainer
-                  sx={{ width: "120px", height: "100px", marginRight: "10px" }}
+                  sx={{ width: "120px", height: "100px", margin: "0 20px" }}
                 >
                   <SitoImage
                     src={item.image || noProduct}
@@ -120,7 +120,16 @@ const List = () => {
               {languageState.texts.Dashboard.List.Title}
             </h3>
             {coursesList.map((item, i) => (
-              <div key={courses[i].id} className={css({ width: "100%" })}>
+              <div
+                key={courses[i].id}
+                className={css({
+                  marginTop: "20px",
+                  width: "100%",
+                  background: "#36363640",
+                  padding: "12px",
+                })}
+                data-uk-scrollspy="cls: uk-animation-fade;"
+              >
                 {item}
               </div>
             ))}

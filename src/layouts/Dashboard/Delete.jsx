@@ -2,6 +2,9 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
+// sito components
+import SitoContainer from "sito-container";
+
 // @emotion/css
 import { css } from "@emotion/css";
 
@@ -40,9 +43,11 @@ const Delete = () => {
     try {
       const response = await fetchAll();
       if (response.status === 200) {
-        const { data } = response;
+        const { courses } = response.data;
+        const data = Object.values(courses);
         if (data.length) {
           setCourses(data);
+          setLoading(0);
         } else setLoading(-1);
       } else {
         setLoading(-1);
@@ -66,6 +71,10 @@ const Delete = () => {
 
   const margin0 = css({ margin: "0 !important" });
 
+  const removeCourse = async (e) => {
+    console.log(courses[selectedCourse].id);
+  };
+
   return (
     <>
       <Loading
@@ -78,13 +87,13 @@ const Delete = () => {
         {error && loading === -1 && <Error onRetry={retry} />}
         {loading === -1 && !error && <Empty />}
         {!error && !loading && (
-          <>
+          <SitoContainer flexDirection="column">
             <h4 className={margin0} data-uk-scrollspy="cls: uk-animation-fade;">
               {languageState.texts.Dashboard.Modify.Select}
             </h4>
-            <div class="uk-margin">
+            <div className="uk-margin">
               <select
-                class="uk-select"
+                className="uk-select"
                 value={selectedCourse}
                 onChange={(e) => setSelectedCourse(e.target.value)}
               >
@@ -94,8 +103,16 @@ const Delete = () => {
                   </option>
                 ))}
               </select>
+              <button
+                className={`uk-button uk-button-primary ${css({
+                  marginTop: "20px",
+                })}`}
+                onClick={removeCourse}
+              >
+                {languageState.texts.Form.Buttons.Delete}
+              </button>
             </div>
-          </>
+          </SitoContainer>
         )}
       </div>
     </>

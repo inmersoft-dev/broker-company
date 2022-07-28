@@ -42,6 +42,7 @@ const Modify = () => {
   const [error, setError] = useState(false);
   const [ok, setOk] = useState(true);
 
+  const [id, setId] = useState("");
   const [photo, setPhoto] = useState("");
   const [title, setTitle] = useState("");
   const [url, setUrl] = useState("");
@@ -55,11 +56,14 @@ const Modify = () => {
   const changeCourse = (e) => {
     const { value } = e.target;
     const valueAsNumber = Number(value);
-    setPhoto(courses[valueAsNumber].photo);
-    setTitle(courses[valueAsNumber].title);
-    setUrl(courses[valueAsNumber].url);
-    setPrice(courses[valueAsNumber].price);
-    setDescription(courses[valueAsNumber].description);
+    const { id, photo, title, url, price, description } =
+      courses[valueAsNumber];
+    setId(id);
+    setPhoto(photo);
+    setTitle(title);
+    setUrl(url);
+    setPrice(price);
+    setDescription(description);
     setSelectedCourse(valueAsNumber);
   };
 
@@ -69,9 +73,19 @@ const Modify = () => {
     try {
       const response = await fetchAll();
       if (response.status === 200) {
-        const { data } = response;
+        const { courses } = response.data;
+        const data = Object.values(courses);
         if (data.length) {
           setCourses(data);
+          const { id, photo, title, url, price, description } =
+            data[selectedCourse];
+          setId(id);
+          setPhoto(photo);
+          setTitle(title);
+          setUrl(url);
+          setPrice(price);
+          setDescription(description);
+          setLoading(0);
         } else setLoading(-1);
       } else {
         setLoading(-1);
@@ -97,8 +111,20 @@ const Modify = () => {
     setLoading(true);
     e.preventDefault();
     try {
-      const response = await saveCourse(title, url, price, description, photo);
+      const response = await saveCourse(
+        id,
+        title,
+        url,
+        price,
+        description,
+        photo
+      );
       if (response.status === 200) {
+        showNotification(
+          "success",
+          languageState.texts.Messages.SaveSuccessful
+        );
+        retry();
       } else {
         const { error } = response.data;
         let message;
@@ -115,7 +141,6 @@ const Modify = () => {
       showNotification("danger", languageState.texts.Errors.SomeWrong);
       setLoading(false);
     }
-    setLoading(false);
   };
 
   useEffect(() => {
@@ -213,13 +238,20 @@ const Modify = () => {
       {error && loading === -1 && <Error onRetry={retry} />}
       {loading === -1 && !error && <Empty />}
       {!error && !loading && courses.length && (
-        <>
-          <h4 className={margin0} data-uk-scrollspy="cls: uk-animation-fade;">
+        <form
+          onSubmit={onSubmit}
+          className="uk-form-stacked uk-width-1-1@xs uk-width-2-3@m"
+          data-uk-scrollspy="cls: uk-animation-slide-right;"
+        >
+          <h4
+            className={margin0}
+            data-uk-scrollspy="cls: uk-animation-slide-left;"
+          >
             {languageState.texts.Dashboard.Modify.Select}
           </h4>
-          <div class="uk-margin">
+          <div className={`uk-margin ${css({ width: "100%" })}`}>
             <select
-              class="uk-select"
+              className={`uk-select ${css({ width: "100%" })}`}
               value={selectedCourse}
               onChange={changeCourse}
             >
@@ -231,128 +263,117 @@ const Modify = () => {
             </select>
           </div>
           <h3
-            className={margin0}
+            className={css({ marginTop: "20px 0 0 0 !important" })}
             data-uk-scrollspy="cls: uk-animation-slide-left;"
           >
             {languageState.texts.Dashboard.Modify.Title}
           </h3>
-          <form
-            onSubmit={onSubmit}
-            className="uk-form-stacked uk-width-1-1@xs uk-width-2-3@m"
-            data-uk-scrollspy="cls: uk-animation-slide-right;"
-          >
-            <div className="uk-margin">
-              <SitoContainer sx={{ flexWrap: "wrap" }}>
-                <div className={`uk-width-1-1@xs uk-width-1-9@m`}>
-                  <label
-                    className={`uk-form-label ${marginTop20}`}
-                    htmlFor="name"
-                  >
-                    {languageState.texts.Form.Inputs.Title.label}
-                  </label>
-                  <div className="uk-form-controls">
-                    <input
-                      id="title"
-                      name="title"
-                      required
-                      className="uk-input"
-                      type="text"
-                      value={title}
-                      onChange={(e) => setTitle(e.target.value)}
-                      onInput={validate}
-                      onInvalid={invalidate}
-                      placeholder={
-                        languageState.texts.Form.Inputs.Title.placeholder
-                      }
-                    />
-                  </div>
-                </div>
-                <div className="uk-width-1-1@xs uk-width-1-2@m">
-                  <label
-                    className={`uk-form-label ${marginTop20}`}
-                    htmlFor="name"
-                  >
-                    {languageState.texts.Form.Inputs.Price.label}
-                  </label>
-                  <div className="uk-form-controls">
-                    <input
-                      id="price"
-                      name="price"
-                      required
-                      className="uk-input"
-                      type="number"
-                      value={price}
-                      onChange={(e) => setPrice(e.target.value)}
-                      onInput={validate}
-                      onInvalid={invalidate}
-                      placeholder={
-                        languageState.texts.Form.Inputs.Price.placeholder
-                      }
-                    />
-                  </div>
-                </div>
-              </SitoContainer>
-              <div>
+          <div className="uk-margin">
+            <SitoContainer sx={{ flexWrap: "wrap" }}>
+              <div className={`uk-width-1-1@xs uk-width-1-9@m`}>
                 <label
                   className={`uk-form-label ${marginTop20}`}
                   htmlFor="name"
                 >
-                  {languageState.texts.Form.Inputs.Url.label}
+                  {languageState.texts.Form.Inputs.Title.label}
                 </label>
                 <div className="uk-form-controls">
                   <input
-                    id="url"
-                    name="url"
+                    id="title"
+                    name="title"
                     required
                     className="uk-input"
                     type="text"
-                    value={url}
-                    onChange={(e) => setUrl(e.target.value)}
+                    value={title}
+                    onChange={(e) => setTitle(e.target.value)}
                     onInput={validate}
                     onInvalid={invalidate}
                     placeholder={
-                      languageState.texts.Form.Inputs.Url.placeholder
+                      languageState.texts.Form.Inputs.Title.placeholder
                     }
                   />
                 </div>
               </div>
+              <div className="uk-width-1-1@xs uk-width-1-2@m">
+                <label
+                  className={`uk-form-label ${marginTop20}`}
+                  htmlFor="name"
+                >
+                  {languageState.texts.Form.Inputs.Price.label}
+                </label>
+                <div className="uk-form-controls">
+                  <input
+                    id="price"
+                    name="price"
+                    required
+                    className="uk-input"
+                    type="number"
+                    value={price}
+                    onChange={(e) => setPrice(e.target.value)}
+                    onInput={validate}
+                    onInvalid={invalidate}
+                    placeholder={
+                      languageState.texts.Form.Inputs.Price.placeholder
+                    }
+                  />
+                </div>
+              </div>
+            </SitoContainer>
+            <div>
               <label className={`uk-form-label ${marginTop20}`} htmlFor="name">
-                {languageState.texts.Form.Inputs.Description.label}
+                {languageState.texts.Form.Inputs.Url.label}
               </label>
               <div className="uk-form-controls">
                 <input
-                  id="description"
-                  name="description"
+                  id="url"
+                  name="url"
                   required
                   className="uk-input"
                   type="text"
-                  value={description}
-                  onChange={(e) => setDescription(e.target.value)}
+                  value={url}
+                  onChange={(e) => setUrl(e.target.value)}
                   onInput={validate}
                   onInvalid={invalidate}
-                  placeholder={
-                    languageState.texts.Form.Inputs.Description.placeholder
-                  }
+                  placeholder={languageState.texts.Form.Inputs.Url.placeholder}
                 />
               </div>
+            </div>
+            <label className={`uk-form-label ${marginTop20}`} htmlFor="name">
+              {languageState.texts.Form.Inputs.Description.label}
+            </label>
+            <div className="uk-form-controls">
               <input
-                id="course-photo"
-                type="file"
-                accept=".jpg, .png, .webp, .gif"
-                value={photo}
-                onChange={onUploadPhoto}
-              />
-              <SitoImage
-                src={photo ? photo : noProduct}
-                id="no-image"
-                sx={{ width: "200px", height: "200px", marginTop: "20px" }}
+                id="description"
+                name="description"
+                required
+                className="uk-input"
+                type="text"
+                value={description}
+                onChange={(e) => setDescription(e.target.value)}
+                onInput={validate}
+                onInvalid={invalidate}
+                placeholder={
+                  languageState.texts.Form.Inputs.Description.placeholder
+                }
               />
             </div>
-            <button className="uk-button uk-button-primary">
-              {languageState.texts.Form.Buttons.Save}
-            </button>
-          </form>
-        </>
+            <input
+              id="course-photo"
+              type="file"
+              accept=".jpg, .png, .webp, .gif"
+              value={photo}
+              onChange={onUploadPhoto}
+            />
+            <SitoImage
+              src={photo ? photo : noProduct}
+              id="no-image"
+              sx={{ width: "200px", height: "200px", marginTop: "20px" }}
+            />
+          </div>
+          <button className="uk-button uk-button-primary">
+            {languageState.texts.Form.Buttons.Save}
+          </button>
+        </form>
       )}
     </div>
   );
