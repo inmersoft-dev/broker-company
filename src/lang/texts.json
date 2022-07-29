@@ -64,6 +64,11 @@
           "to": "/#contact"
         },
         {
+          "id": "courses",
+          "label": "Cursos",
+          "to": "/courses"
+        },
+        {
           "id": "dashboard",
           "label": "Panel de administración",
           "to": "/dashboard",
@@ -205,6 +210,11 @@
           "description": "Divida el costo de un camión con envíos similares y ahorre dinero. Permítanos manejar los detalles para que no tenga que sacrificar la entrega oportuna para recibir un excelente precio."
         }
       ],
+      "Button": "Contactar ahora"
+    },
+    "Courses": {
+      "Title": "Nuestros cursos",
+      "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.",
       "Button": "Contactar ahora"
     },
     "About": {

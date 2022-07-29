@@ -16,26 +16,7 @@ import { scrollTo } from "../../utils/functions";
 const Hero = () => {
   const { languageState } = useLanguage();
   const [slider, setSlider] = useState(0);
-  // const now = new Date();
-  // const nowYear = now.getFullYear();
-  /* const nowMonth =
-    String(now.getMonth() + 1).length === 1
-      ? `0${now.getMonth() + 1}`
-      : now.getMonth() + 1;
-  */
-  // const nowDay = now.getDate();
-  /* const { handleSubmit, register } = useForm({
-    defaultValues: {
-      date: `${nowYear}-${nowMonth}-${nowDay}`,
-      origin: "",
-      destiny: "",
-    },
-  }); */
-
-  /* const onSubmit = (data) => {
-    console.log(data);
-  }; */
-
+  
   useEffect(() => {
     setTimeout(() => {
       if (slider < languageState.texts.Hero.Sliders.length - 1)

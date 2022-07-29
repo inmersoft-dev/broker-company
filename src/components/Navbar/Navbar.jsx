@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable jsx-a11y/anchor-has-content */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import { useState, useEffect, useCallback } from "react";
@@ -25,6 +26,7 @@ const Navbar = () => {
   const { routeState, setRouteState } = useRoute();
   const { active } = routeState;
 
+  const [dark] = useState(false);
   const [transparency, setTransparency] = useState(true);
 
   const extraCSS = css({
@@ -57,8 +59,10 @@ const Navbar = () => {
     if (
       active !== "login" &&
       active !== "dashboard" &&
+      active !== "courses" &&
       id !== "login" &&
-      id !== "dashboard"
+      id !== "dashboard" &&
+      id !== "courses"
     )
       e.preventDefault();
   };
@@ -79,13 +83,17 @@ const Navbar = () => {
     };
   }, [onScroll]);
 
+  const darkBar = css({
+    background: "#222 !important",
+  });
+
   return (
     <>
       <OffCanvas />
       <nav
         className={`uk-navbar-container uk-padding-large ${extraCSS} ${
-          transparency ? "uk-navbar-transparent uk-light" : ""
-        }`}
+          transparency && !dark ? "uk-navbar-transparent uk-light" : ""
+        } ${dark ? `${darkBar} uk-light` : ""}`}
         data-uk-navbar
       >
         <a
@@ -100,29 +108,31 @@ const Navbar = () => {
 
         <SitoContainer ignoreDefault className="uk-navbar-right uk-visible@s">
           <ul className={`uk-navbar-nav ${css({ gap: "0 !important" })}`}>
-            {languageState.texts.Navbar.Links.map((item) =>
-              (item.logged === 2 && userLogged()) ||
-              !item.logged ||
-              (item.logged === 1 && !userLogged()) ? (
-                <li
-                  key={item.label}
-                  className={`${marginRight} ${
-                    item.id === active ? "uk-active" : ""
-                  }`}
-                >
-                  <Link
-                    className={`uk-button uk-button-link ${linksCSS}`}
-                    id={item.id}
-                    onClick={linkTo}
-                    to={item.to}
-                  >
-                    {item.label}
-                  </Link>
-                </li>
-              ) : (
-                <span key={item.label} />
+            {languageState.texts.Navbar.Links.filter((item) => {
+              if (
+                (item.logged === 2 && userLogged()) ||
+                !item.logged ||
+                (item.logged === 1 && !userLogged())
               )
-            )}
+                return item;
+              return null;
+            }).map((item) => (
+              <li
+                key={item.label}
+                className={`${marginRight} ${
+                  item.id === active ? "uk-active" : ""
+                }`}
+              >
+                <Link
+                  className={`uk-button uk-button-link ${linksCSS}`}
+                  id={item.id}
+                  onClick={linkTo}
+                  to={item.to}
+                >
+                  {item.label}
+                </Link>
+              </li>
+            ))}
           </ul>
         </SitoContainer>
       </nav>

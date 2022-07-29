@@ -1,5 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-has-content */
 /* eslint-disable jsx-a11y/anchor-is-valid */
+import { Link } from "react-router-dom";
+
 // @emotion/css
 import { css } from "@emotion/css";
 
@@ -9,6 +11,7 @@ import { useRoute } from "../../contexts/RouteProvider";
 
 // utils
 import { scrollTo } from "../../utils/functions";
+import { userLogged } from "../../utils/auth";
 
 const Footer = () => {
   const { languageState } = useLanguage();
@@ -19,7 +22,13 @@ const Footer = () => {
     const { id } = e.target;
     setRouteState(id);
     scrollTo(`section-${id}`);
-    if (id !== "login") e.preventDefault();
+    if (
+      active !== "login" &&
+      active !== "dashboard" &&
+      id !== "login" &&
+      id !== "dashboard"
+    )
+      e.preventDefault();
   };
 
   const linksCSS = css({
@@ -98,19 +107,27 @@ const Footer = () => {
                 alignItems: "baseline",
               })}`}
             >
-              {languageState.texts.Navbar.Links.map((item) => (
+              {languageState.texts.Navbar.Links.filter((item) => {
+                if (
+                  (item.logged === 2 && userLogged()) ||
+                  !item.logged ||
+                  (item.logged === 1 && !userLogged())
+                )
+                  return item;
+                return null;
+              }).map((item) => (
                 <li
                   key={item.label}
                   className={item.id === active ? "uk-active" : ""}
                 >
-                  <a
+                  <Link
                     className={`uk-button uk-button-link ${linksCSS}`}
                     id={item.id}
                     onClick={linkTo}
-                    href={item.to === "#" ? "#" : item.to}
+                    to={item.to}
                   >
                     {item.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>

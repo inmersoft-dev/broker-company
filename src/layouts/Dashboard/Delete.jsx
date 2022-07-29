@@ -73,7 +73,6 @@ const Delete = () => {
 
   const removeCourse = async (e) => {
     try {
-      console.log(courses, selectedCourse, courses[Number(selectedCourse)].id);
       const response = await deleteCourse(courses[Number(selectedCourse)].id);
       if (response.status === 200) {
         showNotification(

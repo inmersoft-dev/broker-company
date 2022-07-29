@@ -1,5 +1,7 @@
 import { useForm } from "react-hook-form";
 
+import PropTypes from "prop-types";
+
 // sito-image
 import SitoImage from "sito-image";
 
@@ -9,7 +11,8 @@ import { useLanguage } from "../../contexts/LanguageProvider";
 // image
 import background from "../../assets/images/bg1.jpg";
 
-const Contact = () => {
+const Contact = (props) => {
+  const { theme } = props;
   const { languageState } = useLanguage();
   const { handleSubmit, register } = useForm({
     defaultValues: {
@@ -26,7 +29,9 @@ const Contact = () => {
   return (
     <div
       id="section-contact"
-      className="uk-section uk-section-large uk-padding-large"
+      className={`uk-section uk-section-large uk-padding-large uk-section-${theme} ${
+        theme !== "default" && theme !== "muted" ? "uk-light" : ""
+      } `}
     >
       <div className="uk-container">
         <h2 data-uk-scrollspy="cls: uk-animation-fade;">
@@ -105,6 +110,14 @@ const Contact = () => {
       </div>
     </div>
   );
+};
+
+Contact.defaultProps = {
+  theme: "default",
+};
+
+Contact.propTypes = {
+  theme: PropTypes.string,
 };
 
 export default Contact;

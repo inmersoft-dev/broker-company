@@ -40,22 +40,24 @@ const OffCanvas = () => {
 
         <h3>{languageState.texts.CompanyName}</h3>
         <ul className={`uk-nav uk-nav-primary uk-nav-left`}>
-          {languageState.texts.Navbar.Links.map((item) =>
-            (item.logged === 2 && userLogged()) ||
-            !item.logged ||
-            (item.logged === 1 && !userLogged()) ? (
-              <li
-                key={item.label}
-                className={item.id === active ? "uk-active" : ""}
-              >
-                <Link onClick={linkTo} to={item.to} id={item.id}>
-                  {item.label}
-                </Link>
-              </li>
-            ) : (
-              <span key={item.label} />
+          {languageState.texts.Navbar.Links.filter((item) => {
+            if (
+              (item.logged === 2 && userLogged()) ||
+              !item.logged ||
+              (item.logged === 1 && !userLogged())
             )
-          )}
+              return item;
+            return null;
+          }).map((item) => (
+            <li
+              key={item.label}
+              className={item.id === active ? "uk-active" : ""}
+            >
+              <Link onClick={linkTo} to={item.to} id={item.id}>
+                {item.label}
+              </Link>
+            </li>
+          ))}
         </ul>
       </SitoContainer>
     </div>
