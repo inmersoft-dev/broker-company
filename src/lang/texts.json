@@ -15,7 +15,8 @@
     "Messages": {
       "LoginSuccessful": "Inicio de sesión correctamente",
       "RegisterSuccessful": "Usuario creado correctamente",
-      "SaveSuccessful": "Guardado correctamente"
+      "SaveSuccessful": "Guardado correctamente",
+      "DeletedSuccessful": "Eliminado correctamente"
     },
     "CompanyName": "Dogma Transportation",
     "Login": { "Title": "Acceder al panel administrativo" },

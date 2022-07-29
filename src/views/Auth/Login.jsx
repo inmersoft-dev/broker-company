@@ -135,7 +135,6 @@ const Login = () => {
             alignItems: "flex-start",
             display: "flex",
             flexDirection: "column",
-            width: "100%",
           })}`}
         >
           <h2 data-uk-scrollspy="cls: uk-animation-slide-left;">
@@ -143,7 +142,7 @@ const Login = () => {
           </h2>
           <form
             onSubmit={onSubmit}
-            className="uk-form-stacked uk-width-1-1@xs uk-width-1-3@m"
+            className="uk-form-stacked uk-width-1-1"
             data-uk-scrollspy="cls: uk-animation-slide-right;"
           >
             <div className="uk-margin">

@@ -9,7 +9,7 @@ import SitoContainer from "sito-container";
 import { css } from "@emotion/css";
 
 // services
-import { fetchAll } from "../../services/courses.js";
+import { fetchAll, deleteCourse } from "../../services/courses.js";
 
 // own components
 import Loading from "../../components/Loading/Loading";
@@ -72,7 +72,31 @@ const Delete = () => {
   const margin0 = css({ margin: "0 !important" });
 
   const removeCourse = async (e) => {
-    console.log(courses[selectedCourse].id);
+    try {
+      console.log(courses, selectedCourse, courses[Number(selectedCourse)].id);
+      const response = await deleteCourse(courses[Number(selectedCourse)].id);
+      if (response.status === 200) {
+        showNotification(
+          "success",
+          languageState.texts.Messages.DeletedSuccessful
+        );
+        retry();
+      } else {
+        const { error } = response.data;
+        let message;
+        if (error.indexOf("not found") > -1)
+          message = languageState.texts.Errors.Wrong;
+        else if (error.indexOf("Error: Network Error") > -1)
+          message = languageState.texts.Errors.NotConnected;
+        else message = languageState.texts.Errors.SomeWrong;
+        showNotification("danger", message);
+        setLoading(false);
+      }
+    } catch (err) {
+      console.log(err);
+      showNotification("danger", languageState.texts.Errors.SomeWrong);
+      setLoading(false);
+    }
   };
 
   return (

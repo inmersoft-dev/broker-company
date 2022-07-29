@@ -47,11 +47,29 @@ export const fetchCourse = async (user, courseName) => {
  * @param {string} photo - photo url
  */
 export const saveCourse = async (id, title, url, price, description, photo) => {
-  console.log(id, title, url, price, description, photo);
   const response = await axios.post(
     // @ts-ignore
     `${config.apiUrl}course/save`,
     { id, title, url, price, description, photo },
+    {
+      headers: {
+        ...getAuth,
+        Authorization: `Bearer ${getCookie(config.basicKey)}`,
+      },
+    }
+  );
+  const data = await response.data;
+  return data;
+};
+
+/**
+ * @param {id} id
+ */
+export const deleteCourse = async (id) => {
+  const response = await axios.post(
+    // @ts-ignore
+    `${config.apiUrl}course/delete`,
+    { id },
     {
       headers: {
         ...getAuth,
