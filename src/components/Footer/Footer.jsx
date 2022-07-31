@@ -64,7 +64,7 @@ const Footer = () => {
               alignItems: "center",
             })}
           >
-            <a
+            {/* <a
               data-uk-icon="twitter"
               className={`uk-button uk-button-link ${css({
                 marginRight: "20px",
@@ -80,7 +80,7 @@ const Footer = () => {
               })}`}
               href="https://www.facebook.com/"
               rel="noreferrer"
-            ></a>
+            ></a> */}
             <a
               data-uk-icon="whatsapp"
               className={`uk-button uk-button-link ${css({
