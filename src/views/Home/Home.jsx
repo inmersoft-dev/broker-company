@@ -9,7 +9,6 @@ import Footer from "../../components/Footer/Footer";
 import Hero from "../../layouts/Home/Hero";
 import Services from "../../layouts/Home/Services";
 import About from "../../layouts/Home/About";
-import Contact from "../../layouts/Home/Contact";
 
 const Home = () => {
   return (
@@ -18,7 +17,6 @@ const Home = () => {
       <Hero />
       <Services />
       <About />
-      <Contact />
       <Footer />
     </SitoContainer>
   );

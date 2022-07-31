@@ -1,30 +1,35 @@
-import { useForm } from "react-hook-form";
+/* eslint-disable jsx-a11y/anchor-has-content */
+/* eslint-disable jsx-a11y/anchor-is-valid */
+// import { useForm } from "react-hook-form";
 
 import PropTypes from "prop-types";
 
+// @emotion/css
+import { css } from "@emotion/css";
+
 // sito-image
-import SitoImage from "sito-image";
+// import SitoImage from "sito-image";
 
 // contexts
 import { useLanguage } from "../../contexts/LanguageProvider";
 
 // image
-import background from "../../assets/images/bg1.jpg";
+// import background from "../../assets/images/bg1.jpg";
 
 const Contact = (props) => {
   const { theme } = props;
   const { languageState } = useLanguage();
-  const { handleSubmit, register } = useForm({
+  /* const { handleSubmit, register } = useForm({
     defaultValues: {
       name: "",
       email: "",
       message: "",
     },
-  });
+  }); */
 
-  const onSubmit = (data) => {
+  /* const onSubmit = (data) => {
     console.log(data);
-  };
+  }; */
 
   return (
     <div
@@ -38,17 +43,38 @@ const Contact = (props) => {
           {languageState.texts.Contact.Title}
         </h2>
         <div className="uk-child-width-expand@s" data-uk-grid>
-          <div
-            className="uk-margin uk-visible@s"
-            data-uk-scrollspy="cls: uk-animation-slide-left;"
-          >
-            <SitoImage
-              sx={{ objectFit: "cover", height: "100%", marginTop: "10px" }}
-              src={background}
-              alt="contact"
-            />
+          <div className={css({ display: "flex", alignItems: "center" })}>
+            <a
+              className={css({
+                display: "flex",
+                alignItems: "center",
+                marginRight: "20px",
+              })}
+              herf={languageState.texts.Contact.whatsapp}
+              target="_blank"
+              rel="nooreferrer"
+            >
+              <span
+                className={css({ marginRight: "10px" })}
+                data-uk-icon="whatsapp"
+              ></span>
+              {languageState.texts.Contact.toWhatsapp}
+            </a>
+            <a
+              className={css({
+                display: "flex",
+                alignItems: "center",
+              })}
+              herf={`mailto:${languageState.texts.Contact.toEmail}`}
+            >
+              <span
+                className={css({ marginRight: "10px" })}
+                data-uk-icon="mail"
+              ></span>
+              {languageState.texts.Contact.email}
+            </a>
           </div>
-          <form
+          {/* <form
             onSubmit={handleSubmit(onSubmit)}
             className="uk-form-stacked"
             data-uk-scrollspy="cls: uk-animation-slide-right;"
@@ -105,7 +131,7 @@ const Contact = (props) => {
             <button className="uk-button uk-button-primary">
               {languageState.texts.Form.Buttons.Submit}
             </button>
-          </form>
+          </form> */}
         </div>
       </div>
     </div>

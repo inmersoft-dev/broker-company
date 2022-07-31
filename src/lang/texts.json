@@ -100,13 +100,13 @@
         "Links": [
           {
             "id": "1",
-            "Link": "mailto:email@email.com",
-            "Label": "Email: email@email.com"
+            "Link": "mailto:mumi872011a@gmail.com",
+            "Label": "Email: mumi872011a@gmail.com"
           },
           {
             "id": "2",
-            "Link": "tel:123-456-789",
-            "Label": "Teléfono: +123 456 789"
+            "Link": "tel:470-455-1854",
+            "Label": "Teléfono: +1 (470) 455-1854"
           },
           {
             "id": "3",
@@ -189,7 +189,7 @@
         {
           "Title": "Encontramos soluciones",
           "Description": "Tenemos todos los recursos y tecnologías para facilitarle el envío de paquetes",
-          "Button": "Contactar ahora"
+          "Button": "Ver Cursos"
         }
       ]
     },
@@ -238,7 +238,11 @@
     },
     "Contact": {
       "Title": "Contactar ahora",
-      "Button": "Contactar ahora"
+      "Button": "Contactar ahora",
+      "whatsapp": "https://wa.me/147045514854",
+      "toWhatsapp": "+1 (470) 455-1854",
+      "email": "mumi872011a@gmail.com",
+      "toEmail": "mumi872011a@gmail.com"
     }
   }
 }

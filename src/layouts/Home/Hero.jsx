@@ -2,10 +2,11 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable jsx-a11y/anchor-has-content */
 // import { useForm } from "react-hook-form";
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 // @emotion/css
 import { css } from "@emotion/css";
-import { useEffect, useState } from "react";
 
 // contexts
 import { useLanguage } from "../../contexts/LanguageProvider";
@@ -16,7 +17,9 @@ import { scrollTo } from "../../utils/functions";
 const Hero = () => {
   const { languageState } = useLanguage();
   const [slider, setSlider] = useState(0);
-  
+
+  const navigate = useNavigate();
+
   useEffect(() => {
     setTimeout(() => {
       if (slider < languageState.texts.Hero.Sliders.length - 1)
@@ -102,7 +105,7 @@ const Hero = () => {
             </div>
             <div>
               <button
-                onClick={() => scrollTo("section-contact")}
+                onClick={() => navigate("courses")}
                 className="uk-button uk-button-primary"
               >
                 {languageState.texts.Hero.Sliders[2].Button}

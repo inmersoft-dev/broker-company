@@ -86,7 +86,7 @@ const Footer = () => {
               className={`uk-button uk-button-link ${css({
                 marginRight: "20px",
               })}`}
-              href="https://www.whatsapp.com/"
+              href="https://wa.me/147045514854"
               rel="noreferrer"
             ></a>
           </div>
