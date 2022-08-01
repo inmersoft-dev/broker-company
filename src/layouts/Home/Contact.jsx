@@ -50,9 +50,9 @@ const Contact = (props) => {
                 alignItems: "center",
                 marginRight: "20px",
               })}
-              herf={languageState.texts.Contact.whatsapp}
+              href={languageState.texts.Contact.whatsapp}
               target="_blank"
-              rel="nooreferrer"
+              rel="noreferrer"
             >
               <span
                 className={css({ marginRight: "10px" })}
@@ -65,7 +65,7 @@ const Contact = (props) => {
                 display: "flex",
                 alignItems: "center",
               })}
-              herf={`mailto:${languageState.texts.Contact.toEmail}`}
+              href={`mailto:${languageState.texts.Contact.email}`}
             >
               <span
                 className={css({ marginRight: "10px" })}
