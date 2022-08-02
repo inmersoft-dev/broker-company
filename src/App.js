@@ -20,6 +20,7 @@ import { userLogged, logoutUser } from "./utils/auth";
 
 // services
 import { validateBasicKey } from "./services/auth";
+import Details from "./views/Courses/Details";
 
 const App = () => {
   const fetch = async () => {
@@ -43,6 +44,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route exact path="/courses" element={<Courses />} />
+          <Route exact path="/details" element={<Details />} />
           <Route exact path="/login" element={<Login />} />
           <Route exact path="/logout" element={<Logout />} />
           <Route exact path="/dashboard" element={<Dashboard />} />

@@ -89,10 +89,14 @@ const Courses = () => {
                     },
                   }}
                   flexDirection="column"
+                  alignItems="flex-start"
                 >
                   <h4 className={margin0}>{item.title}</h4>
                   <p className={margin0}>{item.description}</p>
-                  <span className={margin0}>{item.price}</span>
+                  <span className={margin0}>{item.price} USD</span>
+                  <a class="uk-link-muted" href="#">
+                    {languageState.texts.Courses.ReadMore}
+                  </a>
                 </SitoContainer>
               </SitoContainer>
             );

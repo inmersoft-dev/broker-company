@@ -43,7 +43,7 @@ const Insert = () => {
   const [title, setTitle] = useState("");
   const [url, setUrl] = useState("");
   const [price, setPrice] = useState("");
-  const [description, setDescription] = useState("");
+  const [shortDescription, setShortDescription] = useState("");
 
   const onSubmit = async (e) => {
     setLoading(true);
@@ -54,7 +54,7 @@ const Insert = () => {
         title,
         url,
         price,
-        description,
+        shortDescription,
         photo
       );
       if (response.status === 200) {
@@ -62,7 +62,7 @@ const Insert = () => {
         setTitle("");
         setUrl("");
         setPrice("");
-        setDescription("");
+        setShortDescription("");
         showNotification(
           "success",
           languageState.texts.Messages.SaveSuccessful
@@ -256,21 +256,21 @@ const Insert = () => {
             </div>
           </div>
           <label className={`uk-form-label ${marginTop20}`} htmlFor="name">
-            {languageState.texts.Form.Inputs.Description.label}
+            {languageState.texts.Form.Inputs.ShortDescription.label}
           </label>
           <div className="uk-form-controls">
             <input
-              id="description"
-              name="description"
+              id="shortDescription"
+              name="shortDescription"
               required
               className="uk-input"
               type="text"
-              value={description}
-              onChange={(e) => setDescription(e.target.value)}
+              value={shortDescription}
+              onChange={(e) => setShortDescription(e.target.value)}
               onInput={validate}
               onInvalid={invalidate}
               placeholder={
-                languageState.texts.Form.Inputs.Description.placeholder
+                languageState.texts.Form.Inputs.ShortDescription.placeholder
               }
             />
           </div>

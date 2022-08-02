@@ -215,7 +215,8 @@
     "Courses": {
       "Title": "Nuestros cursos",
       "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.",
-      "Button": "Contactar ahora"
+      "Button": "Contactar ahora",
+      "ReadMore": "Leer más"
     },
     "About": {
       "Title": "Dogma Transportation",
@@ -239,7 +240,7 @@
     "Contact": {
       "Title": "Contactar ahora",
       "Button": "Contactar ahora",
-      "whatsapp": "https://wa.me/147045514854",
+      "whatsapp": "https://wa.me/+47045514854",
       "toWhatsapp": "+1 (470) 455-1854",
       "email": "mumi872011a@gmail.com"
     }
