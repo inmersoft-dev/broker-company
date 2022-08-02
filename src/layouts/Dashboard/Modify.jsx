@@ -60,13 +60,13 @@ const Modify = () => {
     const { id, photo, title, url, price, shortDescription, description } =
       courses[valueAsNumber];
     setId(id);
-    setPhoto(photo);
-    setTitle(title);
-    setUrl(url);
-    setPrice(price);
-    setShortDescription(shortDescription);
-    setDescription(description);
-    setSelectedCourse(valueAsNumber);
+    setPhoto(photo || "");
+    setTitle(title || "");
+    setUrl(url || "");
+    setPrice(price || "");
+    setShortDescription(shortDescription || "");
+    setDescription(description || "");
+    setSelectedCourse(valueAsNumber || "");
   };
 
   const fetch = async () => {

@@ -97,7 +97,9 @@ const Navbar = () => {
         data-uk-navbar
       >
         <a
-          className="uk-navbar-toggle uk-hidden@s"
+          className={`uk-navbar-toggle ${
+            !userLogged() ? "uk-hidden@s" : "uk-hidden@m"
+          }`}
           data-uk-navbar-toggle-icon
           href="#"
           data-uk-toggle="target: #offcanvas-push"
@@ -106,7 +108,12 @@ const Navbar = () => {
           {languageState.texts.CompanyName}
         </Link>
 
-        <SitoContainer ignoreDefault className="uk-navbar-right uk-visible@s">
+        <SitoContainer
+          ignoreDefault
+          className={` uk-navbar-right ${
+            !userLogged() ? "uk-visible@s" : "uk-visible@m"
+          }`}
+        >
           <ul className={`uk-navbar-nav ${css({ gap: "0 !important" })}`}>
             {languageState.texts.Navbar.Links.filter((item) => {
               if (
