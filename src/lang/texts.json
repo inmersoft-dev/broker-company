@@ -10,6 +10,7 @@
       "UrlRequired": "Debes introducir la url",
       "PriceRequired": "Debes introducir un precio",
       "DescriptionRequired": "Debes introducir una descripción",
+      "ShortDescriptionRequired": "Debes introducir una descripción corta",
       "NoEmptyPassword": "La contraseña no puede estar vacía"
     },
     "Messages": {
@@ -159,6 +160,10 @@
         "Description": {
           "label": "Descripción",
           "placeholder": "Alguna descripción"
+        },
+        "ShortDescription": {
+          "label": "Pequeña descripción",
+          "placeholder": "Alguna reseña"
         },
         "Message": {
           "label": "Mensage",

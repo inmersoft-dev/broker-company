@@ -179,6 +179,16 @@ const Modify = () => {
             "danger",
             languageState.texts.Errors.UrlRequired
           );
+        case "shortDescription":
+          return showNotification(
+            "danger",
+            languageState.texts.Errors.ShortDescription
+          );
+        case "description":
+          return showNotification(
+            "danger",
+            languageState.texts.Errors.Description
+          );
         default:
           return showNotification(
             "danger",
@@ -267,7 +277,7 @@ const Modify = () => {
               onChange={changeCourse}
             >
               {courses.map((item, i) => (
-                <option key={courses[i].id} value={i}>
+                <option key={i} value={i}>
                   {item.title}
                 </option>
               ))}
@@ -350,7 +360,7 @@ const Modify = () => {
               </div>
             </div>
             <label className={`uk-form-label ${marginTop20}`} htmlFor="name">
-              {languageState.texts.Form.Inputs.Description.label}
+              {languageState.texts.Form.Inputs.ShortDescription.label}
             </label>
             <div className="uk-form-controls">
               <input
@@ -368,6 +378,9 @@ const Modify = () => {
                 }
               />
             </div>
+            <label className={`uk-form-label ${marginTop20}`} htmlFor="name">
+              {languageState.texts.Form.Inputs.Description.label}
+            </label>
             <div className="uk-form-controls">
               <textarea
                 className="uk-textarea"
@@ -379,8 +392,8 @@ const Modify = () => {
                 placeholder={
                   languageState.texts.Form.Inputs.Description.placeholder
                 }
-                id="shortDescription"
-                name="shortDescription"
+                id="description"
+                name="description"
                 required
               />
             </div>

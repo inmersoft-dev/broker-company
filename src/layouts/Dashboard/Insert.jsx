@@ -277,6 +277,9 @@ const Insert = () => {
               }
             />
           </div>
+          <label className={`uk-form-label ${marginTop20}`} htmlFor="name">
+            {languageState.texts.Form.Inputs.Description.label}
+          </label>
           <div className="uk-form-controls">
             <textarea
               className="uk-textarea"
@@ -288,8 +291,8 @@ const Insert = () => {
               placeholder={
                 languageState.texts.Form.Inputs.Description.placeholder
               }
-              id="shortDescription"
-              name="shortDescription"
+              id="description"
+              name="description"
               required
             />
           </div>

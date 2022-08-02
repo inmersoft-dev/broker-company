@@ -121,7 +121,7 @@ const Delete = () => {
                 onChange={(e) => setSelectedCourse(e.target.value)}
               >
                 {courses.map((item, i) => (
-                  <option key={courses[i].id} value={i}>
+                  <option key={i} value={i}>
                     {item.title}
                   </option>
                 ))}

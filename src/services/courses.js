@@ -23,13 +23,12 @@ export const fetchAll = async () => {
 
 /**
  * It fetches a course from the database and returns the data.
- * @param {string} user - string
- * @param {string} courseName - "test"
+ * @param {string} course - string
  */
-export const fetchCourse = async (user, courseName) => {
+export const fetchCourse = async (course) => {
   const response = await axios.get(
     // @ts-ignore
-    `${config.apiUrl}course/fetch?user=${user}&courseName=${courseName}`,
+    `${config.apiUrl}course/fetch?id=${course}`,
     {
       headers: getAuth,
     }
@@ -55,6 +54,7 @@ export const saveCourse = async (
   description,
   photo
 ) => {
+  console.log(id, title, url, price, shortDescription, description, photo);
   const response = await axios.post(
     // @ts-ignore
     `${config.apiUrl}course/save`,

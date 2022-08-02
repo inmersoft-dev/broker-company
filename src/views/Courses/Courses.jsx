@@ -1,5 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 // @emotion/css
 import { css } from "@emotion/css";
@@ -8,6 +9,8 @@ import { css } from "@emotion/css";
 import Loading from "../../components/Loading/Loading";
 import Error from "../../components/Error/Error";
 import Empty from "../../components/Empty/Empty";
+import Navbar from "../../components/Navbar/Navbar";
+import Footer from "../../components/Footer/Footer";
 
 // images
 import noProduct from "../../assets/images/no-product.webp";
@@ -20,10 +23,6 @@ import showNotification from "../../components/Notification/Notification";
 // sito components
 import SitoContainer from "sito-container";
 import SitoImage from "sito-image";
-
-// own components
-import Navbar from "../../components/Navbar/Navbar";
-import Footer from "../../components/Footer/Footer";
 
 // layouts
 import Contact from "../../layouts/Home/Contact";
@@ -38,7 +37,6 @@ const Courses = () => {
   const [loading, setLoading] = useState(1);
   const [error, setError] = useState(false);
 
-  const [courses, setCourses] = useState([]);
   const [coursesList, setCoursesList] = useState([]);
 
   const margin0 = css({ margin: "0 !important" });
@@ -92,17 +90,16 @@ const Courses = () => {
                   alignItems="flex-start"
                 >
                   <h4 className={margin0}>{item.title}</h4>
-                  <p className={margin0}>{item.description}</p>
+                  <p className={margin0}>{item.shortDescription}</p>
                   <span className={margin0}>{item.price} USD</span>
-                  <a class="uk-link-muted" href="#">
+                  <Link className="uk-link-muted" to={`/details?id=${item.id}`}>
                     {languageState.texts.Courses.ReadMore}
-                  </a>
+                  </Link>
                 </SitoContainer>
               </SitoContainer>
             );
           });
           setCoursesList(newCourses);
-          setCourses(data);
           setLoading(0);
         } else setLoading(-1);
       } else {
@@ -176,7 +173,7 @@ const Courses = () => {
                   </h3>
                   {coursesList.map((item, i) => (
                     <div
-                      key={courses[i].id}
+                      key={i}
                       className={css({
                         marginTop: "20px",
                         width: "100%",

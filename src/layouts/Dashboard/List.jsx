@@ -50,9 +50,13 @@ const List = () => {
         const { courses } = response.data;
         const data = Object.values(courses);
         if (data.length) {
-          data.forEach((item) => {
+          data.forEach((item, i) => {
             newCourses.push(
-              <SitoContainer alignItems="center" sx={{ padding: "20px" }}>
+              <SitoContainer
+                key={i}
+                alignItems="center"
+                sx={{ padding: "20px" }}
+              >
                 <SitoContainer sx={{ width: "120px", height: "100px" }}>
                   <SitoImage
                     src={item.image || noProduct}
@@ -119,7 +123,7 @@ const List = () => {
             </h3>
             {coursesList.map((item, i) => (
               <div
-                key={courses[i].id}
+                key={i}
                 className={css({
                   marginTop: "20px",
                   width: "100%",
