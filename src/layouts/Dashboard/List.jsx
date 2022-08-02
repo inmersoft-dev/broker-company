@@ -65,7 +65,7 @@ const List = () => {
                   flexDirection="column"
                 >
                   <h4 className={margin0}>{item.title}</h4>
-                  <p className={margin0}>{item.description}</p>
+                  <p className={margin0}>{item.shortDescription}</p>
                   <span className={margin0}>{item.price}</span>
                 </SitoContainer>
               </SitoContainer>

@@ -47,6 +47,7 @@ const Modify = () => {
   const [title, setTitle] = useState("");
   const [url, setUrl] = useState("");
   const [price, setPrice] = useState("");
+  const [shortDescription, setShortDescription] = useState("");
   const [description, setDescription] = useState("");
 
   const [courses, setCourses] = useState([]);
@@ -56,13 +57,14 @@ const Modify = () => {
   const changeCourse = (e) => {
     const { value } = e.target;
     const valueAsNumber = Number(value);
-    const { id, photo, title, url, price, description } =
+    const { id, photo, title, url, price, shortDescription, description } =
       courses[valueAsNumber];
     setId(id);
     setPhoto(photo);
     setTitle(title);
     setUrl(url);
     setPrice(price);
+    setShortDescription(shortDescription);
     setDescription(description);
     setSelectedCourse(valueAsNumber);
   };
@@ -77,13 +79,21 @@ const Modify = () => {
         const data = Object.values(courses);
         if (data.length) {
           setCourses(data);
-          const { id, photo, title, url, price, description } =
-            data[selectedCourse];
+          const {
+            id,
+            photo,
+            title,
+            url,
+            price,
+            shortDescription,
+            description,
+          } = data[selectedCourse];
           setId(id);
           setPhoto(photo);
           setTitle(title);
           setUrl(url);
           setPrice(price);
+          setShortDescription(shortDescription);
           setDescription(description);
           setLoading(0);
         } else setLoading(-1);
@@ -116,6 +126,7 @@ const Modify = () => {
         title,
         url,
         price,
+        shortDescription,
         description,
         photo
       );
@@ -343,11 +354,24 @@ const Modify = () => {
             </label>
             <div className="uk-form-controls">
               <input
-                id="description"
-                name="description"
+                id="shortDescription"
+                name="shortDescription"
                 required
                 className="uk-input"
                 type="text"
+                value={shortDescription}
+                onChange={(e) => setShortDescription(e.target.value)}
+                onInput={validate}
+                onInvalid={invalidate}
+                placeholder={
+                  languageState.texts.Form.Inputs.ShortDescription.placeholder
+                }
+              />
+            </div>
+            <div className="uk-form-controls">
+              <textarea
+                className="uk-textarea"
+                rows="5"
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
                 onInput={validate}
@@ -355,6 +379,9 @@ const Modify = () => {
                 placeholder={
                   languageState.texts.Form.Inputs.Description.placeholder
                 }
+                id="shortDescription"
+                name="shortDescription"
+                required
               />
             </div>
             <input

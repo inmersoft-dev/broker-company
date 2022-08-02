@@ -44,6 +44,7 @@ const Insert = () => {
   const [url, setUrl] = useState("");
   const [price, setPrice] = useState("");
   const [shortDescription, setShortDescription] = useState("");
+  const [description, setDescription] = useState("");
 
   const onSubmit = async (e) => {
     setLoading(true);
@@ -55,6 +56,7 @@ const Insert = () => {
         url,
         price,
         shortDescription,
+        description,
         photo
       );
       if (response.status === 200) {
@@ -63,6 +65,7 @@ const Insert = () => {
         setUrl("");
         setPrice("");
         setShortDescription("");
+        setDescription("");
         showNotification(
           "success",
           languageState.texts.Messages.SaveSuccessful
@@ -272,6 +275,22 @@ const Insert = () => {
               placeholder={
                 languageState.texts.Form.Inputs.ShortDescription.placeholder
               }
+            />
+          </div>
+          <div className="uk-form-controls">
+            <textarea
+              className="uk-textarea"
+              rows="5"
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
+              onInput={validate}
+              onInvalid={invalidate}
+              placeholder={
+                languageState.texts.Form.Inputs.Description.placeholder
+              }
+              id="shortDescription"
+              name="shortDescription"
+              required
             />
           </div>
           <input

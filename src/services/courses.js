@@ -46,11 +46,19 @@ export const fetchCourse = async (user, courseName) => {
  * @param {string} description - "This is a test course"
  * @param {string} photo - photo url
  */
-export const saveCourse = async (id, title, url, price, description, photo) => {
+export const saveCourse = async (
+  id,
+  title,
+  url,
+  price,
+  shortDescription,
+  description,
+  photo
+) => {
   const response = await axios.post(
     // @ts-ignore
     `${config.apiUrl}course/save`,
-    { id, title, url, price, description, photo },
+    { id, title, url, price, shortDescription, description, photo },
     {
       headers: {
         ...getAuth,
