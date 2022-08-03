@@ -37,7 +37,7 @@ const List = () => {
   const [loading, setLoading] = useState(1);
   const [error, setError] = useState(false);
 
-  const [courses, setCourses] = useState([]);
+  const [, setCourses] = useState([]);
   const [coursesList, setCoursesList] = useState([]);
 
   const fetch = async () => {
