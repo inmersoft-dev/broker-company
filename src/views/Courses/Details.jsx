@@ -128,6 +128,13 @@ const Details = () => {
                         },
                       })}`}
                       data-uk-icon="push"
+                      onClick={(e) => {
+                        window.open(
+                          `${languageState.texts.Contact.whatsapp}?text=${languageState.texts.BuyText} ${title}`
+                        );
+                        window.open(url);
+                        e.preventDefault();
+                      }}
                       href={`${languageState.texts.Contact.whatsapp}?text=${languageState.texts.BuyText} ${title}`}
                       target="_blank"
                       rel="noreferrer"
