@@ -1,11 +1,14 @@
+/* eslint-disable jsx-a11y/anchor-has-content */
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 // @emotion/css
 import { css } from "@emotion/css";
 
 // sito components
 import SitoContainer from "sito-container";
+import SitoImage from "sito-image";
 
 // own components
 import Loading from "../../components/Loading/Loading";
@@ -24,8 +27,8 @@ import noProduct from "../../assets/images/no-product.webp";
 import Contact from "../../layouts/Home/Contact";
 
 // contexts
-import { useLanguage } from "../../contexts/LanguageProvider";
 import { useRoute } from "../../contexts/RouteProvider";
+import { useLanguage } from "../../contexts/LanguageProvider";
 
 const Details = () => {
   const location = useLocation();
@@ -118,6 +121,33 @@ const Details = () => {
                   >
                     {title}
                   </h2>
+                  <SitoContainer alignItems="center">
+                    <a
+                      className={css({ marginRight: "20px" })}
+                      href={`${languageState.texts.Contact.whatsapp}?text=${languageState.texts.BuyText} ${title}`}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      {languageState.texts.Buy}
+                    </a>
+                    <p>{price} USD</p>
+                  </SitoContainer>
+                  <SitoContainer
+                    sx={{
+                      width: "320px",
+                      height: "320px",
+                      marginTop: "20px",
+                      "@media (max-width: 529px)": {
+                        width: "100% !important",
+                      },
+                    }}
+                  >
+                    <SitoImage
+                      src={photo || noProduct}
+                      alt={title}
+                      sx={{ width: "100%", height: "100%", objectFit: "cover" }}
+                    />
+                  </SitoContainer>
                   <p>{description}</p>
                 </SitoContainer>
               </div>

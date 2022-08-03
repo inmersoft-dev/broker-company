@@ -53,50 +53,59 @@ const Courses = () => {
         if (data.length) {
           data.forEach((item) => {
             newCourses.push(
-              <SitoContainer
-                alignItems="center"
-                sx={{
-                  padding: "20px",
-                  "@media (max-width: 529px)": {
-                    flexDirection: "column !important",
-                  },
-                }}
+              <Link
+                className={css({ textDecoration: "none !important" })}
+                to={`/details?id=${item.id}`}
               >
                 <SitoContainer
+                  alignItems="center"
                   sx={{
-                    width: "120px",
-                    height: "100px",
+                    padding: "20px",
+
                     "@media (max-width: 529px)": {
-                      width: "100% !important",
+                      flexDirection: "column !important",
                     },
                   }}
                 >
-                  <SitoImage
-                    src={item.image || noProduct}
-                    alt={item.title}
-                    sx={{ width: "100%", height: "100%", objectFit: "cover" }}
-                  />
+                  <SitoContainer
+                    sx={{
+                      width: "120px",
+                      height: "100px",
+                      "@media (max-width: 529px)": {
+                        width: "100% !important",
+                      },
+                    }}
+                  >
+                    <SitoImage
+                      src={item.image || noProduct}
+                      alt={item.title}
+                      sx={{ width: "100%", height: "100%", objectFit: "cover" }}
+                    />
+                  </SitoContainer>
+                  <SitoContainer
+                    sx={{
+                      width: "100%",
+                      marginLeft: "20px",
+                      "@media (max-width: 529px)": {
+                        marginLeft: "0 !important",
+                        marginTop: " 20px !important",
+                      },
+                    }}
+                    flexDirection="column"
+                    alignItems="flex-start"
+                  >
+                    <h4 className={margin0}>{item.title}</h4>
+                    <p className={margin0}>{item.shortDescription}</p>
+                    <span className={margin0}>{item.price} USD</span>
+                    <Link
+                      className="uk-link-muted"
+                      to={`/details?id=${item.id}`}
+                    >
+                      {languageState.texts.Courses.ReadMore}
+                    </Link>
+                  </SitoContainer>
                 </SitoContainer>
-                <SitoContainer
-                  sx={{
-                    width: "100%",
-                    marginLeft: "20px",
-                    "@media (max-width: 529px)": {
-                      marginLeft: "0 !important",
-                      marginTop: " 20px !important",
-                    },
-                  }}
-                  flexDirection="column"
-                  alignItems="flex-start"
-                >
-                  <h4 className={margin0}>{item.title}</h4>
-                  <p className={margin0}>{item.shortDescription}</p>
-                  <span className={margin0}>{item.price} USD</span>
-                  <Link className="uk-link-muted" to={`/details?id=${item.id}`}>
-                    {languageState.texts.Courses.ReadMore}
-                  </Link>
-                </SitoContainer>
-              </SitoContainer>
+              </Link>
             );
           });
           setCoursesList(newCourses);
@@ -178,6 +187,11 @@ const Courses = () => {
                         marginTop: "20px",
                         width: "100%",
                         background: "#36363640",
+                        cursor: "pointer",
+                        transition: "all 500ms ease",
+                        "&:hover": {
+                          transform: "translateY(-5px)",
+                        },
                       })}
                       data-uk-scrollspy="cls: uk-animation-fade;"
                     >

@@ -242,10 +242,12 @@
       },
       "Button": "Contactar ahora"
     },
+    "Buy": "Comprar",
+    "BuyText": "Quiero comprar",
     "Contact": {
       "Title": "Contactar ahora",
       "Button": "Contactar ahora",
-      "whatsapp": "https://wa.me/+47045514854",
+      "whatsapp": "https://wa.me/+14704551854",
       "toWhatsapp": "+1 (470) 455-1854",
       "email": "mumi872011a@gmail.com"
     }
