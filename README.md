@@ -8,20 +8,30 @@
 
 ### JavaScript libraries
 
-- [https://react-hook-form.com/](react-hook-form) for form control
-- [https://emotion.sh/docs/introduction](@emotion/css) for dynamic hashed CSS
-- [https://reactrouter.com/docs/en/v6/getting-started/overview](react-router-dom) for routing
+- [https://www.npmjs.com/react-hook-form](react-hook-form) for form control
+- [https://www.npmjs.com/@emotion/css](@emotion/css) for dynamic hashed CSS
+- [https://www.npmjs.com/react-router-dom](react-router-dom) for routing
+- [https://www.npmjs.com/package/md5](md5) for password encryption
+- [https://www.npmjs.com/package/gh-pages](gh-pages) for hosting
+- [https://www.npmjs.com/package/firebase](firebase) for database and cloud storage
+- [https://www.npmjs.com/package/axios](axios) for fetch api
 
 ### Order of development
 
-- Layout
-  - Navbar
-  - Hero
-  - Services
-    - Cards
-  - About
-  - Contact
-  - Footer
+- Layouts
+  - Home
+    - Navbar
+    - Hero
+    - Services
+      - Cards
+    - About
+    - Contact
+    - Footer
+  - Dashboard
+    - Delete
+    - Insert
+    - List
+    - Modify
 - Texts
   - ES
   - EN

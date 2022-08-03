@@ -73,7 +73,6 @@ const Delete = () => {
 
   const removeCourse = async (e) => {
     try {
-      console.log(courses, selectedCourse, courses[Number(selectedCourse)].id);
       const response = await deleteCourse(courses[Number(selectedCourse)].id);
       if (response.status === 200) {
         showNotification(
@@ -122,7 +121,7 @@ const Delete = () => {
                 onChange={(e) => setSelectedCourse(e.target.value)}
               >
                 {courses.map((item, i) => (
-                  <option key={courses[i].id} value={i}>
+                  <option key={i} value={i}>
                     {item.title}
                   </option>
                 ))}

@@ -43,6 +43,7 @@ const Insert = () => {
   const [title, setTitle] = useState("");
   const [url, setUrl] = useState("");
   const [price, setPrice] = useState("");
+  const [shortDescription, setShortDescription] = useState("");
   const [description, setDescription] = useState("");
 
   const onSubmit = async (e) => {
@@ -54,6 +55,7 @@ const Insert = () => {
         title,
         url,
         price,
+        shortDescription,
         description,
         photo
       );
@@ -62,6 +64,7 @@ const Insert = () => {
         setTitle("");
         setUrl("");
         setPrice("");
+        setShortDescription("");
         setDescription("");
         showNotification(
           "success",
@@ -256,15 +259,31 @@ const Insert = () => {
             </div>
           </div>
           <label className={`uk-form-label ${marginTop20}`} htmlFor="name">
-            {languageState.texts.Form.Inputs.Description.label}
+            {languageState.texts.Form.Inputs.ShortDescription.label}
           </label>
           <div className="uk-form-controls">
             <input
-              id="description"
-              name="description"
+              id="shortDescription"
+              name="shortDescription"
               required
               className="uk-input"
               type="text"
+              value={shortDescription}
+              onChange={(e) => setShortDescription(e.target.value)}
+              onInput={validate}
+              onInvalid={invalidate}
+              placeholder={
+                languageState.texts.Form.Inputs.ShortDescription.placeholder
+              }
+            />
+          </div>
+          <label className={`uk-form-label ${marginTop20}`} htmlFor="name">
+            {languageState.texts.Form.Inputs.Description.label}
+          </label>
+          <div className="uk-form-controls">
+            <textarea
+              className="uk-textarea"
+              rows="5"
               value={description}
               onChange={(e) => setDescription(e.target.value)}
               onInput={validate}
@@ -272,6 +291,9 @@ const Insert = () => {
               placeholder={
                 languageState.texts.Form.Inputs.Description.placeholder
               }
+              id="description"
+              name="description"
+              required
             />
           </div>
           <input

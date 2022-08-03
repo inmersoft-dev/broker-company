@@ -10,6 +10,7 @@
       "UrlRequired": "Debes introducir la url",
       "PriceRequired": "Debes introducir un precio",
       "DescriptionRequired": "Debes introducir una descripción",
+      "ShortDescriptionRequired": "Debes introducir una descripción corta",
       "NoEmptyPassword": "La contraseña no puede estar vacía"
     },
     "Messages": {
@@ -64,6 +65,11 @@
           "to": "/#contact"
         },
         {
+          "id": "courses",
+          "label": "Cursos",
+          "to": "/courses"
+        },
+        {
           "id": "dashboard",
           "label": "Panel de administración",
           "to": "/dashboard",
@@ -95,13 +101,13 @@
         "Links": [
           {
             "id": "1",
-            "Link": "mailto:email@email.com",
-            "Label": "Email: email@email.com"
+            "Link": "mailto:mumi872011a@gmail.com",
+            "Label": "Email: mumi872011a@gmail.com"
           },
           {
             "id": "2",
-            "Link": "tel:123-456-789",
-            "Label": "Teléfono: +123 456 789"
+            "Link": "tel:470-455-1854",
+            "Label": "Teléfono: +1 (470) 455-1854"
           },
           {
             "id": "3",
@@ -155,6 +161,10 @@
           "label": "Descripción",
           "placeholder": "Alguna descripción"
         },
+        "ShortDescription": {
+          "label": "Pequeña descripción",
+          "placeholder": "Alguna reseña"
+        },
         "Message": {
           "label": "Mensage",
           "placeholder": "Algún mensaje..."
@@ -184,7 +194,7 @@
         {
           "Title": "Encontramos soluciones",
           "Description": "Tenemos todos los recursos y tecnologías para facilitarle el envío de paquetes",
-          "Button": "Contactar ahora"
+          "Button": "Ver Cursos"
         }
       ]
     },
@@ -207,6 +217,12 @@
       ],
       "Button": "Contactar ahora"
     },
+    "Courses": {
+      "Title": "Nuestros cursos",
+      "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.",
+      "Button": "Contactar ahora",
+      "ReadMore": "Leer más"
+    },
     "About": {
       "Title": "Dogma Transportation",
       "Description": "Tenemos todos los recursos y tecnologías para facilitarle el envío de paquetes, carga de camión y LTL. Le ayudamos a encontrar la mejor cotización, rastrear rápidamente su producto o contactar con los transportistas en el menor tiempo posible. Nuestras herramientas facilitan todo el proceso de envío, desde el inicio hasta el final.",
@@ -226,9 +242,15 @@
       },
       "Button": "Contactar ahora"
     },
+    "Buy": "Comprar",
+    "BuyText": "Quiero comprar",
+    "Link": "Enlace",
     "Contact": {
       "Title": "Contactar ahora",
-      "Button": "Contactar ahora"
+      "Button": "Contactar ahora",
+      "whatsapp": "https://wa.me/+14704551854",
+      "toWhatsapp": "+1 (470) 455-1854",
+      "email": "mumi872011a@gmail.com"
     }
   }
 }

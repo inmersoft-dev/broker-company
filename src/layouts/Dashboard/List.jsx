@@ -50,24 +50,26 @@ const List = () => {
         const { courses } = response.data;
         const data = Object.values(courses);
         if (data.length) {
-          data.forEach((item) => {
+          data.forEach((item, i) => {
             newCourses.push(
               <SitoContainer
+                key={i}
                 alignItems="center"
-                sx={{ margin: "20px 0", width: "100%" }}
+                sx={{ padding: "20px" }}
               >
-                <SitoContainer
-                  sx={{ width: "120px", height: "100px", margin: "0 20px" }}
-                >
+                <SitoContainer sx={{ width: "120px", height: "100px" }}>
                   <SitoImage
                     src={item.image || noProduct}
                     alt={item.title}
                     sx={{ width: "100%", height: "100%", objectFit: "cover" }}
                   />
                 </SitoContainer>
-                <SitoContainer sx={{ width: "100%" }} flexDirection="column">
+                <SitoContainer
+                  sx={{ width: "100%", marginLeft: "20px" }}
+                  flexDirection="column"
+                >
                   <h4 className={margin0}>{item.title}</h4>
-                  <p className={margin0}>{item.description}</p>
+                  <p className={margin0}>{item.shortDescription}</p>
                   <span className={margin0}>{item.price}</span>
                 </SitoContainer>
               </SitoContainer>
@@ -121,12 +123,11 @@ const List = () => {
             </h3>
             {coursesList.map((item, i) => (
               <div
-                key={courses[i].id}
+                key={i}
                 className={css({
                   marginTop: "20px",
                   width: "100%",
                   background: "#36363640",
-                  padding: "12px",
                 })}
                 data-uk-scrollspy="cls: uk-animation-fade;"
               >

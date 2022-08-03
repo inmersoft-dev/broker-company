@@ -1,32 +1,42 @@
-import { useForm } from "react-hook-form";
+/* eslint-disable jsx-a11y/anchor-has-content */
+/* eslint-disable jsx-a11y/anchor-is-valid */
+// import { useForm } from "react-hook-form";
+
+import PropTypes from "prop-types";
+
+// @emotion/css
+import { css } from "@emotion/css";
 
 // sito-image
-import SitoImage from "sito-image";
+// import SitoImage from "sito-image";
 
 // contexts
 import { useLanguage } from "../../contexts/LanguageProvider";
 
 // image
-import background from "../../assets/images/bg1.jpg";
+// import background from "../../assets/images/bg1.jpg";
 
-const Contact = () => {
+const Contact = (props) => {
+  const { theme } = props;
   const { languageState } = useLanguage();
-  const { handleSubmit, register } = useForm({
+  /* const { handleSubmit, register } = useForm({
     defaultValues: {
       name: "",
       email: "",
       message: "",
     },
-  });
+  }); */
 
-  const onSubmit = (data) => {
+  /* const onSubmit = (data) => {
     console.log(data);
-  };
+  }; */
 
   return (
     <div
       id="section-contact"
-      className="uk-section uk-section-large uk-padding-large"
+      className={`uk-section uk-section-large uk-padding-large uk-section-${theme} ${
+        theme !== "default" && theme !== "muted" ? "uk-light" : ""
+      } `}
     >
       <div className="uk-container">
         <h2 data-uk-scrollspy="cls: uk-animation-fade;">
@@ -34,16 +44,44 @@ const Contact = () => {
         </h2>
         <div className="uk-child-width-expand@s" data-uk-grid>
           <div
-            className="uk-margin uk-visible@s"
-            data-uk-scrollspy="cls: uk-animation-slide-left;"
+            className={css({
+              display: "flex",
+              alignItems: "center",
+              flexWrap: "wrap",
+            })}
           >
-            <SitoImage
-              sx={{ objectFit: "cover", height: "100%", marginTop: "10px" }}
-              src={background}
-              alt="contact"
-            />
+            <a
+              className={css({
+                display: "flex",
+                alignItems: "center",
+                margin: "10px 20px 10px 0",
+              })}
+              href={languageState.texts.Contact.whatsapp}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <span
+                className={css({ marginRight: "10px" })}
+                data-uk-icon="whatsapp"
+              ></span>
+              {languageState.texts.Contact.toWhatsapp}
+            </a>
+            <a
+              className={css({
+                display: "flex",
+                alignItems: "center",
+                margin: "10px 20px 10px 0",
+              })}
+              href={`mailto:${languageState.texts.Contact.email}`}
+            >
+              <span
+                className={css({ marginRight: "10px" })}
+                data-uk-icon="mail"
+              ></span>
+              {languageState.texts.Contact.email}
+            </a>
           </div>
-          <form
+          {/* <form
             onSubmit={handleSubmit(onSubmit)}
             className="uk-form-stacked"
             data-uk-scrollspy="cls: uk-animation-slide-right;"
@@ -100,11 +138,19 @@ const Contact = () => {
             <button className="uk-button uk-button-primary">
               {languageState.texts.Form.Buttons.Submit}
             </button>
-          </form>
+          </form> */}
         </div>
       </div>
     </div>
   );
+};
+
+Contact.defaultProps = {
+  theme: "default",
+};
+
+Contact.propTypes = {
+  theme: PropTypes.string,
 };
 
 export default Contact;

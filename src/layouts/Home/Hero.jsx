@@ -2,10 +2,11 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable jsx-a11y/anchor-has-content */
 // import { useForm } from "react-hook-form";
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 // @emotion/css
 import { css } from "@emotion/css";
-import { useEffect, useState } from "react";
 
 // contexts
 import { useLanguage } from "../../contexts/LanguageProvider";
@@ -16,25 +17,8 @@ import { scrollTo } from "../../utils/functions";
 const Hero = () => {
   const { languageState } = useLanguage();
   const [slider, setSlider] = useState(0);
-  // const now = new Date();
-  // const nowYear = now.getFullYear();
-  /* const nowMonth =
-    String(now.getMonth() + 1).length === 1
-      ? `0${now.getMonth() + 1}`
-      : now.getMonth() + 1;
-  */
-  // const nowDay = now.getDate();
-  /* const { handleSubmit, register } = useForm({
-    defaultValues: {
-      date: `${nowYear}-${nowMonth}-${nowDay}`,
-      origin: "",
-      destiny: "",
-    },
-  }); */
 
-  /* const onSubmit = (data) => {
-    console.log(data);
-  }; */
+  const navigate = useNavigate();
 
   useEffect(() => {
     setTimeout(() => {
@@ -121,7 +105,7 @@ const Hero = () => {
             </div>
             <div>
               <button
-                onClick={() => scrollTo("section-contact")}
+                onClick={() => navigate("courses")}
                 className="uk-button uk-button-primary"
               >
                 {languageState.texts.Hero.Sliders[2].Button}

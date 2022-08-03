@@ -10,7 +10,7 @@ import { css } from "@emotion/css";
 import { useLanguage } from "../../contexts/LanguageProvider";
 
 const Card = (props) => {
-  const { title, description, link } = props;
+  const { title, description, link, theme } = props;
   const { languageState } = useLanguage();
 
   const textLeft = css({
@@ -27,7 +27,9 @@ const Card = (props) => {
 
   return (
     <div
-      className={`uk-card uk-card-default uk-card-body uk-card-hover uk-padding ${margin}`}
+      className={`uk-card uk-card-${theme} ${
+        theme !== "default" && theme !== "muted" ? "uk-light" : ""
+      } uk-card-body uk-card-hover uk-padding ${margin}`}
     >
       <h3 className="uk-card-title">{title}</h3>
       <p>{description}</p>
@@ -42,6 +44,7 @@ const Card = (props) => {
 
 Card.defaultProps = {
   link: "",
+  theme: "default",
 };
 
 Card.propTypes = {
@@ -49,6 +52,7 @@ Card.propTypes = {
   description: PropTypes.string.isRequired,
   link: PropTypes.string,
   index: PropTypes.number.isRequired,
+  theme: PropTypes.string,
 };
 
 export default Card;
