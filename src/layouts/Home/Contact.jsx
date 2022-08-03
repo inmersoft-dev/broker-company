@@ -43,12 +43,18 @@ const Contact = (props) => {
           {languageState.texts.Contact.Title}
         </h2>
         <div className="uk-child-width-expand@s" data-uk-grid>
-          <div className={css({ display: "flex", alignItems: "center" })}>
+          <div
+            className={css({
+              display: "flex",
+              alignItems: "center",
+              flexWrap: "wrap",
+            })}
+          >
             <a
               className={css({
                 display: "flex",
                 alignItems: "center",
-                marginRight: "20px",
+                margin: "10px 20px 10px 0",
               })}
               href={languageState.texts.Contact.whatsapp}
               target="_blank"
@@ -64,6 +70,7 @@ const Contact = (props) => {
               className={css({
                 display: "flex",
                 alignItems: "center",
+                margin: "10px 20px 10px 0",
               })}
               href={`mailto:${languageState.texts.Contact.email}`}
             >

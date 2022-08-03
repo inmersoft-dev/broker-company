@@ -44,7 +44,6 @@ const Details = () => {
   const [title, setTitle] = useState("");
   const [url, setUrl] = useState("");
   const [price, setPrice] = useState("");
-  const [shortDescription, setShortDescription] = useState("");
   const [description, setDescription] = useState("");
   const [photo, setPhoto] = useState("");
 
@@ -58,12 +57,10 @@ const Details = () => {
         try {
           const response = await fetchCourse(id);
           if (response.status === 200) {
-            const { title, url, price, shortDescription, description, photo } =
-              response.data;
+            const { title, url, price, description, photo } = response.data;
             setTitle(title);
             setUrl(url);
             setPrice(price);
-            setShortDescription(shortDescription);
             setDescription(description);
             setPhoto(photo);
             setLoading(0);
@@ -121,16 +118,41 @@ const Details = () => {
                   >
                     {title}
                   </h2>
-                  <SitoContainer alignItems="center">
+                  <SitoContainer alignItems="center" sx={{ flexWrap: "wrap" }}>
                     <a
-                      className={css({ marginRight: "20px" })}
+                      className={`uk-button uk-button-primary ${css({
+                        margin: "10px 20px 10px 0",
+                        svg: {
+                          marginLeft: "4px",
+                          marginTop: "-3px",
+                        },
+                      })}`}
+                      data-uk-icon="push"
                       href={`${languageState.texts.Contact.whatsapp}?text=${languageState.texts.BuyText} ${title}`}
                       target="_blank"
                       rel="noreferrer"
                     >
                       {languageState.texts.Buy}
                     </a>
-                    <p>{price} USD</p>
+                    <p className={css({ margin: "10px 20px 10px 0" })}>
+                      {price} USD
+                    </p>
+                    <a
+                      href={url}
+                      id="link"
+                      data-uk-icon="push"
+                      target="_blank"
+                      rel="noreferrer"
+                      className={css({
+                        margin: "14px 20px 10px 0",
+                        svg: {
+                          marginLeft: "4px",
+                          marginTop: "-3px",
+                        },
+                      })}
+                    >
+                      {languageState.texts.Link}
+                    </a>
                   </SitoContainer>
                   <SitoContainer
                     sx={{
