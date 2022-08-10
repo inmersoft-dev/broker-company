@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/broker-company/static/css/main.4b8d47f4.css",
-    "main.js": "/broker-company/static/js/main.bd7e9c61.js",
+    "main.js": "/broker-company/static/js/main.2c2658d3.js",
     "static/media/no-product.webp": "/broker-company/static/media/no-product.bd6d3d713a44ec40dac7.webp",
     "static/media/crash.webp": "/broker-company/static/media/crash.f32dbcba5a7808f8e8da.webp",
     "index.html": "/broker-company/index.html",
     "main.4b8d47f4.css.map": "/broker-company/static/css/main.4b8d47f4.css.map",
-    "main.bd7e9c61.js.map": "/broker-company/static/js/main.bd7e9c61.js.map"
+    "main.2c2658d3.js.map": "/broker-company/static/js/main.2c2658d3.js.map"
   },
   "entrypoints": [
     "static/css/main.4b8d47f4.css",
-    "static/js/main.bd7e9c61.js"
+    "static/js/main.2c2658d3.js"
   ]
 }
