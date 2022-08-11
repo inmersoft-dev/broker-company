@@ -46,7 +46,7 @@ const Contact = (props) => {
           <div
             className={css({
               display: "flex",
-              alignItems: "center",
+              alignItems: "baseline",
               flexWrap: "wrap",
             })}
           >
