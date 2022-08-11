@@ -7,6 +7,27 @@ import { getCookie } from "../utils/auth";
 
 import md5 from "md5";
 
+/**
+ *
+ * @param {string} password
+ * @returns
+ */
+export const savePassword = async (password) => {
+  const response = await axios.post(
+    // @ts-ignore
+    `${config.apiUrl}course/save`,
+    { password: md5(password) },
+    {
+      headers: {
+        ...getAuth,
+        Authorization: `Bearer ${getCookie(config.basicKey)}`,
+      },
+    }
+  );
+  const data = await response.data;
+  return data;
+};
+
 export const validateBasicKey = async () => {
   const response = await axios.post(
     // @ts-ignore

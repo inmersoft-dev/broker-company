@@ -54,7 +54,6 @@ export const saveCourse = async (
   description,
   photo
 ) => {
-  console.log(id, title, url, price, shortDescription, description, photo);
   const response = await axios.post(
     // @ts-ignore
     `${config.apiUrl}course/save`,

@@ -11,7 +11,10 @@
       "PriceRequired": "Debes introducir un precio",
       "DescriptionRequired": "Debes introducir una descripción",
       "ShortDescriptionRequired": "Debes introducir una descripción corta",
-      "NoEmptyPassword": "La contraseña no puede estar vacía"
+      "NoEmptyPassword": "La contraseña no puede estar vacía",
+      "PasswordRequired": "Debes introducir una contraseña",
+      "RPasswordRequired": "Debes repetir la contraseña",
+      "DifferentPasswords": "Las contraseñas no coinciden"
     },
     "Messages": {
       "LoginSuccessful": "Inicio de sesión correctamente",
@@ -27,7 +30,10 @@
       "Link": "Volver"
     },
     "Dashboard": {
-      "Tabs": ["Listar", "Insertar", "Modificar", "Eliminar"],
+      "Tabs": ["Listar", "Insertar", "Modificar", "Eliminar", "Configuración"],
+      "Settings": {
+        "Title": "Ajustes"
+      },
       "Insert": {
         "Title": "Insertar curso"
       },
@@ -143,6 +149,10 @@
         },
         "Password": {
           "label": "Contraseña",
+          "placeholder": "ej: ********"
+        },
+        "RPassword": {
+          "label": "Repetir contraseña",
           "placeholder": "ej: ********"
         },
         "Title": {

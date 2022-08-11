@@ -16,6 +16,7 @@ import Insert from "../../layouts/Dashboard/Insert";
 import List from "../../layouts/Dashboard/List";
 import Modify from "../../layouts/Dashboard/Modify";
 import Delete from "../../layouts/Dashboard/Delete";
+import Settings from "../../layouts/Dashboard/Settings";
 
 const Dashboard = () => {
   const { languageState } = useLanguage();
@@ -62,6 +63,9 @@ const Dashboard = () => {
             </li>
             <li>
               <Delete />
+            </li>
+            <li>
+              <Settings />
             </li>
           </ul>
         </div>
