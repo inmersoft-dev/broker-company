@@ -19,6 +19,7 @@
 ### Order of development
 
 - Layouts
+
   - Home
     - Navbar
     - Hero
@@ -28,10 +29,18 @@
     - Contact
     - Footer
   - Dashboard
+
     - Delete
+      - to remove courses
     - Insert
+      - to save new courses
     - List
+      - to list all courses
     - Modify
+      - to modify courses
+    - Settings
+      - to change password
+
 - Texts
   - ES
   - EN

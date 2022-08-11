@@ -15,7 +15,7 @@ import md5 from "md5";
 export const savePassword = async (password) => {
   const response = await axios.post(
     // @ts-ignore
-    `${config.apiUrl}course/save`,
+    `${config.apiUrl}user/password`,
     { password: md5(password) },
     {
       headers: {

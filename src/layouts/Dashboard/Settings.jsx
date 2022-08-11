@@ -138,10 +138,10 @@ const Settings = () => {
                 {languageState.texts.Form.Inputs.Password.label}
               </label>
               <div className="uk-form-controls">
-                <div class="uk-margin">
-                  <div class="uk-inline">
+                <div className="uk-margin">
+                  <div className="uk-inline">
                     <a
-                      class="uk-form-icon uk-form-icon-flip"
+                      className="uk-form-icon uk-form-icon-flip"
                       href="#"
                       uk-icon={`icon: ${!showPassword ? "lock" : "unlock"}`}
                       onClick={() => setShowPassword(!showPassword)}
@@ -169,10 +169,10 @@ const Settings = () => {
                 {languageState.texts.Form.Inputs.RPassword.label}
               </label>
               <div className="uk-form-controls">
-                <div class="uk-margin">
-                  <div class="uk-inline">
+                <div className="uk-margin">
+                  <div className="uk-inline">
                     <a
-                      class="uk-form-icon uk-form-icon-flip"
+                      className="uk-form-icon uk-form-icon-flip"
                       href="#"
                       uk-icon={`icon: ${!showRPassword ? "lock" : "unlock"}`}
                       onClick={() => setShowRPassword(!showRPassword)}
