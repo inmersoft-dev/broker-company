@@ -1,6 +1,6 @@
 {
   "name": "dogma-transportation",
-  "version": "0.4.19",
+  "version": "0.5.8",
   "private": false,
   "homepage": "https://inmersoft-dev.github.io/broker-company/",
   "dependencies": {
