@@ -58,6 +58,7 @@ const Footer = () => {
           <h3 data-uk-scrollspy="cls: uk-animation-fade;">
             {languageState.texts.CompanyName}
           </h3>
+          <p>{languageState.texts.Footer.Section1.Description}</p>
           <div
             className={css({
               display: "flex",

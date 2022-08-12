@@ -30,6 +30,9 @@ import Contact from "../../layouts/Home/Contact";
 // services
 import { fetchAll } from "../../services/courses";
 
+// functions
+import { scrollTo } from "../../utils/functions";
+
 const Courses = () => {
   const { languageState } = useLanguage();
   const { setRouteState } = useRoute();
@@ -127,6 +130,7 @@ const Courses = () => {
 
   useEffect(() => {
     setRouteState("courses");
+    scrollTo(0);
     retry();
   }, []);
 
@@ -159,7 +163,7 @@ const Courses = () => {
                 {languageState.texts.Courses.Title}
               </h2>
               <p data-uk-scrollspy="cls: uk-animation-fade;">
-                {languageState.texts.Courses.Description}
+                {languageState.texts.Courses.Subdescription}
               </p>
               <div
                 className={`uk-child-width-1-1@s uk-child-width-1-2@m uk-child-width-expands@l uk-grid-match ${css(

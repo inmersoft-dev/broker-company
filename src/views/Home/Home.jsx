@@ -10,6 +10,7 @@ import Hero from "../../layouts/Home/Hero";
 import Services from "../../layouts/Home/Services";
 import About from "../../layouts/Home/About";
 import Contact from "../../layouts/Home/Contact";
+import Courses from "../../layouts/Home/Courses";
 
 const Home = () => {
   return (
@@ -19,6 +20,7 @@ const Home = () => {
       <Services />
       <About />
       <Contact />
+      <Courses />
       <Footer />
     </SitoContainer>
   );

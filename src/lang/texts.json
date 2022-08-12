@@ -97,7 +97,7 @@
     },
     "Footer": {
       "Section1": {
-        "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor. "
+        "Description": "Explore nuestros servicios de carga, soluciones personalizadas u obtenga un presupuesto gratuito."
       },
       "Section2": {
         "Title": "Enlaces útiles"
@@ -229,8 +229,9 @@
     },
     "Courses": {
       "Title": "Nuestros cursos",
-      "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.",
-      "Button": "Contactar ahora",
+      "Description": "Échale un vistazo a nuestros cursos",
+      "Subdescription": "¿Te interesa la profesión, pero todavía no te sientes preparado? En nuestros cursos aprenderás todo lo que necesitas",
+      "Button": "Ver cursos",
       "ReadMore": "Leer más"
     },
     "About": {
