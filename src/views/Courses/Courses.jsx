@@ -60,8 +60,8 @@ const Courses = () => {
                 <SitoContainer
                   alignItems="center"
                   sx={{
+                    width: "100%",
                     padding: "20px",
-
                     "@media (max-width: 529px)": {
                       flexDirection: "column !important",
                     },
@@ -84,7 +84,7 @@ const Courses = () => {
                   </SitoContainer>
                   <SitoContainer
                     sx={{
-                      width: "100%",
+                      flex: 1,
                       marginLeft: "20px",
                       "@media (max-width: 529px)": {
                         marginLeft: "0 !important",
@@ -165,6 +165,7 @@ const Courses = () => {
                 className={`uk-child-width-1-1@s uk-child-width-1-2@m uk-child-width-expands@l uk-grid-match ${css(
                   {
                     justifyContent: "center",
+                    width: "100%",
                   }
                 )}`}
                 data-uk-grid
