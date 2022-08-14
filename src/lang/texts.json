@@ -197,9 +197,10 @@
           "Button": "Leer más"
         },
         {
-          "Title": "Servicios de envío",
+          "Title": "Servicios",
           "Description": "Vea cotizaciones gratuitas de los principales transportistas",
-          "Button": "Ver servicios"
+          "Button": "Pedir estiamdo",
+          "Link": "https://wa.me/+14704551854?text=Pedir estimado"
         },
         {
           "Title": "Encontramos soluciones",

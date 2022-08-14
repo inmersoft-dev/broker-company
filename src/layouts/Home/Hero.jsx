@@ -82,12 +82,15 @@ const Hero = () => {
               </p>
             </div>
             <div>
-              <button
-                onClick={() => scrollTo("section-services")}
-                className="uk-button uk-button-primary"
+              <a
+                href={languageState.texts.Hero.Sliders[1].Link}
+                target="_blank"
+                rel="noreferrer"
               >
-                {languageState.texts.Hero.Sliders[1].Button}
-              </button>
+                <button className="uk-button uk-button-primary">
+                  {languageState.texts.Hero.Sliders[1].Button}
+                </button>
+              </a>
             </div>
           </div>
         )}
