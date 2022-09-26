@@ -2,7 +2,7 @@
   "name": "dogma-transportation",
   "version": "0.5.8",
   "private": false,
-  "homepage": "https://inmersoft-dev.github.io/broker-company/",
+  "homepage": "https://client-broker-company.web.app/",
   "dependencies": {
     "@emotion/css": "^11.9.0",
     "axios": "^0.27.2",
