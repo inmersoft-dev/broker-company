@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/broker-company/static/css/main.4b8d47f4.css",
-    "main.js": "/broker-company/static/js/main.287535d4.js",
-    "static/media/no-product.webp": "/broker-company/static/media/no-product.bd6d3d713a44ec40dac7.webp",
-    "static/media/crash.webp": "/broker-company/static/media/crash.f32dbcba5a7808f8e8da.webp",
-    "index.html": "/broker-company/index.html",
-    "main.4b8d47f4.css.map": "/broker-company/static/css/main.4b8d47f4.css.map",
-    "main.287535d4.js.map": "/broker-company/static/js/main.287535d4.js.map"
+    "main.css": "/static/css/main.4b8d47f4.css",
+    "main.js": "/static/js/main.41885df6.js",
+    "static/media/no-product.webp": "/static/media/no-product.bd6d3d713a44ec40dac7.webp",
+    "static/media/crash.webp": "/static/media/crash.f32dbcba5a7808f8e8da.webp",
+    "index.html": "/index.html",
+    "main.4b8d47f4.css.map": "/static/css/main.4b8d47f4.css.map",
+    "main.41885df6.js.map": "/static/js/main.41885df6.js.map"
   },
   "entrypoints": [
     "static/css/main.4b8d47f4.css",
-    "static/js/main.287535d4.js"
+    "static/js/main.41885df6.js"
   ]
 }
