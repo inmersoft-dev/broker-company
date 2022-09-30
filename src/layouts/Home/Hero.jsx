@@ -14,6 +14,9 @@ import { useLanguage } from "../../contexts/LanguageProvider";
 // utils
 import { scrollTo } from "../../utils/functions";
 
+// images
+import banner from "../../assets/images/headers.webp";
+
 const Hero = () => {
   const { languageState } = useLanguage();
   const [slider, setSlider] = useState(0);
@@ -35,6 +38,9 @@ const Hero = () => {
         height: "100vh",
         display: "flex",
         alignItems: "center",
+        background: `url('${banner}')`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
       })}`}
     >
       <div

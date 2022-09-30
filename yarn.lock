@@ -8511,10 +8511,10 @@ sito-container@^0.2.21:
     react-dom "^18.2.0"
     react-scripts "5.0.1"
 
-sito-image@^0.3.6:
-  version "0.3.6"
-  resolved "https://registry.yarnpkg.com/sito-image/-/sito-image-0.3.6.tgz#7d16369839acaba1b0df9bae86fb468d38f99d05"
-  integrity sha512-P8x0fGSSnaIasqW7ZpIxTckpO+129+nqtaIIMwMvtHFIXfuaz1lLqFZeR+PNcgIRag6xhq5n0Gm+UXc2BHhrxg==
+sito-image@^0.3.9:
+  version "0.3.9"
+  resolved "https://registry.yarnpkg.com/sito-image/-/sito-image-0.3.9.tgz#7bf75c086f768dce7cf0847708e75d9f90fb60f0"
+  integrity sha512-I++B4y5qGULNPehOG+erLucQ8p/p/1hIaGeHqY6Igz/ZX3LqDeblQFV75PKJCOpjERfm+j7KLFAGGQi0mIlRWA==
   dependencies:
     "@emotion/css" "^11.9.0"
     "@emotion/react" "^11.9.3"

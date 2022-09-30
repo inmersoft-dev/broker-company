@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 
 // sito components
 import SitoContainer from "sito-container";
+import SitoImage from "sito-image";
 
 // @emotion/css
 import { css } from "@emotion/css";
@@ -20,6 +21,10 @@ import { useRoute } from "../../contexts/RouteProvider";
 // utils
 import { scrollTo } from "../../utils/functions";
 import { userLogged } from "../../utils/auth";
+
+// images
+import redLogo from "../../assets/images/logo-red.webp";
+import blueLogo from "../../assets/images/logo-blue.webp";
 
 const Navbar = () => {
   const { languageState } = useLanguage();
@@ -105,7 +110,11 @@ const Navbar = () => {
           data-uk-toggle="target: #offcanvas-push"
         />
         <Link to="/" className={`uk-navbar-item uk-logo ${logoCSS}`}>
-          {languageState.texts.CompanyName}
+          {!transparency ? (
+            <SitoImage src={blueLogo} alt="blue-logo" sx={{ height: "55px" }} />
+          ) : (
+            <SitoImage src={redLogo} alt="red-logo" sx={{ height: "55px" }} />
+          )}
         </Link>
 
         <SitoContainer
