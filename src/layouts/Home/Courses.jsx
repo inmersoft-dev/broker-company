@@ -26,12 +26,15 @@ const Courses = (props) => {
         <SitoContainer
           ignoreDefault
           data-uk-grid
-          sx={{ alignItems: "flex-start", button: { color: "#222" } }}
+          sx={{ alignItems: "flex-start" }}
         >
           <p data-uk-scrollspy="cls: uk-animation-fade;">
             {languageState.texts.Courses.Description}
           </p>
-          <button onClick={() => navigate("courses")} className="uk-button">
+          <button
+            onClick={() => navigate("courses")}
+            className="uk-button uk-button-secondary"
+          >
             {languageState.texts.Courses.Button}
           </button>
         </SitoContainer>

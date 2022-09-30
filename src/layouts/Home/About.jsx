@@ -35,36 +35,6 @@ const About = () => {
         >
           {languageState.texts.About.Description1}
         </p>
-        {/*<div
-          className={`uk-grid-match uk-child-width-1-3@m`}
-          data-uk-grid
-          data-uk-scrollspy="cls: uk-animation-fade; target: div; delay: 500;"
-        >
-          <div>
-            <h5>
-              <span className={marginRight} data-uk-icon="users" />
-              {languageState.texts.About.Section1.Title}
-            </h5>
-
-            <p>{languageState.texts.About.Section1.Description}</p>
-          </div>
-          <div>
-            <h5>
-              <span className={marginRight} data-uk-icon="rss" />
-              {languageState.texts.About.Section2.Title}
-            </h5>
-
-            <p>{languageState.texts.About.Section2.Description}</p>
-          </div>
-          <div>
-            <h5>
-              <span className={marginRight} data-uk-icon="commenting" />
-              {languageState.texts.About.Section3.Title}
-            </h5>
-
-            <p>{languageState.texts.About.Section3.Description}</p>
-          </div>
-        </div>*/}
       </div>
     </div>
   );

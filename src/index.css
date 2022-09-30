@@ -56,24 +56,53 @@ textarea {
     margin-right: 20px;
   }
 }
+
+/*
+ * Secondary
+ */
+.uk-button-secondary {
+  background-color: #2c3959 !important;
+  color: #fff !important;
+  border: 1px solid transparent !important;
+}
+/* Hover */
+.uk-button-secondary:hover {
+  background-color: #20274b !important;
+  color: #fff !important;
+}
+/* OnClick + Active */
+.uk-button-secondary:active,
+.uk-button-secondary.uk-active {
+  background-color: #334664 !important;
+  color: #fff !important;
+}
+
 /*
  * Primary
  */
 .uk-button-primary {
-  background-color: #1e87f0 !important;
+  background-color: #d91c29 !important;
   color: #fff !important;
   border: 1px solid transparent !important;
 }
 /* Hover */
 .uk-button-primary:hover {
-  background-color: #0f7ae5 !important;
+  background-color: #9d2331 !important;
   color: #fff !important;
 }
 /* OnClick + Active */
 .uk-button-primary:active,
 .uk-button-primary.uk-active {
-  background-color: #0e6dcd !important;
+  background-color: #ec444f !important;
   color: #fff !important;
+}
+
+.uk-section-primary {
+  background: #d91c29 !important;
+}
+
+.uk-section-secondary {
+  background-color: #2c3959 !important;
 }
 
 /* Style modifiers
@@ -82,7 +111,7 @@ textarea {
  * Primary
  */
 .uk-notification-message-primary {
-  background: #1e87f0 !important;
+  background: #d91c29 !important;
 }
 /*
  * Success

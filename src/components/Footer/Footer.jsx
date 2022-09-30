@@ -2,6 +2,9 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import { Link } from "react-router-dom";
 
+// sito components
+import SitoImage from "sito-image";
+
 // @emotion/css
 import { css } from "@emotion/css";
 
@@ -12,6 +15,9 @@ import { useRoute } from "../../contexts/RouteProvider";
 // utils
 import { scrollTo } from "../../utils/functions";
 import { userLogged } from "../../utils/auth";
+
+// images
+import white from "../../assets/images/white.png";
 
 const Footer = () => {
   const { languageState } = useLanguage();
@@ -56,7 +62,11 @@ const Footer = () => {
           data-uk-grid
         >
           <h3 data-uk-scrollspy="cls: uk-animation-fade;">
-            {languageState.texts.CompanyName}
+            <SitoImage
+              src={white}
+              alt="blue-logo"
+              sx={{ height: "55px", width: "230px" }}
+            />
           </h3>
           <p>{languageState.texts.Footer.Section1.Description}</p>
           <div

@@ -123,58 +123,6 @@ const Hero = () => {
           </div>
         )}
       </div>
-      {/* <form
-          className={`uk-grid-small uk-padding-large`}
-          data-uk-grid
-          onSubmit={handleSubmit(onSubmit)}
-          data-uk-scrollspy="cls: uk-animation-fade; target: div; delay: 500;"
-        >
-          <div className="uk-width-1-4@s">
-            <label className="uk-form-label" htmlFor="date">
-              {languageState.texts.Form.Inputs.Date.label}
-            </label>
-            <input
-              id="date"
-              name="date"
-              className="uk-input"
-              type="date"
-              required
-              {...register("date")}
-            />
-          </div>
-          <div className="uk-width-1-4@s">
-            <label className="uk-form-label" htmlFor="origin">
-              {languageState.texts.Form.Inputs.Origin.label}
-            </label>
-            <input
-              id="origin"
-              className="uk-input"
-              type="text"
-              required
-              placeholder={languageState.texts.Form.Inputs.Origin.placeholder}
-              {...register("origin")}
-            />
-          </div>
-          <div className="uk-width-1-4@s">
-            <label className="uk-form-label" htmlFor="destiny">
-              {languageState.texts.Form.Inputs.Destiny.label}
-            </label>
-            <input
-              id="destiny"
-              className="uk-input"
-              type="text"
-              required
-              placeholder={languageState.texts.Form.Inputs.Destiny.placeholder}
-              {...register("destiny")}
-            />
-          </div>
-          <div>
-            <div className={css({ height: "23px" })} />
-            <button className="uk-button uk-button-primary">
-              {languageState.texts.Form.Buttons.Submit}
-            </button>
-          </div>
-        </form> */}
     </div>
   );
 };

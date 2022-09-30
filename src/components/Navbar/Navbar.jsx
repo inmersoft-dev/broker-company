@@ -23,8 +23,8 @@ import { scrollTo } from "../../utils/functions";
 import { userLogged } from "../../utils/auth";
 
 // images
-import redLogo from "../../assets/images/logo-red.webp";
-import blueLogo from "../../assets/images/logo-blue.webp";
+import red from "../../assets/images/red.png";
+import white from "../../assets/images/white.png";
 
 const Navbar = () => {
   const { languageState } = useLanguage();
@@ -110,10 +110,18 @@ const Navbar = () => {
           data-uk-toggle="target: #offcanvas-push"
         />
         <Link to="/" className={`uk-navbar-item uk-logo ${logoCSS}`}>
-          {!transparency ? (
-            <SitoImage src={blueLogo} alt="blue-logo" sx={{ height: "55px" }} />
+          {transparency ? (
+            <SitoImage
+              src={white}
+              alt="blue-logo"
+              sx={{ height: "55px", width: "230px" }}
+            />
           ) : (
-            <SitoImage src={redLogo} alt="red-logo" sx={{ height: "55px" }} />
+            <SitoImage
+              src={red}
+              alt="red-logo"
+              sx={{ height: "55px", width: "230px" }}
+            />
           )}
         </Link>
 
