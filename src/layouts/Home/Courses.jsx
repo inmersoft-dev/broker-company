@@ -4,11 +4,17 @@ import { useNavigate } from "react-router-dom";
 
 import PropTypes from "prop-types";
 
+// @emotion/css
+import { css } from "@emotion/css";
+
 // sito components
 import SitoContainer from "sito-container";
 
 // contexts
 import { useLanguage } from "../../contexts/LanguageProvider";
+
+// images
+import bg1 from "../../assets/images/bg1.jpg";
 
 const Courses = (props) => {
   const { languageState } = useLanguage();
@@ -17,9 +23,38 @@ const Courses = (props) => {
   return (
     <div
       id="section-contact"
-      className="uk-section uk-section-primary uk-section-large uk-padding-large"
+      className={`uk-section uk-section-primary uk-section-large uk-padding-large ${css(
+        {
+          background: `url('${bg1}') !important`,
+          backgroundPosition: "center",
+          backgroundSize: "cover !important",
+          height: "100vh",
+          display: "flex",
+          alignItems: "center",
+          position: "relative",
+        }
+      )}`}
     >
-      <div className="uk-container">
+      <div
+        className={`uk-section-primary ${css({
+          zIndex: 1,
+          opacity: 0.7,
+          left: 0,
+          top: 0,
+          width: "100%",
+          height: "100%",
+          position: "absolute",
+        })}`}
+      ></div>
+      <div
+        className={`uk-container ${css({
+          display: "flex",
+          alignItems: "flex-start",
+          flexDirection: "column",
+          width: "100%",
+          zIndex: 2,
+        })}`}
+      >
         <h2 data-uk-scrollspy="cls: uk-animation-fade;">
           {languageState.texts.Courses.Title}
         </h2>

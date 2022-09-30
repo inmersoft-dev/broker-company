@@ -1,5 +1,6 @@
 {
   "es": {
+    "Estimate": "Pedir Estimado",
     "Errors": {
       "NotConnected": "No tienes conexión con el servidor",
       "Empty": "No hay cursos",
@@ -22,7 +23,7 @@
       "SaveSuccessful": "Guardado correctamente",
       "DeletedSuccessful": "Eliminado correctamente"
     },
-    "CompanyName": "Dogma Transportation",
+    "CompanyName": "WMT Logistics LLC",
     "Login": { "Title": "Acceder al panel administrativo" },
     "NotFound": {
       "Title": "Ups! 404",
@@ -236,7 +237,7 @@
       "ReadMore": "Leer más"
     },
     "About": {
-      "Title": "Dogma Transportation",
+      "Title": "WMT Logistics LLC",
       "Description": "Tenemos todos los recursos y tecnologías para facilitarle el envío de paquetes, carga de camión y LTL. Le ayudamos a encontrar la mejor cotización, rastrear rápidamente su producto o contactar con los transportistas en el menor tiempo posible. Nuestras herramientas facilitan todo el proceso de envío, desde el inicio hasta el final.",
       "Title1": "Superamos obstáculos, encontramos soluciones",
       "Description1": "Explore nuestros servicios de carga, soluciones personalizadas u obtenga un presupuesto gratuito.",

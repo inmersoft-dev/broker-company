@@ -191,7 +191,7 @@ const Courses = () => {
                       className={css({
                         marginTop: "20px",
                         width: "100%",
-                        background: "#36363640",
+                        background: "#9d233140",
                         cursor: "pointer",
                         transition: "all 500ms ease",
                         "&:hover": {

@@ -57,6 +57,10 @@ textarea {
   }
 }
 
+.uk-offcanvas-bar {
+  background-color: #2c3959 !important;
+}
+
 /*
  * Secondary
  */

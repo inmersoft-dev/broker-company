@@ -21,7 +21,7 @@ const Loading = (props) => {
         top: 0,
         left: 0,
         backdropFilter: "blur(4px)",
-        background: `#222`,
+        background: `#2c3959`,
         ...sx,
       }}
     >

@@ -127,7 +127,7 @@ const List = () => {
                 className={css({
                   marginTop: "20px",
                   width: "100%",
-                  background: "#36363640",
+                  background: "#9d233140",
                 })}
                 data-uk-scrollspy="cls: uk-animation-fade;"
               >

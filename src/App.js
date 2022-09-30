@@ -6,6 +6,7 @@ import SitoContainer from "sito-container";
 
 // own components
 import ToTop from "./components/ToTop/ToTop";
+import Estimate from "./components/Estimate/Estimate";
 
 // views
 import Home from "./views/Home/Home";
@@ -13,6 +14,7 @@ import Courses from "./views/Courses/Courses";
 import Login from "./views/Auth/Login";
 import Logout from "./views/Auth/Logout";
 import Dashboard from "./views/Dashboard/Dashboard";
+import Details from "./views/Courses/Details";
 import NotFound from "./views/NotFound/NotFound";
 
 // functions
@@ -20,7 +22,6 @@ import { userLogged, logoutUser } from "./utils/auth";
 
 // services
 import { validateBasicKey } from "./services/auth";
-import Details from "./views/Courses/Details";
 
 const App = () => {
   const fetch = async () => {
@@ -40,6 +41,7 @@ const App = () => {
   return (
     <SitoContainer ignoreDefault sx={{ width: "100vw" }}>
       <ToTop />
+      <Estimate />
       <BrowserRouter basename={process.env.PUBLIC_URL}>
         <Routes>
           <Route path="/" element={<Home />} />
