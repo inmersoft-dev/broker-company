@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 // sito components
 import SitoContainer from "sito-container";
