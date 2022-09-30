@@ -1,4 +1,270 @@
 {
+  "en": {
+    "Estimate": "Estimate",
+    "Errors": {
+      "NotConnected": "Not connected",
+      "Empty": "There are not courses",
+      "SomeWrong": "Something went wrong",
+      "Wrong": "Wrong credentials",
+      "NameRequired": "Name cannot be empty",
+      "TitleRequired": "Title cannot be empty",
+      "UrlRequired": "Url cannot be empty",
+      "PriceRequired": "Price cannot be empty",
+      "DescriptionRequired": "Description cannot be empty",
+      "ShortDescriptionRequired": "Short description cannot be empty",
+      "NoEmptyPassword": "Password cannot be empty",
+      "PasswordRequired": "Password cannot be empty",
+      "RPasswordRequired": "You must repeat the password",
+      "DifferentPasswords": "Passwords do not match"
+    },
+    "Messages": {
+      "LoginSuccessful": "Login successful",
+      "RegisterSuccessful": "User created successfully",
+      "SaveSuccessful": "Saved Successfully",
+      "DeletedSuccessful": "Deleted Successfully"
+    },
+    "CompanyName": "WMT Logistics LLC",
+    "Login": { "Title": "Access the administrative panel" },
+    "NotFound": {
+      "Title": "Whops! 404",
+      "Description": "Page not found",
+      "Link": "Go Home"
+    },
+    "Dashboard": {
+      "Tabs": ["List", "Insert", "Modify", "Delete", "Settings"],
+      "Settings": {
+        "Title": "Settings"
+      },
+      "Insert": {
+        "Title": "Insert course"
+      },
+      "Delete": {
+        "Title": "Delete course"
+      },
+      "Modify": {
+        "Select": "Select the course to modify",
+        "Title": "Modify Course"
+      },
+      "List": {
+        "Title": "Course list"
+      }
+    },
+    "Navbar": {
+      "Links": [
+        {
+          "id": "home",
+          "label": "Home",
+          "to": "/"
+        },
+        {
+          "id": "services",
+          "label": "Services",
+          "to": "/#services"
+        },
+        {
+          "id": "about",
+          "label": "About us",
+          "to": "/#about"
+        },
+        {
+          "id": "contact",
+          "label": "Contact us",
+          "to": "/#contact"
+        },
+        {
+          "id": "courses",
+          "label": "Courses",
+          "to": "/courses"
+        },
+        {
+          "id": "dashboard",
+          "label": "Dashboard",
+          "to": "/dashboard",
+          "logged": 2
+        },
+        {
+          "id": "logout",
+          "label": "Log out",
+          "to": "/logout",
+          "logged": 2
+        },
+        {
+          "id": "login",
+          "label": "Log in",
+          "to": "/login",
+          "logged": 1
+        }
+      ]
+    },
+    "Footer": {
+      "Section1": {
+        "Description": "Explore our cargo services, custom solutions, or get a free quote."
+      },
+      "Section2": {
+        "Title": "Helpful Links"
+      },
+      "Section3": {
+        "Title": "Contact us",
+        "Links": [
+          {
+            "id": "1",
+            "Link": "mailto:wmtlogistics@gmail.com",
+            "Label": "Email: wmtlogistics@gmail.com"
+          },
+          {
+            "id": "2",
+            "Link": "tel:470-455-1854",
+            "Label": "Phone: +1 (470) 455-1854"
+          },
+          {
+            "id": "3",
+            "Description": "Address: Sidney Street, New York, USA"
+          }
+        ]
+      }
+    },
+    "Form": {
+      "Inputs": {
+        "Date": {
+          "label": "Date"
+        },
+        "Origin": {
+          "label": "From",
+          "placeholder": "City or zip code"
+        },
+        "Destiny": {
+          "label": "Destination",
+          "placeholder": "City or zip code"
+        },
+        "Name": {
+          "label": "Name",
+          "placeholder": "ex: Jose"
+        },
+        "Email": {
+          "label": "Email",
+          "placeholder": "ex: jose@email.com"
+        },
+        "User": {
+          "label": "User",
+          "placeholder": "ex: jose artigas"
+        },
+        "Password": {
+          "label": "Password",
+          "placeholder": "ex: ********"
+        },
+        "RPassword": {
+          "label": "Repeat Password",
+          "placeholder": "ex: ********"
+        },
+        "Title": {
+          "label": "Title",
+          "placeholder": "ex: Freight transport"
+        },
+        "Price": {
+          "label": "Price",
+          "placeholder": "ex: 100"
+        },
+        "Url": {
+          "label": "Url link",
+          "placeholder": "ex: https://fdrive-curso1233/?file=1as23@@13Dc"
+        },
+        "Description": {
+          "label": "Description",
+          "placeholder": "Some description"
+        },
+        "ShortDescription": {
+          "label": "Short description",
+          "placeholder": "some review"
+        },
+        "Message": {
+          "label": "Message",
+          "placeholder": "Some message"
+        }
+      },
+      "Buttons": {
+        "Submit": "Submit",
+        "Save": "Save",
+        "ReadMore": "Read More",
+        "Login": "Login",
+        "Retry": "Retry",
+        "Delete": "Delete"
+      }
+    },
+    "Hero": {
+      "Sliders": [
+        {
+          "Title": "We overcome obstacles",
+          "Description": "We simplify the shipping process from start to finish",
+          "Button": "Read more"
+        },
+        {
+          "Title": "Services",
+          "Description": "See free quotes from major carriers",
+          "Button": "Ask for estimate",
+          "Link": "https://wa.me/+14704551854?text=Pedir estimado"
+        },
+        {
+          "Title": "We find solutions",
+          "Description": "We have all the resources and technologies to make it easy for you to send packages",
+          "Button": "View Courses"
+        }
+      ]
+    },
+    "Projects": {
+      "Title": "Shipping Services",
+      "Services": [
+        {
+          "title": "LTL Freight",
+          "description": "See free quotes from leading LTL carriers for freight that does not require a full truckload. Save on fuel and overall shipping costs by getting the right offer to move your freight."
+        },
+        {
+          "title": "Loading trucks",
+          "description": "Whether you need a full truckload or several, we have the capacity to move freight your way. Take advantage of our wide selection of carrier relationships to get a great deal fast."
+        },
+        {
+          "title": "Partial loads",
+          "description": "Split the cost of a truckload with similar shipments and save money. Let us handle the details so you don't have to sacrifice timely delivery for a great price."
+        }
+      ],
+      "Button": "Contact now"
+    },
+    "Courses": {
+      "Title": "Our courses",
+      "Description": "Take a look at our courses",
+      "Subdescription": "Are you interested in the profession, but you still don't feel ready? In our courses you will learn everything you need",
+      "Button": "View courses",
+      "ReadMore": "Read More"
+    },
+    "About": {
+      "Title": "WMT Logistics LLC",
+      "Description": "We have all the resources and technologies to make it easy for you to ship packages, truckloads, and LTL. We help you find the best quote, quickly track your product, or contact carriers in the shortest amount of time. Our tools make it easy the entire shipping process, from start to finish.",
+      "Title1": "We overcome obstacles, we find solutions",
+      "Description1": "Explore our cargo services, custom solutions or get a free quote.",
+      "Section1": {
+        "Title": "Section 1",
+        "Description": "We overcome obstacles, we find solutions. "
+      },
+      "Section2": {
+        "Title": "Section 2",
+        "Description": "Explore our cargo services, custom solutions, or get a free quote. "
+      },
+      "Section3": {
+        "Title": "Section 3",
+        "Description": "Lorem ipsum pain sit amet, consectetur adipiscing elit, sed do eiusmod tempor."
+      },
+      "Button": "Contact now"
+    },
+    "Buy": "Buy",
+    "BuyText": "I want to buy",
+    "Link": "Link",
+    "Contact": {
+      "Title": "Contact Now",
+      "Button": "Contact now",
+      "whatsapp": "https://wa.me/+14704551854",
+      "toWhatsapp": "+1 (470) 455-1854",
+      "email": "wmtlogistics@gmail.com"
+    }
+  },
   "es": {
     "Estimate": "Pedir Estimado",
     "Errors": {
@@ -53,7 +319,7 @@
       "Links": [
         {
           "id": "home",
-          "label": "Inico",
+          "label": "Home",
           "to": "/"
         },
         {

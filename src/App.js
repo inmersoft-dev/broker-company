@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 // sito components
 import SitoContainer from "sito-container";
@@ -23,7 +23,12 @@ import { userLogged, logoutUser } from "./utils/auth";
 // services
 import { validateBasicKey } from "./services/auth";
 
+// contexts
+import { useLanguage } from "./contexts/LanguageProvider";
+
 const App = () => {
+  const { setLanguageState } = useLanguage();
+
   const fetch = async () => {
     const value = await validateBasicKey();
     if (!value) {
@@ -37,6 +42,17 @@ const App = () => {
   useEffect(() => {
     if (userLogged()) fetch();
   }, []);
+
+  useEffect(() => {
+    console.log("hola", navigator.languages[0].split("-")[0]);
+    if (navigator.languages && navigator.languages.length)
+      setLanguageState({
+        type: "set",
+        lang: navigator.languages[0].split("-")[0],
+      });
+    else if (navigator.language && navigator.language.split("-"))
+      setLanguageState({ type: "set", lang: navigator.language.split("-")[0] });
+  });
 
   return (
     <SitoContainer ignoreDefault sx={{ width: "100vw" }}>
