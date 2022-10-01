@@ -108,8 +108,8 @@
         "Links": [
           {
             "id": "1",
-            "Link": "mailto:wmtlogistics@gmail.com",
-            "Label": "Email: wmtlogistics@gmail.com"
+            "Link": "mailto:wmt@www.wmtlogistics.org",
+            "Label": "Email: wmt@www.wmtlogistics.org"
           },
           {
             "id": "2",
@@ -262,7 +262,7 @@
       "Button": "Contact now",
       "whatsapp": "https://wa.me/+14704551854",
       "toWhatsapp": "+1 (470) 455-1854",
-      "email": "wmtlogistics@gmail.com"
+      "email": "wmt@www.wmtlogistics.org"
     }
   },
   "es": {
@@ -374,8 +374,8 @@
         "Links": [
           {
             "id": "1",
-            "Link": "mailto:wmtlogistics@gmail.com",
-            "Label": "Email: wmtlogistics@gmail.com"
+            "Link": "mailto:wmt@www.wmtlogistics.org",
+            "Label": "Email: wmt@www.wmtlogistics.org"
           },
           {
             "id": "2",
@@ -529,7 +529,7 @@
       "Button": "Contactar ahora",
       "whatsapp": "https://wa.me/+14704551854",
       "toWhatsapp": "+1 (470) 455-1854",
-      "email": "wmtlogistics@gmail.com"
+      "email": "wmt@www.wmtlogistics.org"
     }
   }
 }
